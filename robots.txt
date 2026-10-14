@@ -1,0 +1,4 @@
+# Pre-launch: canonical domain not verified (site-config.json site.canonicalVerified=false).
+User-agent: *
+Disallow: /
+Sitemap: https://kabukplatform.com/sitemap.xml

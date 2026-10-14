@@ -1,0 +1,487 @@
+{
+  "_meta": { "locale": "ko", "status": "DRAFT translation from the English master copy. Not reviewed by a native speaker. Do not publish as approved." },
+  "common": {
+    "skip": "본문으로 건너뛰기",
+    "menu": "메뉴",
+    "mainNav": "주 메뉴",
+    "language": "언어",
+    "languageChoose": "언어 선택",
+    "lockupParent": "by KabuK Style",
+    "logoAlt": "KabuK",
+    "home": "KabuK Platform 홈",
+    "external": "새 탭에서 열림",
+    "overview": "개요",
+    "learnMore": "자세히 보기",
+    "nav": {
+      "solutions": "솔루션",
+      "solutionsOverview": "전체 솔루션",
+      "technology": "기술",
+      "technologyOverview": "플랫폼 기능",
+      "why": "왜 KabuK Platform인가",
+      "about": "회사 소개",
+      "talk": "문의하기"
+    },
+    "segments": {
+      "hotels": { "name": "호텔 및 호텔 그룹", "hint": "연결성, 예약, 요금 관리" },
+      "destinations": { "name": "관광청 및 관광지", "hint": "지역 숙박시설 연결" },
+      "wholesalers": { "name": "도매업체 및 공급업체", "hint": "재고, 콘텐츠, 재무 워크플로" },
+      "travel": { "name": "여행사", "hint": "여행 산업 특화 기술 인프라" }
+    },
+    "services": {
+      "pricing": "요금 및 재고",
+      "booking": "예약 및 예약 관리",
+      "billing": "청구 및 결제",
+      "content": "콘텐츠 및 매핑",
+      "identity": "ID 및 관리",
+      "analytics": "분석 및 자동화"
+    },
+    "status": {
+      "core": "핵심 서비스",
+      "development": "개발 중",
+      "planned": "계획됨"
+    },
+    "footer": {
+      "tagline": "KabuK Style Inc.가 개발하는 여행 기술 인프라.",
+      "solutions": "솔루션",
+      "technology": "기술",
+      "techCore": "핵심 서비스",
+      "techConnectivity": "연결성",
+      "techOperations": "운영",
+      "techAnalytics": "분석 및 자동화",
+      "company": "회사",
+      "about": "회사 소개",
+      "contact": "문의",
+      "privacy": "개인정보",
+      "products": "KabuK Style 제품",
+      "platformCurrent": "KabuK Platform",
+      "currentSite": "현재 사이트",
+      "exchange": "KabuK Exchange",
+      "hafh": "HafH",
+      "corporate": "KabuK Style Inc.",
+      "copyright": "© {year} KabuK Style Inc.",
+      "languages": "언어",
+      "draftNotice": "번역 페이지는 원어민 검토 전 초안입니다."
+    },
+    "draftBanner": "이 페이지는 번역 초안이며 아직 원어민 검토를 거치지 않았습니다. 영어판이 기준입니다.",
+    "draftBannerLink": "영어로 보기"
+  },
+
+  "diagram": {
+    "arch": {
+      "label": "KabuK Platform 서비스 아키텍처",
+      "top": "기업 및 제품",
+      "topItems": ["호텔 및 호텔 그룹", "관광지", "도매업체 및 공급업체", "여행사"],
+      "topExchange": "KabuK Exchange",
+      "core": "핵심 서비스",
+      "nodes": {
+        "pricing": "요금",
+        "availability": "재고",
+        "booking": "예약",
+        "reservations": "예약 관리",
+        "billing": "청구 및 결제",
+        "content": "콘텐츠 및 매핑",
+        "identity": "ID 및 접근",
+        "operations": "운영",
+        "analytics": "분석 및 자동화"
+      },
+      "plannedTag": "AI 워크플로 계획됨",
+      "base": "공통 기반",
+      "baseItems": ["통합 패턴", "공통 데이터 모델", "권한", "운영 가시성"],
+      "caption": "KabuK Platform 서비스 영역 간의 관계를 보여주는 개념도입니다. 운영 중인 연동 목록이 아니며, 범위는 구현에 따라 달라집니다."
+    },
+    "rel": {
+      "label": "KabuK Platform과 KabuK Exchange의 관계",
+      "supply": "공급",
+      "supplyItems": ["호텔 및 호텔 그룹", "도매업체 및 공급업체", "온라인 여행사(OTA)"],
+      "enablersTitle": "연결성 제공업체",
+      "enablers": "PMS, CRS, 채널 매니저는 공급 측 시스템을 연결합니다. 연결을 지원하는 역할이며, 반드시 판매자인 것은 아닙니다.",
+      "exchange": "KabuK Exchange",
+      "exchangeDesc": "여행 공급과 수요 측 파트너를 연결하는 B2B 유통 네트워크.",
+      "exchangeFunctions": ["파트너 네트워크", "유통", "상업 계약"],
+      "demand": "유통",
+      "demandItems": ["여행사 및 TMC", "온라인 여행사(OTA)", "투어 운영사 및 도매업체"],
+      "bothSides": "양측",
+      "foundationPrefix": "기반:",
+      "foundationName": "KabuK Platform",
+      "foundationServices": "요금 · 예약 · 예약 관리 · 콘텐츠 · 청구 · ID · 운영",
+      "caption": "관계를 보여주는 개념도입니다. OTA와 도매업체는 공급과 수요 양측 모두에서 활동할 수 있습니다. 운영 중인 파트너 연동을 나타내지 않습니다."
+    },
+    "compare": {
+      "beforeTitle": "포인트 투 포인트",
+      "beforeBody": "각 시스템이 파트너마다 개별적으로 연동합니다. 연결이 늘어날수록 규칙, 상태, 기록이 서로 어긋나게 됩니다.",
+      "afterTitle": "공통 기반",
+      "afterBody": "시스템이 공통 서비스를 통해 연결되므로 요금 규칙, 예약 상태, 재무 기록이 일관된 패턴을 따릅니다.",
+      "label": "포인트 투 포인트 연동과 공통 기술 기반의 비교"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "KabuK Platform — 여행 기술 인프라",
+      "description": "여행 연결성, 요금, 예약, 예약 관리, 재무 워크플로, 운영을 위한 기술 기반 KabuK Platform을 소개합니다."
+    },
+    "hero": {
+      "eyebrow": "여행 기술 인프라",
+      "title": "연결된 여행을 위한 기술 기반.",
+      "lead": "KabuK Platform은 요금, 예약, 예약 관리, 재무 워크플로, 콘텐츠, 파트너 운영을 하나의 공통 기술 기반으로 통합합니다. 여행 기업이 시스템을 연결하고 복잡성을 관리할 수 있도록 설계되었습니다.",
+      "primary": "팀과 상담하기",
+      "secondary": "플랫폼 기능 살펴보기"
+    },
+    "value": {
+      "eyebrow": "왜 KabuK Platform인가",
+      "title": "단절은 줄이고, 운영은 연결합니다.",
+      "lead": "여행 기업은 재고, 요금, 예약, 결제, 파트너 관계를 조율해야 하는 여러 시스템에 의존합니다. KabuK Platform은 일관된 서비스와 운영 통제를 통해 이러한 워크플로를 연결하도록 설계되었습니다.",
+      "pillars": [
+        { "title": "연결을 전제로 한 설계", "body": "공급업체, 채널, 운영 시스템 전반에 공통 통합 패턴을 확립합니다." },
+        { "title": "일관된 예약 워크플로", "body": "예약 상태, 변경, 취소 및 후속 운영 이벤트를 조율합니다." },
+        { "title": "상업 및 재무의 명확성", "body": "요금 규칙, 청구, 정산 대사, 정산 관련 워크플로를 지원합니다." },
+        { "title": "운영을 위한 설계", "body": "파트너 및 거래 수명주기를 관리하는 데 필요한 가시성과 통제 기능을 팀에 제공합니다." }
+      ],
+      "link": "왜 KabuK Platform인가"
+    },
+    "capabilities": {
+      "eyebrow": "플랫폼 기능",
+      "title": "함께 작동하는 핵심 서비스.",
+      "lead": "KabuK Platform은 여행 기반 기술을 서로 연결된 서비스 영역으로 구성합니다. 구체적인 연동과 제공 여부는 사용 사례와 구현 범위에 따라 달라집니다.",
+      "link": "기술 살펴보기"
+    },
+    "audiences": {
+      "eyebrow": "솔루션",
+      "title": "여행 기업과 관광지를 위한 인프라.",
+      "lead": "비즈니스 모델이 다르면 같은 기반에 요구하는 것도 다릅니다. 모든 협업은 고객의 요구사항을 파악하는 데서 시작합니다."
+    },
+    "relationship": {
+      "eyebrow": "KabuK 제품군",
+      "title": "KabuK Exchange를 뒷받침하는 기반.",
+      "body": "KabuK Platform은 요금, 예약, 예약 관리, 콘텐츠, 재무 워크플로, 운영을 위한 기반 기술 서비스를 제공합니다. KabuK Exchange는 이 기반을 활용해 여행 공급과 수요 측 파트너를 연결하는 별도의 유통 제품입니다.",
+      "cta": "KabuK Exchange 살펴보기"
+    },
+    "transparency": {
+      "title": "기능 표기 방식",
+      "body": "각 서비스 영역은 성숙도(핵심 서비스, 개발 중, 계획됨)로 표기하며, 범위는 파트너마다 확인합니다. 이 사이트의 내용은 서비스 수준 약정이나 공개 API가 아닙니다.",
+      "link": "기능 상태 보기"
+    },
+    "cta": {
+      "title": "무엇을 만들고 계신지 알려주세요.",
+      "body": "요구사항을 공유해 주시면 가능한 연동 또는 협업 방안을 팀이 함께 논의합니다.",
+      "button": "팀과 상담하기"
+    }
+  },
+
+  "capabilityCards": {
+    "pricing": "요금 로직, 재고 워크플로, 유통 관련 상업 규칙을 구성합니다.",
+    "booking": "연결된 시스템 전반에서 예약 거래와 예약 수명주기를 조율합니다.",
+    "content": "숙박시설 콘텐츠를 정리하고 공급업체, 시설, 객실 정보를 정규화합니다.",
+    "billing": "청구, 정산 대사, 매입·매출 채무 및 채권, 정산 워크플로를 지원합니다.",
+    "identity": "정의된 권한과 도구를 통해 파트너 접근과 운영 관리를 수행합니다.",
+    "analytics": "운영 가시성을 구축하고, 반복 업무를 위한 AI 지원 워크플로를 모색합니다."
+  },
+
+  "audienceCopy": {
+    "hotels": {
+      "title": "숙박시설을 유통을 뒷받침하는 시스템에 연결하세요.",
+      "body": "KabuK Platform은 숙박시설 연결성, 예약 워크플로, 요금 관리, 그리고 연결된 여행 커머스에 참여하는 데 필요한 운영 프로세스를 지원하도록 설계되었습니다. KabuK Exchange를 통한 유통은 별도의 제품 경로입니다.",
+      "cta": "호텔 연결성 상담하기",
+      "topics": ["시설 및 객실 콘텐츠", "요금 및 재고 관리", "예약 수명주기", "기존 PMS 또는 채널 매니저를 통한 연결"]
+    },
+    "destinations": {
+      "title": "더욱 연결된 관광지 생태계를 만드세요.",
+      "body": "공통 기술 서비스가 지역 숙박시설 연결, 재고 조율, 유통 채널 접근을 어떻게 지원할 수 있는지 살펴보세요. 솔루션은 각 관광지와 참여 기업의 필요에 맞게 범위를 정해야 합니다.",
+      "cta": "관광지 솔루션 살펴보기",
+      "topics": ["지역 숙박시설 연결", "재고 조율", "지역 기업 참여 모델", "유통 채널로의 경로"]
+    },
+    "wholesalers": {
+      "title": "재고 유통을 뒷받침하는 시스템을 단순하게.",
+      "body": "일관된 인프라 기반을 통해 콘텐츠, 요금, 예약, 재무 워크플로를 연결합니다. 상업적 유통 기회는 해당되는 경우 KabuK Exchange를 통해 처리됩니다.",
+      "cta": "공급업체 인프라 상담하기",
+      "topics": ["콘텐츠 정규화 및 매핑", "상업 및 요금 규칙", "예약 및 예약 관리 상태", "청구 및 정산 대사"]
+    },
+    "travel": {
+      "title": "여행에 특화된 인프라 위에 구축하세요.",
+      "body": "예약 수명주기, 상업 규칙, 파트너 운영, 연동을 중심으로 설계된 기술 서비스를 살펴보세요. 모든 기업이 기반의 각 구성 요소를 독자적으로 구축해야 한다고 가정하지 않습니다.",
+      "cta": "Platform 팀과 상담하기",
+      "topics": ["예약 수명주기 서비스", "파트너 접근 및 관리", "통합 패턴", "운영 도구"]
+    }
+  },
+
+  "solutions": {
+    "meta": {
+      "title": "여행 기업을 위한 솔루션 — KabuK Platform",
+      "description": "호텔, 관광지, 도매업체, 공급업체, 여행 기업을 위한 기술 인프라."
+    },
+    "hero": {
+      "eyebrow": "솔루션",
+      "title": "하나의 기반을 다양한 여행 비즈니스 모델에 맞게.",
+      "lead": "호텔, 관광지, 공급업체, 여행사는 같은 핵심 워크플로를 각기 다른 방식으로 조율합니다. 저희는 비즈니스에 맞춰 협업 범위를 정합니다."
+    },
+    "topicsLabel": "주요 논의 주제",
+    "pathway": {
+      "eyebrow": "협업 방식",
+      "title": "협업은 보통 이렇게 시작됩니다.",
+      "lead": "참고용 절차입니다. 실제 진행은 시스템, 범위, 상업 모델에 따라 달라집니다.",
+      "steps": [
+        { "title": "요구사항 공유", "body": "비즈니스, 시스템, 연결하고자 하는 워크플로에 대해 알려주세요." },
+        { "title": "적합성 및 범위 검토", "body": "관련된 Platform 서비스와 사용 사례에 제공 가능한 항목을 검토합니다." },
+        { "title": "연동 계획", "body": "시스템, 데이터, 역할 분담, 상업적 틀에 합의합니다." },
+        { "title": "단계적 구현", "body": "정의된 범위에서 시작하고, 기반이 제대로 작동하면 확장합니다." }
+      ]
+    },
+    "exchangeNote": {
+      "title": "유통을 찾고 계신가요?",
+      "body": "B2B 수요 측 파트너에게 재고를 판매하는 것이 목표라면 유통 제품은 KabuK Exchange입니다. KabuK Platform은 그 기반 기술을 제공합니다.",
+      "cta": "KabuK Exchange 방문하기"
+    }
+  },
+
+  "technology": {
+    "meta": {
+      "title": "플랫폼 기능 — KabuK Platform",
+      "description": "KabuK Platform의 요금, 예약, 예약 관리, 콘텐츠, 재무 워크플로, ID, 운영 서비스에 대해 알아보세요."
+    },
+    "hero": {
+      "eyebrow": "기술",
+      "title": "함께 작동하는 핵심 서비스.",
+      "lead": "KabuK Platform은 여행 기반 기술을 서로 연결된 서비스 영역으로 구성합니다. 구체적인 연동과 제공 여부는 사용 사례와 구현 범위에 따라 달라집니다."
+    },
+    "architecture": {
+      "eyebrow": "서비스 아키텍처",
+      "title": "조율된 서비스, 하나의 기반.",
+      "lead": "각 영역은 명확한 책임을 가집니다. 이들은 통합 패턴, 데이터, 권한, 운영 가시성을 공유합니다."
+    },
+    "legend": {
+      "title": "기능 상태",
+      "core": "KabuK Platform의 기반 서비스 영역. 범위는 협업마다 확인합니다.",
+      "development": "현재 개발 중입니다. 일정과 범위는 아직 확정되지 않았습니다.",
+      "planned": "로드맵에 포함되어 있습니다. 현재는 제공되지 않습니다."
+    },
+    "domainsTitle": "서비스 영역",
+    "covers": "포함 범위",
+    "scopeNote": "범위 안내",
+    "domains": {
+      "pricing": {
+        "body": "요금 로직, 재고 워크플로, 유통 관련 상업 규칙을 구성합니다.",
+        "covers": ["요금 규칙 및 요금 구조", "재고 및 할당 워크플로", "채널·파트너별 상업 규칙", "운영팀을 위한 규칙 관리"],
+        "note": "요금은 규칙 기반입니다. 자동화 또는 머신러닝 기반 요금 최적화는 현재 범위에 포함되지 않습니다."
+      },
+      "booking": {
+        "body": "연결된 시스템 전반에서 예약 거래와 예약 수명주기를 조율합니다.",
+        "covers": ["예약 거래", "예약 상태 및 이력", "변경 및 취소", "후속 운영 이벤트"],
+        "note": "특정 변경, 취소, 환불 흐름의 지원 여부는 공급업체와 연동에 따라 다릅니다."
+      },
+      "content": {
+        "body": "숙박시설 콘텐츠를 정리하고 공급업체, 시설, 객실 정보를 정규화합니다.",
+        "covers": ["시설 및 객실 콘텐츠", "공급업체 데이터 정규화", "시설 및 객실 매핑", "콘텐츠 품질 워크플로"],
+        "note": "매핑 품질은 원본 데이터에 따라 달라집니다. 매핑은 운영의 일부로 검토됩니다."
+      },
+      "billing": {
+        "body": "청구, 정산 대사, 매입·매출 채무 및 채권, 정산 워크플로를 지원합니다.",
+        "covers": ["청구", "정산 대사", "매입 채무 및 매출 채권(AP/AR)", "정산 관련 워크플로"],
+        "note": "KabuK Platform은 재무 워크플로를 지원합니다. 인가된 결제 대행사나 에스크로 서비스가 아닙니다."
+      },
+      "identity": {
+        "body": "정의된 권한과 도구를 통해 파트너 접근과 운영 관리를 수행합니다.",
+        "covers": ["파트너 및 사용자 접근", "역할 및 권한", "관리 도구", "운영을 위한 활동 기록"],
+        "note": "보안 관행 및 인증 여부는 협업 과정에서 공유하며, 이 사이트에서 주장하지 않습니다."
+      },
+      "analytics": {
+        "body": "운영 가시성을 구축하고, 반복 업무를 위한 AI 지원 워크플로를 모색합니다.",
+        "covers": ["운영 보고", "거래 및 파트너 가시성", "예외 모니터링", "AI 지원 워크플로(계획됨)"],
+        "note": "KAOS를 포함한 AI 지원 워크플로는 계획 및 개발 단계이며, 일반 제공되지 않습니다."
+      }
+    },
+    "connectivity": {
+      "eyebrow": "연결성",
+      "title": "공통 통합 패턴.",
+      "body": "KabuK Platform은 일회성 연동이 아닌 일관된 패턴으로 공급업체, 채널, 운영 시스템을 연결하도록 설계되었습니다. PMS, CRS, 채널 매니저는 연결성 제공업체 역할을 하며, 연결 가능한 시스템은 범위 검토 시 확인합니다.",
+      "points": ["파트너 간 일관된 데이터 구조", "정의된 예약 및 상태 이벤트", "책임이 명확한 파트너 온보딩"]
+    },
+    "operations": {
+      "eyebrow": "운영",
+      "title": "연동을 넘어, 운영할 수 있도록.",
+      "body": "여행 거래는 예약 이후에도 오래 이어집니다. Platform 서비스는 운영 통제를 고려해 설계되어, 팀이 상태를 확인하고 예외에 대응하며 기록의 일관성을 유지할 수 있습니다.",
+      "points": ["거래 및 파트너 수명주기의 가시성", "예외 및 수동 개입을 위한 통제 기능", "요금, 예약, 재무 전반의 일관된 기록"]
+    },
+    "disclaimer": "이 페이지는 서비스 영역과 설계 의도를 설명합니다. 서비스 수준 약정, 공개 API 사양, 또는 특정 기능이 독립 제품으로 제공된다는 약속이 아닙니다."
+  },
+
+  "why": {
+    "meta": {
+      "title": "왜 KabuK Platform인가",
+      "description": "여행 운영 전반의 단절을 줄이도록 설계된 연결된 기술 기반."
+    },
+    "hero": {
+      "eyebrow": "왜 KabuK Platform인가",
+      "title": "단절은 줄이고, 운영은 연결합니다.",
+      "lead": "여행 기업은 재고, 요금, 예약, 결제, 파트너 관계를 조율해야 하는 여러 시스템에 의존합니다. KabuK Platform은 일관된 서비스와 운영 통제를 통해 이러한 워크플로를 연결하도록 설계되었습니다."
+    },
+    "problem": {
+      "eyebrow": "과제",
+      "title": "연결이 늘어날 때마다 복잡성도 늘어납니다.",
+      "lead": "각 시스템이 파트너마다 개별적으로 연동하면 규칙, 상태, 기록이 어긋나게 됩니다. 공통 기반은 이를 일관되게 유지합니다."
+    },
+    "pillarsTitle": "공통 기반이 제공하도록 설계된 것",
+    "pillarsDetail": [
+      { "title": "연결을 전제로 한 설계", "body": "공급업체, 채널, 운영 시스템 전반에 공통 통합 패턴을 확립합니다.", "detail": "새로운 파트너는 매번 새로운 맞춤 모델 대신 콘텐츠, 재고, 예약 이벤트에 대한 정해진 구조를 따릅니다." },
+      { "title": "일관된 예약 워크플로", "body": "예약 상태, 변경, 취소 및 후속 운영 이벤트를 조율합니다.", "detail": "하나의 예약 수명주기로 운영, 재무, 파트너가 같은 상태를 참조합니다." },
+      { "title": "상업 및 재무의 명확성", "body": "요금 규칙, 청구, 정산 대사, 정산 관련 워크플로를 지원합니다.", "detail": "상업 규칙과 재무 기록이 연결되어 있어 차이를 추적하기가 쉬워집니다." },
+      { "title": "운영을 위한 설계", "body": "파트너 및 거래 수명주기를 관리하는 데 필요한 가시성과 통제 기능을 팀에 제공합니다.", "detail": "예외 상황을 사후에 발견하는 대신, 바로 확인하고 대응할 수 있습니다." }
+    ],
+    "principles": {
+      "eyebrow": "저희의 방식",
+      "title": "실용적인 기술을 정확하게.",
+      "items": [
+        { "title": "여행 특화", "body": "서비스는 예약 수명주기, 상업 규칙, 파트너 운영을 중심으로 설계됩니다." },
+        { "title": "모듈형 경계", "body": "서비스 영역마다 책임이 명확해 파트너의 요구 변화에 따라 발전할 수 있습니다." },
+        { "title": "성숙도에 대한 정직함", "body": "핵심 서비스, 개발 중인 기능, 계획된 기능을 구분하고 모든 파트너와 범위를 확인합니다." }
+      ]
+    },
+    "notList": {
+      "title": "KabuK Platform이 아닌 것",
+      "items": ["온라인 여행사나 소비자 대상 예약 브랜드가 아닙니다", "호텔 마켓플레이스가 아닙니다", "숙박 관리 시스템(PMS)이 아닙니다"],
+      "body": "유통은 이 기반 위에 구축된 별도 제품인 KabuK Exchange가 담당합니다."
+    }
+  },
+
+  "about": {
+    "meta": {
+      "title": "KabuK Platform 소개",
+      "description": "KabuK Style Inc.의 여행 기술 제품, KabuK Platform에 대해 알아보세요."
+    },
+    "hero": {
+      "eyebrow": "회사 소개",
+      "title": "연결된 여행을 뒷받침하는 인프라를 만듭니다.",
+      "lead": "KabuK Platform은 KabuK Style Inc.가 개발한 기술 제품입니다. 여행 운영, 제품, 엔지니어링, 파트너 연결 전반의 전문성을 모아 여행 커머스를 위한 더 일관된 기반을 만듭니다."
+    },
+    "focus": {
+      "title": "저희가 집중하는 것",
+      "body": "저희는 업무 워크플로를 연결하는 실용적인 기술 서비스에 집중합니다. 또 하나의 소비자 예약 브랜드가 아닙니다."
+    },
+    "family": {
+      "eyebrow": "KabuK 제품군",
+      "title": "세 가지 역할, 명확한 구분.",
+      "lead": "KabuK Platform과 KabuK Exchange는 모회사와 기술 기반을 공유하지만 목적은 다릅니다.",
+      "items": [
+        { "role": "모회사", "name": "KabuK Style Inc.", "body": "KabuK 제품을 개발하고 운영하는 회사입니다.", "link": "corporate" },
+        { "role": "기술 기반", "name": "KabuK Platform", "body": "요금, 예약, 예약 관리, 콘텐츠, 재무 워크플로, ID, 운영을 위한 공통 서비스.", "current": true },
+        { "role": "유통 제품", "name": "KabuK Exchange", "body": "KabuK Platform 위에 구축되어 여행 공급과 수요 측 파트너를 연결하는 B2B 유통 네트워크.", "link": "exchange" }
+      ],
+      "youAreHere": "현재 사이트",
+      "visit": "사이트 방문"
+    },
+    "team": {
+      "eyebrow": "팀",
+      "title": "KabuK Platform을 만드는 팀.",
+      "body": "KabuK Platform은 KabuK Style Inc. 내에서 여행 운영, 제품, 엔지니어링, 파트너 연결 분야에 걸친 팀이 만들고 있습니다. 팀 프로필은 게시 승인 후 이곳에 추가됩니다."
+    }
+  },
+
+  "contact": {
+    "meta": {
+      "title": "KabuK Platform 문의",
+      "description": "여행 인프라, 연결성, 협업에 대해 팀과 상담하세요."
+    },
+    "hero": {
+      "eyebrow": "문의",
+      "title": "무엇을 만들고 계신지 알려주세요.",
+      "lead": "호텔 그룹, 관광 기관, 도매업체, 여행 기술 기업 등 어떤 곳이든 요구사항을 공유해 주시면 가능한 연동 또는 협업 방안을 팀이 함께 논의합니다."
+    },
+    "mailtoNotice": "이 양식은 사용 중인 이메일 앱에서 이메일을 작성합니다. 직접 그 이메일을 보내기 전까지 KabuK로 아무것도 전송되지 않습니다.",
+    "form": {
+      "title": "문의 내용",
+      "required": "필수",
+      "optional": "선택",
+      "name": "이름",
+      "company": "회사",
+      "email": "업무용 이메일",
+      "orgType": "조직 유형",
+      "orgTypeChoose": "조직 유형 선택",
+      "orgTypes": {
+        "hotel": "호텔 또는 호텔 그룹",
+        "tourism": "관광청 또는 관광지 기관",
+        "wholesaler": "도매업체 또는 공급업체",
+        "travel-company": "여행사",
+        "technology": "기술 또는 연결성 제공업체",
+        "other": "기타"
+      },
+      "region": "지역",
+      "regionChoose": "지역 선택",
+      "regions": {
+        "japan": "일본",
+        "east-asia": "동아시아",
+        "southeast-asia": "동남아시아",
+        "middle-east": "중동",
+        "europe": "유럽",
+        "americas": "미주",
+        "oceania": "오세아니아",
+        "other": "기타 / 복수 지역"
+      },
+      "interest": "관심 분야",
+      "interestChoose": "관심 분야 선택",
+      "interests": {
+        "connectivity": "숙박시설 연결",
+        "pricing": "요금 및 재고",
+        "booking": "예약 및 예약 관리",
+        "content": "콘텐츠 및 매핑",
+        "billing": "청구 및 결제",
+        "distribution": "KabuK Exchange를 통한 유통",
+        "partnership": "파트너십 또는 협업",
+        "other": "기타"
+      },
+      "systems": "현재 사용 중인 시스템",
+      "systemsHint": "예: PMS, CRS, 채널 매니저, 예약 엔진 등.",
+      "message": "메시지",
+      "messageHint": "무엇을 연결하거나 개선하고 싶으신가요?",
+      "privacy": "이 양식이 제 이메일 앱에서 이메일을 작성한다는 점, 그리고 KabuK Style Inc.가 {link}에 설명된 대로 제 정보를 처리한다는 점을 이해합니다.",
+      "privacyLink": "개인정보 처리 안내",
+      "submit": "문의 이메일 작성",
+      "errors": {
+        "required": "계속하려면 이 정보를 입력하세요.",
+        "email": "유효한 업무용 이메일 주소를 입력하세요(예: name@company.com).",
+        "select": "계속하려면 항목을 선택하세요.",
+        "privacy": "개인정보 처리 안내를 읽었음을 확인해 주세요.",
+        "summary": "표시된 항목을 확인하세요."
+      },
+      "confirmation": "이메일 앱이 열리고 메시지가 작성됩니다. 문의를 완료하려면 해당 이메일을 보내주세요.",
+      "fallback": "이메일 앱이 열리지 않으면 {email}로 문의 내용을 보내주세요.",
+      "configError": "문의 주소가 아직 설정되지 않았습니다. 나중에 다시 시도해 주세요.",
+      "emailSubject": "{prefix}: {company}",
+      "emailLabels": { "name": "이름", "company": "회사", "email": "업무용 이메일", "orgType": "조직 유형", "region": "지역", "interest": "관심 분야", "systems": "현재 시스템", "message": "메시지" }
+    },
+    "aside": {
+      "title": "다음 단계",
+      "items": [
+        { "title": "담당 팀으로 전달", "body": "작성된 이메일은 조직 유형에 맞는 팀에게 발송됩니다." },
+        { "title": "후속 연락", "body": "보통 시스템과 목표를 파악하기 위한 짧은 통화로 시작합니다." },
+        { "title": "함께 범위 정의", "body": "그 후 KabuK Platform이 무엇을 지원할 수 있는지 논의합니다." }
+      ],
+      "only": "요청을 이해하는 데 필요한 정보만 공유해 주세요. 결제 정보나 비밀번호는 포함하지 마세요."
+    }
+  },
+
+  "privacy": {
+    "meta": {
+      "title": "개인정보 — KabuK Platform",
+      "description": "KabuK Platform 웹사이트의 개인정보 관련 초안 정보. 법무 검토 대기 중."
+    },
+    "hero": {
+      "eyebrow": "법률",
+      "title": "개인정보 처리 안내",
+      "lead": "초안 — 이 페이지는 KabuK Style Inc. 법무팀의 승인을 받지 않았습니다."
+    },
+    "draft": "초안 — 법무 미승인. 공개 전에 승인된 KabuK Style Inc. 개인정보 처리 안내로 교체해야 합니다.",
+    "sections": [
+      { "title": "문의 양식", "body": "이 사이트의 문의 양식은 KabuK 서버로 데이터를 전송하지 않습니다. 사용자의 이메일 앱에서 이메일을 작성합니다. KabuK Style Inc.는 사용자가 그 이메일을 보낸 경우에만 정보를 받습니다." },
+      { "title": "쿠키 및 분석", "body": "이 사이트는 광고 또는 분석용 쿠키를 설정하지 않습니다. 언어를 선택하면 사이트가 기억할 수 있도록 그 선택이 브라우저의 로컬 저장소에 저장됩니다. 브라우저 설정에서 언제든지 삭제할 수 있습니다." },
+      { "title": "글꼴", "body": "이 사이트는 Google Fonts에서 글꼴을 불러옵니다. 다운로드를 위해 브라우저가 Google 서버에 연결됩니다. [법무 검토: 고지 확인 또는 글꼴 자체 호스팅]" },
+      { "title": "연락처", "body": "[KabuK Style Inc. 제공 예정: 개인정보 처리자 정보, 개인정보 요청 연락처, 적용되는 권리]" }
+    ]
+  },
+
+  "notFound": {
+    "meta": { "title": "페이지를 찾을 수 없습니다 — KabuK Platform", "description": "요청하신 페이지를 찾을 수 없습니다." },
+    "title": "페이지를 찾을 수 없습니다.",
+    "body": "페이지가 이동되었거나 주소가 올바르지 않을 수 있습니다.",
+    "home": "홈으로 이동",
+    "contact": "팀에 문의하기"
+  }
+}

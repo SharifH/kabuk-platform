@@ -1,0 +1,487 @@
+{
+  "_meta": { "locale": "zh-TW", "status": "DRAFT translation from the English master copy (Traditional Chinese, Taiwan). Not reviewed by a native speaker. Do not publish as approved." },
+  "common": {
+    "skip": "跳至主要內容",
+    "menu": "選單",
+    "mainNav": "主要導覽",
+    "language": "語言",
+    "languageChoose": "選擇語言",
+    "lockupParent": "by KabuK Style",
+    "logoAlt": "KabuK",
+    "home": "KabuK Platform 首頁",
+    "external": "於新分頁開啟",
+    "overview": "概覽",
+    "learnMore": "了解更多",
+    "nav": {
+      "solutions": "解決方案",
+      "solutionsOverview": "所有解決方案",
+      "technology": "技術",
+      "technologyOverview": "平台功能",
+      "why": "為何選擇 KabuK Platform",
+      "about": "關於我們",
+      "talk": "聯絡我們"
+    },
+    "segments": {
+      "hotels": { "name": "飯店與飯店集團", "hint": "連線、訂房與房價控管" },
+      "destinations": { "name": "觀光局與旅遊目的地", "hint": "區域住宿連線" },
+      "wholesalers": { "name": "批發商與供應商", "hint": "庫存、內容與財務流程" },
+      "travel": { "name": "旅遊公司", "hint": "專為旅遊業打造的技術基礎設施" }
+    },
+    "services": {
+      "pricing": "價格與房況",
+      "booking": "訂購與訂房",
+      "billing": "帳務與付款",
+      "content": "內容與對應",
+      "identity": "身分與管理",
+      "analytics": "分析與自動化"
+    },
+    "status": {
+      "core": "核心服務",
+      "development": "開發中",
+      "planned": "規劃中"
+    },
+    "footer": {
+      "tagline": "由 KabuK Style Inc. 開發的旅遊技術基礎設施。",
+      "solutions": "解決方案",
+      "technology": "技術",
+      "techCore": "核心服務",
+      "techConnectivity": "連線能力",
+      "techOperations": "營運",
+      "techAnalytics": "分析與自動化",
+      "company": "公司",
+      "about": "關於我們",
+      "contact": "聯絡我們",
+      "privacy": "隱私權",
+      "products": "KabuK Style 產品",
+      "platformCurrent": "KabuK Platform",
+      "currentSite": "目前網站",
+      "exchange": "KabuK Exchange",
+      "hafh": "HafH",
+      "corporate": "KabuK Style Inc.",
+      "copyright": "© {year} KabuK Style Inc.",
+      "languages": "語言",
+      "draftNotice": "翻譯頁面為草稿，尚待母語人士審閱。"
+    },
+    "draftBanner": "本頁為翻譯草稿，尚未經母語人士審閱。請以英文版為準。",
+    "draftBannerLink": "閱讀英文版"
+  },
+
+  "diagram": {
+    "arch": {
+      "label": "KabuK Platform 服務架構",
+      "top": "企業與產品",
+      "topItems": ["飯店與飯店集團", "旅遊目的地", "批發商與供應商", "旅遊公司"],
+      "topExchange": "KabuK Exchange",
+      "core": "核心服務",
+      "nodes": {
+        "pricing": "價格",
+        "availability": "房況",
+        "booking": "訂購",
+        "reservations": "訂房",
+        "billing": "帳務與付款",
+        "content": "內容與對應",
+        "identity": "身分與存取",
+        "operations": "營運",
+        "analytics": "分析與自動化"
+      },
+      "plannedTag": "AI 流程規劃中",
+      "base": "共用基礎",
+      "baseItems": ["整合模式", "共用資料模型", "權限", "營運可視性"],
+      "caption": "此為 KabuK Platform 各服務領域關係的示意圖，並非現行整合清單；實際範圍依各導入專案而定。"
+    },
+    "rel": {
+      "label": "KabuK Platform 與 KabuK Exchange 的關係",
+      "supply": "供給",
+      "supplyItems": ["飯店與飯店集團", "批發商與供應商", "線上旅行社（OTA）"],
+      "enablersTitle": "連線服務供應商",
+      "enablers": "PMS、CRS 與通路管理系統負責連接供給端系統。它們提供連線能力，但不一定是銷售方。",
+      "exchange": "KabuK Exchange",
+      "exchangeDesc": "連結旅遊供給與需求端合作夥伴的 B2B 通路網絡。",
+      "exchangeFunctions": ["合作夥伴網絡", "通路銷售", "商業協議"],
+      "demand": "通路",
+      "demandItems": ["旅行社與差旅管理公司（TMC）", "線上旅行社（OTA）", "旅遊營運商與批發商"],
+      "bothSides": "雙向",
+      "foundationPrefix": "基礎：",
+      "foundationName": "KabuK Platform",
+      "foundationServices": "價格 · 訂購 · 訂房 · 內容 · 帳務 · 身分 · 營運",
+      "caption": "僅為關係示意。OTA 與批發商可能同時位於供給端與需求端。本圖不代表現行的合作夥伴整合。"
+    },
+    "compare": {
+      "beforeTitle": "點對點",
+      "beforeBody": "每個系統都分別與各合作夥伴整合。連線越多，規則、狀態與紀錄就越容易不一致。",
+      "afterTitle": "共用基礎",
+      "afterBody": "系統透過共用服務連接，讓價格規則、訂房狀態與財務紀錄遵循一致的模式。",
+      "label": "點對點整合與共用技術基礎的比較"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "KabuK Platform — 旅遊技術基礎設施",
+      "description": "認識 KabuK Platform：支援旅遊連線、價格、訂購、訂房、財務流程與營運的技術基礎。"
+    },
+    "hero": {
+      "eyebrow": "旅遊技術基礎設施",
+      "title": "串連旅遊產業的技術基礎。",
+      "lead": "KabuK Platform 將價格、訂購、訂房、財務流程、內容與合作夥伴營運整合於共用的技術基礎之上，協助旅遊企業串接系統、管理複雜性。",
+      "primary": "與我們的團隊洽談",
+      "secondary": "探索平台功能"
+    },
+    "value": {
+      "eyebrow": "為何選擇 KabuK Platform",
+      "title": "減少割裂，串連營運。",
+      "lead": "旅遊企業仰賴多套系統協調庫存、價格、訂房、付款與合作夥伴關係。KabuK Platform 的設計目標，是透過一致的服務與營運控管，將這些流程串連起來。",
+      "pillars": [
+        { "title": "以連線為前提設計", "body": "在供應商、通路與營運系統之間建立共通的整合模式。" },
+        { "title": "一致的訂房流程", "body": "協調訂房狀態、變更、取消及後續的營運事件。" },
+        { "title": "清晰的商務與財務", "body": "支援價格規則、開立帳單、對帳及結算相關流程。" },
+        { "title": "為營運而打造", "body": "為團隊提供管理合作夥伴與交易生命週期所需的可視性與控管。" }
+      ],
+      "link": "為何選擇 KabuK Platform"
+    },
+    "capabilities": {
+      "eyebrow": "平台功能",
+      "title": "協同運作的核心服務。",
+      "lead": "KabuK Platform 將旅遊業的基礎技術組織為相互連結的服務領域。具體整合與提供狀況，依使用情境與導入範圍而定。",
+      "link": "探索技術"
+    },
+    "audiences": {
+      "eyebrow": "解決方案",
+      "title": "為旅遊企業與目的地打造的基礎設施。",
+      "lead": "不同的商業模式，對同一個基礎有不同的需求。每一次合作都從了解您的需求開始。"
+    },
+    "relationship": {
+      "eyebrow": "KabuK 產品家族",
+      "title": "支撐 KabuK Exchange 的基礎。",
+      "body": "KabuK Platform 提供價格、訂購、訂房、內容、財務流程與營運的底層技術服務。KabuK Exchange 則是運用此基礎、連結旅遊供給與需求端合作夥伴的獨立通路產品。",
+      "cta": "探索 KabuK Exchange"
+    },
+    "transparency": {
+      "title": "我們如何描述功能",
+      "body": "我們依成熟度（核心服務、開發中、規劃中）標示各服務領域，並與每位合作夥伴確認範圍。本網站內容並非服務等級承諾，也不是公開 API。",
+      "link": "查看功能狀態"
+    },
+    "cta": {
+      "title": "告訴我們您正在打造什麼。",
+      "body": "分享您的需求，我們的團隊將與您討論可能的整合或合作方式。",
+      "button": "與我們的團隊洽談"
+    }
+  },
+
+  "capabilityCards": {
+    "pricing": "設定價格邏輯、房況流程，以及與通路相關的商業規則。",
+    "booking": "在相連的系統之間協調訂購交易與訂房生命週期。",
+    "content": "整理住宿內容，並將供應商、物業與房型資訊標準化。",
+    "billing": "支援開立帳單、對帳、應付與應收帳款，以及結算流程。",
+    "identity": "透過明確定義的權限與工具，管理合作夥伴存取與營運管理。",
+    "analytics": "建立營運可視性，並探索以 AI 協助重複性流程。"
+  },
+
+  "audienceCopy": {
+    "hotels": {
+      "title": "將您的物業連接到支撐通路的系統。",
+      "body": "KabuK Platform 的設計目標，是支援住宿連線、訂房流程、價格控管，以及參與串連式旅遊商務所需的營運流程。透過 KabuK Exchange 進行通路銷售，則是另一條獨立的產品路徑。",
+      "cta": "洽談飯店連線",
+      "topics": ["物業與房型內容", "價格與房況控管", "訂房生命週期", "透過現有 PMS 或通路管理系統連線"]
+    },
+    "destinations": {
+      "title": "打造更緊密連結的目的地生態系。",
+      "body": "探索共用的技術服務如何支援區域住宿連線、庫存協調，以及通路接軌。解決方案應依各目的地與參與業者的需求界定範圍。",
+      "cta": "探索目的地解決方案",
+      "topics": ["區域住宿連線", "庫存協調", "在地業者參與模式", "接軌通路的路徑"]
+    },
+    "wholesalers": {
+      "title": "簡化支撐庫存通路的系統。",
+      "body": "透過一致的基礎設施，串連內容、價格、訂購與財務流程。適用時，商業通路機會將透過 KabuK Exchange 處理。",
+      "cta": "洽談供應商基礎設施",
+      "topics": ["內容標準化與對應", "商業與價格規則", "訂購與訂房狀態", "開立帳單與對帳"]
+    },
+    "travel": {
+      "title": "建構於旅遊專屬的基礎設施之上。",
+      "body": "探索圍繞訂房生命週期、商業規則、合作夥伴營運與整合所設計的技術服務——不預設每家企業都必須自行打造每一個基礎元件。",
+      "cta": "與 Platform 團隊洽談",
+      "topics": ["訂房生命週期服務", "合作夥伴存取與管理", "整合模式", "營運工具"]
+    }
+  },
+
+  "solutions": {
+    "meta": {
+      "title": "旅遊企業解決方案 — KabuK Platform",
+      "description": "為飯店、目的地、批發商、供應商與旅遊企業打造的技術基礎設施。"
+    },
+    "hero": {
+      "eyebrow": "解決方案",
+      "title": "同一個基礎，因應不同的旅遊商業模式。",
+      "lead": "飯店、目的地、供應商與旅遊公司以不同方式協調相同的核心流程。我們依您的業務界定合作範圍，而非反其道而行。"
+    },
+    "topicsLabel": "常見討論主題",
+    "pathway": {
+      "eyebrow": "合作方式",
+      "title": "合作通常如何開始。",
+      "lead": "以下為參考流程，實際進程依您的系統、範圍與商業模式而定。",
+      "steps": [
+        { "title": "分享您的需求", "body": "告訴我們您的業務、系統，以及希望串連的流程。" },
+        { "title": "評估適配性與範圍", "body": "我們檢視相關的 Platform 服務，以及適用於您情境的可用項目。" },
+        { "title": "規劃整合", "body": "就系統、資料、權責與商業架構達成共識。" },
+        { "title": "分階段導入", "body": "從明確的範圍開始，在基礎運作順利後再擴展。" }
+      ]
+    },
+    "exchangeNote": {
+      "title": "正在尋找通路？",
+      "body": "若您的目標是將庫存銷售給 B2B 需求端合作夥伴，對應的通路產品是 KabuK Exchange；KabuK Platform 則提供其底層技術。",
+      "cta": "前往 KabuK Exchange"
+    }
+  },
+
+  "technology": {
+    "meta": {
+      "title": "平台功能 — KabuK Platform",
+      "description": "了解 KabuK Platform 的價格、訂購、訂房、內容、財務流程、身分與營運服務。"
+    },
+    "hero": {
+      "eyebrow": "技術",
+      "title": "協同運作的核心服務。",
+      "lead": "KabuK Platform 將旅遊業的基礎技術組織為相互連結的服務領域。具體整合與提供狀況，依使用情境與導入範圍而定。"
+    },
+    "architecture": {
+      "eyebrow": "服務架構",
+      "title": "協調的服務，同一個基礎。",
+      "lead": "每個領域各有明確的職責，並共享整合模式、資料、權限與營運可視性。"
+    },
+    "legend": {
+      "title": "功能狀態",
+      "core": "KabuK Platform 的基礎服務領域。範圍依每次合作確認。",
+      "development": "正在開發中。時程與範圍尚未確定。",
+      "planned": "已列入產品藍圖，目前尚未提供。"
+    },
+    "domainsTitle": "服務領域",
+    "covers": "涵蓋",
+    "scopeNote": "範圍說明",
+    "domains": {
+      "pricing": {
+        "body": "設定價格邏輯、房況流程，以及與通路相關的商業規則。",
+        "covers": ["價格規則與房價結構", "房況與配額流程", "依通路與合作夥伴設定的商業規則", "供營運團隊使用的規則管理"],
+        "note": "價格採規則式設定。自動化或機器學習的價格最佳化不在目前範圍內。"
+      },
+      "booking": {
+        "body": "在相連的系統之間協調訂購交易與訂房生命週期。",
+        "covers": ["訂購交易", "訂房狀態與歷程", "變更與取消", "後續營運事件"],
+        "note": "特定變更、取消與退款流程的支援程度，依各供應商與整合方式而定。"
+      },
+      "content": {
+        "body": "整理住宿內容，並將供應商、物業與房型資訊標準化。",
+        "covers": ["物業與房型內容", "供應商資料標準化", "物業與房型對應", "內容品質流程"],
+        "note": "對應品質取決於來源資料，並於營運中持續檢視。"
+      },
+      "billing": {
+        "body": "支援開立帳單、對帳、應付與應收帳款，以及結算流程。",
+        "covers": ["開立帳單", "對帳", "應付與應收帳款（AP/AR）", "結算相關流程"],
+        "note": "KabuK Platform 支援財務流程，但並非持牌支付服務業者或履約保證（託管）服務。"
+      },
+      "identity": {
+        "body": "透過明確定義的權限與工具，管理合作夥伴存取與營運管理。",
+        "covers": ["合作夥伴與使用者存取", "角色與權限", "管理工具", "營運所需的操作紀錄"],
+        "note": "資安做法與任何認證資訊將於合作過程中提供，本網站不作宣稱。"
+      },
+      "analytics": {
+        "body": "建立營運可視性，並探索以 AI 協助重複性流程。",
+        "covers": ["營運報表", "交易與合作夥伴可視性", "例外監控", "AI 輔助流程（規劃中）"],
+        "note": "包含 KAOS 在內的 AI 輔助流程仍在規劃與開發中，尚未全面提供。"
+      }
+    },
+    "connectivity": {
+      "eyebrow": "連線能力",
+      "title": "共通的整合模式。",
+      "body": "KabuK Platform 的設計目標，是以一致的模式連接供應商、通路與營運系統，而非一次性的客製整合。PMS、CRS 與通路管理系統扮演連線服務供應商的角色；可連接的系統將於範圍評估時確認。",
+      "points": ["跨合作夥伴一致的資料結構", "明確定義的訂房與狀態事件", "權責清楚的合作夥伴導入流程"]
+    },
+    "operations": {
+      "eyebrow": "營運",
+      "title": "不只是整合，更要能營運。",
+      "body": "旅遊交易在完成訂購後仍會持續很久。Platform 服務在設計上納入營運控管，讓團隊能掌握狀態、處理例外，並維持紀錄一致。",
+      "points": ["交易與合作夥伴生命週期的可視性", "例外處理與人工介入的控管", "橫跨價格、訂購與財務的一致紀錄"]
+    },
+    "disclaimer": "本頁說明服務領域與設計意圖，並非服務等級協議、公開 API 規格，亦不代表任何功能會以獨立產品形式提供。"
+  },
+
+  "why": {
+    "meta": {
+      "title": "為何選擇 KabuK Platform",
+      "description": "旨在減少旅遊營運割裂的串連式技術基礎。"
+    },
+    "hero": {
+      "eyebrow": "為何選擇 KabuK Platform",
+      "title": "減少割裂，串連營運。",
+      "lead": "旅遊企業仰賴多套系統協調庫存、價格、訂房、付款與合作夥伴關係。KabuK Platform 的設計目標，是透過一致的服務與營運控管，將這些流程串連起來。"
+    },
+    "problem": {
+      "eyebrow": "挑戰",
+      "title": "每多一個連線，就多一分複雜。",
+      "lead": "當每個系統都分別與各合作夥伴整合，規則、狀態與紀錄就會逐漸不一致。共用基礎讓它們保持一致。"
+    },
+    "pillarsTitle": "共用基礎的設計目標",
+    "pillarsDetail": [
+      { "title": "以連線為前提設計", "body": "在供應商、通路與營運系統之間建立共通的整合模式。", "detail": "新的合作夥伴依循既有的內容、房況與訂房事件結構，而不必每次都建立新的客製模型。" },
+      { "title": "一致的訂房流程", "body": "協調訂房狀態、變更、取消及後續的營運事件。", "detail": "單一的訂房生命週期，讓營運、財務與合作夥伴參照相同的狀態。" },
+      { "title": "清晰的商務與財務", "body": "支援價格規則、開立帳單、對帳及結算相關流程。", "detail": "商業規則與財務紀錄相互連結，差異更容易追溯。" },
+      { "title": "為營運而打造", "body": "為團隊提供管理合作夥伴與交易生命週期所需的可視性與控管。", "detail": "例外狀況能即時看見並處理，而非事後才發現。" }
+    ],
+    "principles": {
+      "eyebrow": "我們的做法",
+      "title": "務實的技術，精確的描述。",
+      "items": [
+        { "title": "專為旅遊業設計", "body": "服務圍繞訂房生命週期、商業規則與合作夥伴營運而設計。" },
+        { "title": "模組化的邊界", "body": "各服務領域職責明確，能隨合作夥伴需求的變化而演進。" },
+        { "title": "誠實面對成熟度", "body": "我們區分核心服務、開發中與規劃中的功能，並與每位合作夥伴確認範圍。" }
+      ]
+    },
+    "notList": {
+      "title": "KabuK Platform 不是什麼",
+      "items": ["不是線上旅行社或消費者訂房品牌", "不是飯店交易市集", "不是旅館管理系統（PMS）"],
+      "body": "通路銷售由建構於此基礎之上的獨立產品 KabuK Exchange 負責。"
+    }
+  },
+
+  "about": {
+    "meta": {
+      "title": "關於 KabuK Platform",
+      "description": "認識 KabuK Platform——KabuK Style Inc. 的旅遊技術產品。"
+    },
+    "hero": {
+      "eyebrow": "關於我們",
+      "title": "打造串連旅遊產業的基礎設施。",
+      "lead": "KabuK Platform 是由 KabuK Style Inc. 開發的技術產品，匯集旅遊營運、產品、工程與合作夥伴連線等領域的專業，為旅遊商務打造更一致的基礎。"
+    },
+    "focus": {
+      "title": "我們的專注",
+      "body": "我們專注於串連業務流程的務實技術服務——而不是另一個消費者訂房品牌。"
+    },
+    "family": {
+      "eyebrow": "KabuK 產品家族",
+      "title": "三種角色，清楚區分。",
+      "lead": "KabuK Platform 與 KabuK Exchange 共享母公司與技術基礎，但服務不同的目的。",
+      "items": [
+        { "role": "母公司", "name": "KabuK Style Inc.", "body": "開發並營運 KabuK 各項產品的公司。", "link": "corporate" },
+        { "role": "技術基礎", "name": "KabuK Platform", "body": "涵蓋價格、訂購、訂房、內容、財務流程、身分與營運的共用服務。", "current": true },
+        { "role": "通路產品", "name": "KabuK Exchange", "body": "建構於 KabuK Platform 之上、連結旅遊供給與需求端合作夥伴的 B2B 通路網絡。", "link": "exchange" }
+      ],
+      "youAreHere": "目前網站",
+      "visit": "前往網站"
+    },
+    "team": {
+      "eyebrow": "團隊",
+      "title": "KabuK Platform 背後的團隊。",
+      "body": "KabuK Platform 由 KabuK Style Inc. 內橫跨旅遊營運、產品、工程與合作夥伴連線的團隊打造。團隊成員介紹將於獲准公開後新增於此。"
+    }
+  },
+
+  "contact": {
+    "meta": {
+      "title": "聯絡 KabuK Platform",
+      "description": "與團隊洽談旅遊基礎設施、連線與合作。"
+    },
+    "hero": {
+      "eyebrow": "聯絡我們",
+      "title": "告訴我們您正在打造什麼。",
+      "lead": "無論您代表飯店集團、目的地組織、批發商或旅遊科技企業，只要分享您的需求，我們的團隊都能與您討論可能的整合或合作方式。"
+    },
+    "mailtoNotice": "此表單會在您的電子郵件應用程式中準備一封郵件。在您親自寄出之前，不會有任何資料傳送至 KabuK。",
+    "form": {
+      "title": "洽詢內容",
+      "required": "必填",
+      "optional": "選填",
+      "name": "姓名",
+      "company": "公司",
+      "email": "公司電子郵件",
+      "orgType": "組織類型",
+      "orgTypeChoose": "選擇組織類型",
+      "orgTypes": {
+        "hotel": "飯店或飯店集團",
+        "tourism": "觀光局或目的地組織",
+        "wholesaler": "批發商或供應商",
+        "travel-company": "旅遊公司",
+        "technology": "技術或連線服務供應商",
+        "other": "其他"
+      },
+      "region": "地區",
+      "regionChoose": "選擇地區",
+      "regions": {
+        "japan": "日本",
+        "east-asia": "東亞",
+        "southeast-asia": "東南亞",
+        "middle-east": "中東",
+        "europe": "歐洲",
+        "americas": "美洲",
+        "oceania": "大洋洲",
+        "other": "其他／多個地區"
+      },
+      "interest": "關注領域",
+      "interestChoose": "選擇關注領域",
+      "interests": {
+        "connectivity": "住宿連線",
+        "pricing": "價格與房況",
+        "booking": "訂購與訂房",
+        "content": "內容與對應",
+        "billing": "帳務與付款",
+        "distribution": "透過 KabuK Exchange 通路銷售",
+        "partnership": "合作夥伴關係或協作",
+        "other": "其他"
+      },
+      "systems": "目前使用的系統",
+      "systemsHint": "例如：PMS、CRS、通路管理系統或訂房引擎。",
+      "message": "訊息",
+      "messageHint": "您希望串連或改善哪些部分？",
+      "privacy": "我了解此表單會在我自己的電子郵件應用程式中準備郵件，且 KabuK Style Inc. 將依{link}所述處理我的資料。",
+      "privacyLink": "隱私權聲明",
+      "submit": "準備洽詢郵件",
+      "errors": {
+        "required": "請填寫此欄位以繼續。",
+        "email": "請輸入有效的公司電子郵件地址，例如 name@company.com。",
+        "select": "請選擇一個選項以繼續。",
+        "privacy": "請確認您已閱讀隱私權聲明。",
+        "summary": "請檢查標示的欄位。"
+      },
+      "confirmation": "您的電子郵件應用程式將開啟並帶入已準備好的訊息。請寄出該郵件以完成洽詢。",
+      "fallback": "若電子郵件應用程式未開啟，請將洽詢內容寄至 {email}。",
+      "configError": "洽詢信箱尚未設定，請稍後再試。",
+      "emailSubject": "{prefix}: {company}",
+      "emailLabels": { "name": "姓名", "company": "公司", "email": "公司電子郵件", "orgType": "組織類型", "region": "地區", "interest": "關注領域", "systems": "目前系統", "message": "訊息" }
+    },
+    "aside": {
+      "title": "接下來的流程",
+      "items": [
+        { "title": "轉交負責團隊", "body": "準備好的郵件會寄送給對應您組織類型的團隊。" },
+        { "title": "我們會與您聯繫", "body": "通常會先安排簡短通話，了解您的系統與目標。" },
+        { "title": "共同界定範圍", "body": "接著才討論 KabuK Platform 能為您支援的項目。" }
+      ],
+      "only": "請僅提供理解您需求所需的資訊。請勿填寫付款資訊或密碼。"
+    }
+  },
+
+  "privacy": {
+    "meta": {
+      "title": "隱私權 — KabuK Platform",
+      "description": "KabuK Platform 網站的隱私權草稿資訊，尚待法務審閱。"
+    },
+    "hero": {
+      "eyebrow": "法律",
+      "title": "隱私權聲明",
+      "lead": "草稿——本頁尚未經 KabuK Style Inc. 法務核准。"
+    },
+    "draft": "草稿——尚未經法務核准。正式上線前，請替換為核准版的 KabuK Style Inc. 隱私權聲明。",
+    "sections": [
+      { "title": "聯絡表單", "body": "本網站的聯絡表單不會將資料傳送至 KabuK 伺服器，而是在您自己的電子郵件應用程式中準備郵件。只有在您寄出該郵件時，KabuK Style Inc. 才會收到資訊。" },
+      { "title": "Cookie 與分析", "body": "本網站不會設定廣告或分析用 Cookie。若您選擇語言，該選擇會儲存在瀏覽器的本機儲存空間，以便網站記住；您可隨時於瀏覽器設定中清除。" },
+      { "title": "字型", "body": "本網站從 Google Fonts 載入字型，您的瀏覽器會連線至 Google 伺服器下載字型。［法務審閱：確認揭露內容，或改為自行託管字型］" },
+      { "title": "聯絡方式", "body": "［由 KabuK Style Inc. 提供：資料控管者資訊、隱私權請求聯絡窗口及適用權利］" }
+    ]
+  },
+
+  "notFound": {
+    "meta": { "title": "找不到頁面 — KabuK Platform", "description": "找不到您要求的頁面。" },
+    "title": "找不到頁面。",
+    "body": "頁面可能已移動，或網址不正確。",
+    "home": "回到首頁",
+    "contact": "聯絡團隊"
+  }
+}

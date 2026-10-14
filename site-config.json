@@ -1,0 +1,59 @@
+{
+  "_readme": "Edit this file to change links, lead routing and capability status without touching code. Values marked TODO must be verified before launch. Never put API keys or secrets here: this file is public.",
+  "site": {
+    "canonicalBase": "https://kabukplatform.com",
+    "canonicalVerified": false,
+    "_canonicalNote": "TODO: placeholder domain. Confirm ownership, then run `python3 tools/build.py` so canonical, hreflang and sitemap URLs are regenerated."
+  },
+  "brand": {
+    "name": "KabuK Platform",
+    "parent": "KabuK Style Inc.",
+    "primary": "#38C3E2",
+    "logo": "/assets/brand/kabuk-logo.png",
+    "_logoNote": "Official KabuK brush mark from the KabuK design library, paired with the 'Platform' descriptor. A dedicated KabuK Platform lockup has not been approved yet."
+  },
+  "urls": {
+    "exchange": "https://kabukexchange.com/",
+    "corporate": "https://www.kabuk.co.jp/",
+    "hafh": "https://www.hafh.com/",
+    "adminConsole": "https://console.example.com/",
+    "_note": "TODO: verify each URL. adminConsole is not linked publicly."
+  },
+  "capabilityStatus": {
+    "_values": "core | development | planned. 'core' = a foundation service area within KabuK Platform, scoped per engagement (not a claim of standalone public availability). Confirm with product before launch.",
+    "pricing": "core",
+    "booking": "core",
+    "content": "core",
+    "billing": "core",
+    "identity": "core",
+    "analytics": "development",
+    "ai": "planned"
+  },
+  "leads": {
+    "formMode": "mailto",
+    "_formModeNote": "Only 'mailto' is implemented. A backend/CRM endpoint is proposed in docs/CHANGELOG.md but does not exist yet.",
+    "routes": {
+      "hotels": "hotels@example.com",
+      "tourism": "destinations@example.com",
+      "technology": "technology@example.com",
+      "general": "platform@example.com"
+    },
+    "_routesNote": "TODO: replace every example.com address with a monitored KabuK Style inbox.",
+    "organizationTypeRoute": {
+      "hotel": "hotels",
+      "tourism": "tourism",
+      "wholesaler": "general",
+      "travel-company": "technology",
+      "technology": "technology",
+      "other": "general"
+    },
+    "subjectPrefix": "KabuK Platform inquiry"
+  },
+  "locales": [
+    { "code": "en", "path": "", "htmlLang": "en", "hreflang": "en", "ogLocale": "en_US", "label": "English", "short": "EN", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600", "review": "source" },
+    { "code": "ja", "path": "ja", "htmlLang": "ja", "hreflang": "ja", "ogLocale": "ja_JP", "label": "日本語", "short": "JA", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600", "review": "draft" },
+    { "code": "ko", "path": "ko", "htmlLang": "ko", "hreflang": "ko", "ogLocale": "ko_KR", "label": "한국어", "short": "KO", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600", "review": "draft" },
+    { "code": "zh-TW", "path": "zh-tw", "htmlLang": "zh-Hant-TW", "hreflang": "zh-TW", "ogLocale": "zh_TW", "label": "繁體中文（台灣）", "short": "繁中", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600", "review": "draft" },
+    { "code": "ar", "path": "ar", "htmlLang": "ar", "hreflang": "ar", "ogLocale": "ar_AR", "label": "العربية", "short": "AR", "dir": "rtl", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600", "review": "draft" }
+  ]
+}

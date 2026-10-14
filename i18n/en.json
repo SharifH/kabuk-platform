@@ -1,0 +1,487 @@
+{
+  "_meta": { "locale": "en", "status": "Approved English master copy — pending editorial and legal/product review (see KABUK_PLATFORM_COPY_RECOMMENDATIONS.md §12)." },
+  "common": {
+    "skip": "Skip to main content",
+    "menu": "Menu",
+    "mainNav": "Main navigation",
+    "language": "Language",
+    "languageChoose": "Choose language",
+    "lockupParent": "by KabuK Style",
+    "logoAlt": "KabuK",
+    "home": "KabuK Platform home",
+    "external": "opens in a new tab",
+    "overview": "Overview",
+    "learnMore": "Learn more",
+    "nav": {
+      "solutions": "Solutions",
+      "solutionsOverview": "All solutions",
+      "technology": "Technology",
+      "technologyOverview": "Platform capabilities",
+      "why": "Why KabuK Platform",
+      "about": "About",
+      "talk": "Talk to Us"
+    },
+    "segments": {
+      "hotels": { "name": "Hotels & Hotel Groups", "hint": "Connectivity, reservations and pricing controls" },
+      "destinations": { "name": "Tourism Boards & Destinations", "hint": "Regional accommodation connectivity" },
+      "wholesalers": { "name": "Wholesalers & Suppliers", "hint": "Inventory, content and financial workflows" },
+      "travel": { "name": "Travel Companies", "hint": "Travel-specific technology infrastructure" }
+    },
+    "services": {
+      "pricing": "Pricing & Availability",
+      "booking": "Booking & Reservations",
+      "billing": "Billing & Payments",
+      "content": "Content & Mapping",
+      "identity": "Identity & Administration",
+      "analytics": "Analytics & Automation"
+    },
+    "status": {
+      "core": "Core service",
+      "development": "In development",
+      "planned": "Planned"
+    },
+    "footer": {
+      "tagline": "Travel technology infrastructure, developed by KabuK Style Inc.",
+      "solutions": "Solutions",
+      "technology": "Technology",
+      "techCore": "Core Services",
+      "techConnectivity": "Connectivity",
+      "techOperations": "Operations",
+      "techAnalytics": "Analytics & Automation",
+      "company": "Company",
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "products": "KabuK Style Products",
+      "platformCurrent": "KabuK Platform",
+      "currentSite": "current site",
+      "exchange": "KabuK Exchange",
+      "hafh": "HafH",
+      "corporate": "KabuK Style Inc.",
+      "copyright": "© {year} KabuK Style Inc.",
+      "languages": "Languages",
+      "draftNotice": "Translated pages are drafts pending native-speaker review."
+    },
+    "draftBanner": "This page is a draft translation and has not yet been reviewed by a native speaker. The English version is the reference.",
+    "draftBannerLink": "Read in English"
+  },
+
+  "diagram": {
+    "arch": {
+      "label": "KabuK Platform service architecture",
+      "top": "Businesses and products",
+      "topItems": ["Hotels & hotel groups", "Destinations", "Wholesalers & suppliers", "Travel companies"],
+      "topExchange": "KabuK Exchange",
+      "core": "Core services",
+      "nodes": {
+        "pricing": "Pricing",
+        "availability": "Availability",
+        "booking": "Booking",
+        "reservations": "Reservations",
+        "billing": "Billing & Payments",
+        "content": "Content & Mapping",
+        "identity": "Identity & Access",
+        "operations": "Operations",
+        "analytics": "Analytics & Automation"
+      },
+      "plannedTag": "AI workflows planned",
+      "base": "Shared foundation",
+      "baseItems": ["Integration patterns", "Shared data model", "Permissions", "Operational visibility"],
+      "caption": "Illustrative overview of how KabuK Platform service domains relate. It is not a list of live integrations; scope depends on each implementation."
+    },
+    "rel": {
+      "label": "How KabuK Platform relates to KabuK Exchange",
+      "supply": "Supply",
+      "supplyItems": ["Hotels & hotel groups", "Wholesalers & suppliers", "Online travel agencies"],
+      "enablersTitle": "Connectivity providers",
+      "enablers": "PMS, CRS and channel managers connect supply systems. They enable connectivity; they are not necessarily sellers.",
+      "exchange": "KabuK Exchange",
+      "exchangeDesc": "The B2B distribution network that connects travel supply with demand partners.",
+      "exchangeFunctions": ["Partner network", "Distribution", "Commercial agreements"],
+      "demand": "Distribution",
+      "demandItems": ["Travel agencies & TMCs", "Online travel agencies", "Tour operators & wholesalers"],
+      "bothSides": "Both sides",
+      "foundationPrefix": "Powered by",
+      "foundationName": "KabuK Platform",
+      "foundationServices": "Pricing · Booking · Reservations · Content · Billing · Identity · Operations",
+      "caption": "Illustrative relationship only. OTAs and wholesalers can act on both the supply and demand sides. It does not represent live partner integrations."
+    },
+    "compare": {
+      "beforeTitle": "Point-to-point",
+      "beforeBody": "Each system integrates separately with each partner. Rules, states and records drift apart as connections multiply.",
+      "afterTitle": "Shared foundation",
+      "afterBody": "Systems connect through common services, so pricing rules, reservation states and financial records follow consistent patterns.",
+      "label": "Comparison of point-to-point integrations and a shared technology foundation"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "KabuK Platform — Travel Technology Infrastructure",
+      "description": "Explore KabuK Platform, the technology foundation for travel connectivity, pricing, booking, reservations, financial workflows, and operations."
+    },
+    "hero": {
+      "eyebrow": "Travel technology infrastructure",
+      "title": "The technology foundation for connected travel.",
+      "lead": "KabuK Platform brings pricing, booking, reservations, financial workflows, content, and partner operations together in a shared technology foundation—designed to help travel businesses connect systems and manage complexity.",
+      "primary": "Talk to Our Team",
+      "secondary": "Explore Platform Capabilities"
+    },
+    "value": {
+      "eyebrow": "Why KabuK Platform",
+      "title": "Less fragmentation. More connected operations.",
+      "lead": "Travel businesses rely on systems that must coordinate inventory, pricing, reservations, payments, and partner relationships. KabuK Platform is designed to connect these workflows through consistent services and operational controls.",
+      "pillars": [
+        { "title": "Connected by design", "body": "Establish common integration patterns across suppliers, channels, and operational systems." },
+        { "title": "Consistent booking workflows", "body": "Coordinate reservation states, changes, cancellations, and downstream operational events." },
+        { "title": "Commercial and financial clarity", "body": "Support pricing rules, invoicing, reconciliation, and settlement-related workflows." },
+        { "title": "Built for operations", "body": "Give teams the visibility and controls needed to manage partner and transaction lifecycles." }
+      ],
+      "link": "Why KabuK Platform"
+    },
+    "capabilities": {
+      "eyebrow": "Platform capabilities",
+      "title": "Core services that work together.",
+      "lead": "KabuK Platform organizes foundational travel technology into connected service domains. Specific integrations and availability depend on the use case and implementation scope.",
+      "link": "Explore the technology"
+    },
+    "audiences": {
+      "eyebrow": "Solutions",
+      "title": "Infrastructure for travel businesses and destinations.",
+      "lead": "Different business models need different things from the same foundation. Each engagement starts with your requirements."
+    },
+    "relationship": {
+      "eyebrow": "Part of the KabuK product family",
+      "title": "The foundation behind KabuK Exchange.",
+      "body": "KabuK Platform provides the underlying technology services for pricing, booking, reservations, content, financial workflows, and operations. KabuK Exchange is the separate distribution product that connects travel supply with demand partners using that foundation.",
+      "cta": "Explore KabuK Exchange"
+    },
+    "transparency": {
+      "title": "How we describe our capabilities",
+      "body": "We label each service area by maturity—core service, in development, or planned—and confirm scope with every partner. Nothing on this site is a service-level commitment or a public API.",
+      "link": "See capability status"
+    },
+    "cta": {
+      "title": "Tell us what you're building.",
+      "body": "Share your requirements and our team can discuss possible integration or collaboration paths.",
+      "button": "Talk to Our Team"
+    }
+  },
+
+  "capabilityCards": {
+    "pricing": "Configure pricing logic, availability workflows, and distribution-related commercial rules.",
+    "booking": "Coordinate booking transactions and the reservation lifecycle across connected systems.",
+    "content": "Organize accommodation content and normalize supplier, property, and room information.",
+    "billing": "Support invoicing, reconciliation, accounts payable and receivable, and settlement workflows.",
+    "identity": "Manage partner access and operational administration through defined permissions and tools.",
+    "analytics": "Build operational visibility and explore AI-assisted workflows for repetitive processes."
+  },
+
+  "audienceCopy": {
+    "hotels": {
+      "title": "Connect your properties to the systems behind distribution.",
+      "body": "KabuK Platform is designed to support accommodation connectivity, reservation workflows, pricing controls, and the operational processes needed to participate in connected travel commerce. Distribution through KabuK Exchange is a separate product pathway.",
+      "cta": "Discuss Hotel Connectivity",
+      "topics": ["Property and room content", "Rate and availability controls", "Reservation lifecycle", "Connectivity through existing PMS or channel manager"]
+    },
+    "destinations": {
+      "title": "Build a more connected destination ecosystem.",
+      "body": "Explore how common technology services could support regional accommodation connectivity, inventory coordination, and access to distribution channels. Solutions should be scoped to the needs of each destination and participating businesses.",
+      "cta": "Explore Destination Solutions",
+      "topics": ["Regional accommodation connectivity", "Inventory coordination", "Participation models for local businesses", "Pathways to distribution channels"]
+    },
+    "wholesalers": {
+      "title": "Simplify the systems behind inventory distribution.",
+      "body": "Connect content, pricing, booking, and financial workflows through a consistent infrastructure foundation. Commercial distribution opportunities are handled through KabuK Exchange where applicable.",
+      "cta": "Discuss Supplier Infrastructure",
+      "topics": ["Content normalization and mapping", "Commercial and pricing rules", "Booking and reservation states", "Invoicing and reconciliation"]
+    },
+    "travel": {
+      "title": "Build on travel-specific infrastructure.",
+      "body": "Explore technology services designed around booking lifecycles, commercial rules, partner operations, and integrations—without assuming that every business needs to build each foundation component independently.",
+      "cta": "Talk to the Platform Team",
+      "topics": ["Booking lifecycle services", "Partner access and administration", "Integration patterns", "Operational tooling"]
+    }
+  },
+
+  "solutions": {
+    "meta": {
+      "title": "Solutions for Travel Businesses — KabuK Platform",
+      "description": "Technology infrastructure for hotels, destinations, wholesalers, suppliers, and travel businesses."
+    },
+    "hero": {
+      "eyebrow": "Solutions",
+      "title": "One foundation, shaped to different travel business models.",
+      "lead": "Hotels, destinations, suppliers, and travel companies coordinate the same core workflows in different ways. We scope each engagement to the business—not the other way around."
+    },
+    "topicsLabel": "Typical topics to discuss",
+    "pathway": {
+      "eyebrow": "Working with us",
+      "title": "How an engagement typically starts.",
+      "lead": "An indicative sequence. The actual path depends on your systems, scope, and commercial model.",
+      "steps": [
+        { "title": "Share your requirements", "body": "Tell us about your business, systems, and the workflows you want to connect." },
+        { "title": "Assess fit and scope", "body": "We review which Platform services are relevant and what is available for your use case." },
+        { "title": "Plan the integration", "body": "Agree on systems, data, responsibilities, and the commercial framework." },
+        { "title": "Implement in stages", "body": "Start with a defined scope and extend once the foundation is working for you." }
+      ]
+    },
+    "exchangeNote": {
+      "title": "Looking for distribution?",
+      "body": "If your goal is to sell inventory to B2B demand partners, KabuK Exchange is the distribution product. KabuK Platform provides the technology underneath it.",
+      "cta": "Visit KabuK Exchange"
+    }
+  },
+
+  "technology": {
+    "meta": {
+      "title": "Platform Capabilities — KabuK Platform",
+      "description": "Learn about pricing, booking, reservations, content, financial workflows, identity, and operational services in KabuK Platform."
+    },
+    "hero": {
+      "eyebrow": "Technology",
+      "title": "Core services that work together.",
+      "lead": "KabuK Platform organizes foundational travel technology into connected service domains. Specific integrations and availability depend on the use case and implementation scope."
+    },
+    "architecture": {
+      "eyebrow": "Service architecture",
+      "title": "Coordinated services, one foundation.",
+      "lead": "Each domain has a clear responsibility. Together they share integration patterns, data, permissions, and operational visibility."
+    },
+    "legend": {
+      "title": "Capability status",
+      "core": "A foundation service area within KabuK Platform. Scope is confirmed for each engagement.",
+      "development": "Actively being built. Timing and scope are not yet committed.",
+      "planned": "On the roadmap. Not available today."
+    },
+    "domainsTitle": "Service domains",
+    "covers": "Covers",
+    "scopeNote": "Scope note",
+    "domains": {
+      "pricing": {
+        "body": "Configure pricing logic, availability workflows, and distribution-related commercial rules.",
+        "covers": ["Pricing rules and rate structures", "Availability and allotment workflows", "Channel- and partner-specific commercial rules", "Rule management for operations teams"],
+        "note": "Pricing is rule-based. Automated or machine-learning price optimization is not part of the current scope."
+      },
+      "booking": {
+        "body": "Coordinate booking transactions and the reservation lifecycle across connected systems.",
+        "covers": ["Booking transactions", "Reservation states and history", "Modifications and cancellations", "Downstream operational events"],
+        "note": "Support for specific change, cancellation, and refund flows depends on each supplier and integration."
+      },
+      "content": {
+        "body": "Organize accommodation content and normalize supplier, property, and room information.",
+        "covers": ["Property and room content", "Supplier data normalization", "Property and room mapping", "Content quality workflows"],
+        "note": "Mapping quality depends on source data. Mappings are reviewed as part of operations."
+      },
+      "billing": {
+        "body": "Support invoicing, reconciliation, accounts payable and receivable, and settlement workflows.",
+        "covers": ["Invoicing", "Reconciliation", "Accounts payable and receivable", "Settlement-related workflows"],
+        "note": "KabuK Platform supports financial workflows. It is not a licensed payment processor or escrow service."
+      },
+      "identity": {
+        "body": "Manage partner access and operational administration through defined permissions and tools.",
+        "covers": ["Partner and user access", "Roles and permissions", "Administrative tooling", "Activity records for operations"],
+        "note": "Security practices and any certifications are shared during engagement, not claimed here."
+      },
+      "analytics": {
+        "body": "Build operational visibility and explore AI-assisted workflows for repetitive processes.",
+        "covers": ["Operational reporting", "Transaction and partner visibility", "Exception monitoring", "AI-assisted workflows (planned)"],
+        "note": "AI-assisted workflows, including KAOS, are planned and in development. They are not generally available."
+      }
+    },
+    "connectivity": {
+      "eyebrow": "Connectivity",
+      "title": "Common integration patterns.",
+      "body": "KabuK Platform is designed to connect supplier, channel, and operational systems through consistent patterns rather than one-off integrations. PMS, CRS, and channel managers act as connectivity providers; which systems can be connected is confirmed during scoping.",
+      "points": ["Consistent data structures across partners", "Defined reservation and status events", "Partner onboarding with explicit responsibilities"]
+    },
+    "operations": {
+      "eyebrow": "Operations",
+      "title": "Built to be operated, not just integrated.",
+      "body": "Travel transactions continue long after a booking is made. Platform services are designed with operational controls so teams can see state, act on exceptions, and keep records consistent.",
+      "points": ["Visibility of transaction and partner lifecycles", "Controls for exceptions and manual intervention", "Consistent records across pricing, booking, and finance"]
+    },
+    "disclaimer": "This page describes service areas and design intent. It is not a service-level agreement, a public API specification, or a commitment that any capability is available as a standalone product."
+  },
+
+  "why": {
+    "meta": {
+      "title": "Why KabuK Platform",
+      "description": "A connected technology foundation designed to reduce fragmentation across travel operations."
+    },
+    "hero": {
+      "eyebrow": "Why KabuK Platform",
+      "title": "Less fragmentation. More connected operations.",
+      "lead": "Travel businesses rely on systems that must coordinate inventory, pricing, reservations, payments, and partner relationships. KabuK Platform is designed to connect these workflows through consistent services and operational controls."
+    },
+    "problem": {
+      "eyebrow": "The challenge",
+      "title": "Every new connection adds complexity.",
+      "lead": "When each system integrates separately with each partner, rules, states, and records drift apart. A shared foundation keeps them consistent."
+    },
+    "pillarsTitle": "What a shared foundation is designed to provide",
+    "pillarsDetail": [
+      { "title": "Connected by design", "body": "Establish common integration patterns across suppliers, channels, and operational systems.", "detail": "New partners follow known structures for content, availability, and reservation events, instead of a new custom model each time." },
+      { "title": "Consistent booking workflows", "body": "Coordinate reservation states, changes, cancellations, and downstream operational events.", "detail": "One reservation lifecycle means operations, finance, and partners refer to the same state." },
+      { "title": "Commercial and financial clarity", "body": "Support pricing rules, invoicing, reconciliation, and settlement-related workflows.", "detail": "Commercial rules and financial records are connected, which makes differences easier to trace." },
+      { "title": "Built for operations", "body": "Give teams the visibility and controls needed to manage partner and transaction lifecycles.", "detail": "Exceptions are visible and actionable, rather than discovered after the fact." }
+    ],
+    "principles": {
+      "eyebrow": "How we build",
+      "title": "Practical technology, described precisely.",
+      "items": [
+        { "title": "Travel-specific", "body": "Services are shaped around booking lifecycles, commercial rules, and partner operations." },
+        { "title": "Modular boundaries", "body": "Service domains have clear responsibilities, so they can evolve as partner needs change." },
+        { "title": "Honest about maturity", "body": "We distinguish core services, work in development, and planned capabilities—and confirm scope with every partner." }
+      ]
+    },
+    "notList": {
+      "title": "What KabuK Platform is not",
+      "items": ["Not an online travel agency or consumer booking brand", "Not a hotel marketplace", "Not a property management system (PMS)"],
+      "body": "Distribution is handled by KabuK Exchange, a separate product built on this foundation."
+    }
+  },
+
+  "about": {
+    "meta": {
+      "title": "About KabuK Platform",
+      "description": "Learn about KabuK Platform, a travel technology product by KabuK Style Inc."
+    },
+    "hero": {
+      "eyebrow": "About",
+      "title": "Building the infrastructure behind connected travel.",
+      "lead": "KabuK Platform is a technology product developed by KabuK Style Inc. It brings together expertise across travel operations, product, engineering, and partner connectivity to create a more consistent foundation for travel commerce."
+    },
+    "focus": {
+      "title": "Our focus",
+      "body": "Our focus is on practical technology services that connect business workflows—not another consumer booking brand."
+    },
+    "family": {
+      "eyebrow": "The KabuK product family",
+      "title": "Three roles, kept distinct.",
+      "lead": "KabuK Platform and KabuK Exchange share a parent company and a technology foundation, but serve different purposes.",
+      "items": [
+        { "role": "Parent company", "name": "KabuK Style Inc.", "body": "The company that develops and operates the KabuK products.", "link": "corporate" },
+        { "role": "Technology foundation", "name": "KabuK Platform", "body": "Shared services for pricing, booking, reservations, content, financial workflows, identity, and operations.", "current": true },
+        { "role": "Distribution product", "name": "KabuK Exchange", "body": "The B2B distribution network that connects travel supply with demand partners, built on KabuK Platform.", "link": "exchange" }
+      ],
+      "youAreHere": "You are here",
+      "visit": "Visit site"
+    },
+    "team": {
+      "eyebrow": "People",
+      "title": "The team behind KabuK Platform.",
+      "body": "KabuK Platform is built by a team working across travel operations, product, engineering, and partner connectivity within KabuK Style Inc. Team profiles will be added here once they are approved for publication."
+    }
+  },
+
+  "contact": {
+    "meta": {
+      "title": "Contact KabuK Platform",
+      "description": "Talk with the team about travel infrastructure, connectivity, and collaboration."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Tell us what you're building.",
+      "lead": "Whether you represent a hotel group, destination organization, wholesaler, or travel technology business, share your requirements and our team can discuss possible integration or collaboration paths."
+    },
+    "mailtoNotice": "This form prepares an email in your email application. Nothing is sent to KabuK until you send that email yourself.",
+    "form": {
+      "title": "Inquiry details",
+      "required": "Required",
+      "optional": "optional",
+      "name": "Name",
+      "company": "Company",
+      "email": "Business email",
+      "orgType": "Organization type",
+      "orgTypeChoose": "Select organization type",
+      "orgTypes": {
+        "hotel": "Hotel or hotel group",
+        "tourism": "Tourism board or destination organization",
+        "wholesaler": "Wholesaler or supplier",
+        "travel-company": "Travel company",
+        "technology": "Technology or connectivity provider",
+        "other": "Other"
+      },
+      "region": "Region",
+      "regionChoose": "Select region",
+      "regions": {
+        "japan": "Japan",
+        "east-asia": "East Asia",
+        "southeast-asia": "Southeast Asia",
+        "middle-east": "Middle East",
+        "europe": "Europe",
+        "americas": "Americas",
+        "oceania": "Oceania",
+        "other": "Other / multiple"
+      },
+      "interest": "Interest area",
+      "interestChoose": "Select interest area",
+      "interests": {
+        "connectivity": "Accommodation connectivity",
+        "pricing": "Pricing & availability",
+        "booking": "Booking & reservations",
+        "content": "Content & mapping",
+        "billing": "Billing & payments",
+        "distribution": "Distribution via KabuK Exchange",
+        "partnership": "Partnership or collaboration",
+        "other": "Other"
+      },
+      "systems": "Systems you use today",
+      "systemsHint": "For example, your PMS, CRS, channel manager, or booking engine.",
+      "message": "Message",
+      "messageHint": "What would you like to connect or improve?",
+      "privacy": "I understand that this prepares an email in my own email application, and that KabuK Style Inc. will handle my details as described in the {link}.",
+      "privacyLink": "privacy notice",
+      "submit": "Prepare Inquiry Email",
+      "errors": {
+        "required": "Enter this information to continue.",
+        "email": "Enter a valid business email address, for example name@company.com.",
+        "select": "Select an option to continue.",
+        "privacy": "Confirm that you have read the privacy notice.",
+        "summary": "Check the highlighted fields."
+      },
+      "confirmation": "Your email application will open with a prepared message. Please send it to complete your inquiry.",
+      "fallback": "If no email application opened, send your inquiry to {email}.",
+      "configError": "The inquiry address is not configured yet. Please try again later.",
+      "emailSubject": "{prefix}: {company}",
+      "emailLabels": { "name": "Name", "company": "Company", "email": "Business email", "orgType": "Organization type", "region": "Region", "interest": "Interest area", "systems": "Current systems", "message": "Message" }
+    },
+    "aside": {
+      "title": "What happens next",
+      "items": [
+        { "title": "Your inquiry is routed", "body": "The prepared email is addressed to the team for your organization type." },
+        { "title": "We follow up", "body": "Typically with a short call to understand your systems and goals." },
+        { "title": "We scope together", "body": "Only then do we discuss what KabuK Platform can support for you." }
+      ],
+      "only": "Please share only what is needed to understand your request. Do not include payment details or passwords."
+    }
+  },
+
+  "privacy": {
+    "meta": {
+      "title": "Privacy — KabuK Platform",
+      "description": "Draft privacy information for the KabuK Platform website. Pending legal review."
+    },
+    "hero": {
+      "eyebrow": "Legal",
+      "title": "Privacy notice",
+      "lead": "Draft — this page has not been approved by KabuK Style Inc. legal counsel."
+    },
+    "draft": "DRAFT — NOT LEGAL-APPROVED. Replace this page with the approved KabuK Style Inc. privacy notice before launch.",
+    "sections": [
+      { "title": "Contact form", "body": "The contact form on this site does not send data to a KabuK server. It prepares an email in your own email application. Information is received by KabuK Style Inc. only if you send that email." },
+      { "title": "Cookies and analytics", "body": "This site does not set advertising or analytics cookies. If you choose a language, that choice is stored in your browser's local storage so the site can remember it. You can clear it at any time in your browser settings." },
+      { "title": "Fonts", "body": "This site loads typefaces from Google Fonts. Your browser connects to Google's servers to download them. [Legal review: confirm disclosure or self-host fonts.]" },
+      { "title": "Contact", "body": "[To be provided by KabuK Style Inc.: data controller details, contact for privacy requests, and applicable rights.]" }
+    ]
+  },
+
+  "notFound": {
+    "meta": { "title": "Page not found — KabuK Platform", "description": "The page you requested could not be found." },
+    "title": "Page not found.",
+    "body": "The page may have moved, or the address may be incorrect.",
+    "home": "Go to the homepage",
+    "contact": "Contact the team"
+  }
+}
