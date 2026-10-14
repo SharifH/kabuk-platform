@@ -3,7 +3,9 @@
   "site": {
     "canonicalBase": "https://kabukplatform.com",
     "canonicalVerified": false,
-    "_canonicalNote": "TODO: placeholder domain. Confirm ownership, then run `python3 tools/build.py` so canonical, hreflang and sitemap URLs are regenerated."
+    "_canonicalNote": "TODO: placeholder domain. Confirm ownership, then run `python3 tools/build.py` so canonical, hreflang and sitemap URLs are regenerated.",
+    "deployBasePath": "/kabuk-platform/",
+    "_deployBasePathNote": "URL folder the site is served from. Used only by 404.html (GitHub Pages serves it at any depth). '/kabuk-platform/' for https://sharifh.github.io/kabuk-platform/; set to '/' on a custom domain, then rebuild. All other pages use relative paths and need no setting."
   },
   "brand": {
     "name": "KabuK Platform",
@@ -50,10 +52,65 @@
     "subjectPrefix": "KabuK Platform inquiry"
   },
   "locales": [
-    { "code": "en", "path": "", "htmlLang": "en", "hreflang": "en", "ogLocale": "en_US", "label": "English", "short": "EN", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600", "review": "source" },
-    { "code": "ja", "path": "ja", "htmlLang": "ja", "hreflang": "ja", "ogLocale": "ja_JP", "label": "日本語", "short": "JA", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600", "review": "draft" },
-    { "code": "ko", "path": "ko", "htmlLang": "ko", "hreflang": "ko", "ogLocale": "ko_KR", "label": "한국어", "short": "KO", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600", "review": "draft" },
-    { "code": "zh-TW", "path": "zh-tw", "htmlLang": "zh-Hant-TW", "hreflang": "zh-TW", "ogLocale": "zh_TW", "label": "繁體中文（台灣）", "short": "繁中", "dir": "ltr", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600", "review": "draft" },
-    { "code": "ar", "path": "ar", "htmlLang": "ar", "hreflang": "ar", "ogLocale": "ar_AR", "label": "العربية", "short": "AR", "dir": "rtl", "fonts": "Inter:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600", "review": "draft" }
+    {
+      "code": "en",
+      "path": "",
+      "htmlLang": "en",
+      "hreflang": "en",
+      "ogLocale": "en_US",
+      "label": "English",
+      "short": "EN",
+      "dir": "ltr",
+      "fonts": "Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600",
+      "review": "source"
+    },
+    {
+      "code": "ja",
+      "path": "ja",
+      "htmlLang": "ja",
+      "hreflang": "ja",
+      "ogLocale": "ja_JP",
+      "label": "日本語",
+      "short": "JA",
+      "dir": "ltr",
+      "fonts": "Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600",
+      "review": "draft"
+    },
+    {
+      "code": "ko",
+      "path": "ko",
+      "htmlLang": "ko",
+      "hreflang": "ko",
+      "ogLocale": "ko_KR",
+      "label": "한국어",
+      "short": "KO",
+      "dir": "ltr",
+      "fonts": "Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600",
+      "review": "draft"
+    },
+    {
+      "code": "zh-TW",
+      "path": "zh-tw",
+      "htmlLang": "zh-Hant-TW",
+      "hreflang": "zh-TW",
+      "ogLocale": "zh_TW",
+      "label": "繁體中文（台灣）",
+      "short": "繁中",
+      "dir": "ltr",
+      "fonts": "Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600",
+      "review": "draft"
+    },
+    {
+      "code": "ar",
+      "path": "ar",
+      "htmlLang": "ar",
+      "hreflang": "ar",
+      "ogLocale": "ar_AR",
+      "label": "العربية",
+      "short": "AR",
+      "dir": "rtl",
+      "fonts": "Inter:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600",
+      "review": "draft"
+    }
   ]
 }

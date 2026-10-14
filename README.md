@@ -13,7 +13,7 @@ python3 -m http.server 8000      # from this folder
 # open http://localhost:8000/
 ```
 
-Serve over HTTP (not `file://`). The pages use root-absolute paths, and the form reads `site-config.json` with `fetch`.
+Serve over HTTP (not `file://`); the form reads `site-config.json` with `fetch`. All generated links and assets are **relative**, so the same build works at a domain root (`https://kabukplatform.com/`) or under a subpath (`https://sharifh.github.io/kabuk-platform/`).
 
 ## Structure
 
@@ -68,4 +68,6 @@ Upload the folder to any static host with directory-index routing (Netlify, Verc
 3. Replace `/privacy/` with legal-approved text.
 4. Complete native review → set each locale's `review` to `approved` → rebuild.
 
-Host `404.html` as the not-found page.
+Host `404.html` as the not-found page. GitHub Pages serves it at whatever URL was requested, so it uses a `<base href>` taken from `site.deployBasePath` (currently `/kabuk-platform/`). On a custom domain, set this to `/` and rebuild.
+
+**GitHub Pages:** push the folder contents to the repo root (or `/docs`), enable Pages, and keep `.nojekyll` in place.

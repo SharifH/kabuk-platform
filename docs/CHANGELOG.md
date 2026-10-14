@@ -1,5 +1,11 @@
 # Changelog — KabuK Platform website
 
+## 1.0.1 — 2026-10-14
+
+### Fixed
+- **No CSS, JS or logo on GitHub Pages** (`https://sharifh.github.io/kabuk-platform/`). Pages were generated with root-absolute paths (`/assets/css/site.css`), which a project site resolves against the domain root, where they 404. `tools/build.py` now writes page-relative paths (`assets/…`, `../assets/…`, `../../assets/…`). `site.js` resolves `site-config.json` from `<html data-root>`, the stored-language redirect is subpath-aware, and `404.html` uses `<base href>` from the new `site.deployBasePath` setting. Verified with the site served under `/kabuk-platform/` locally: every page styled and no asset 404s. Also verified at the root: 24/24 tests pass.
+- Added `.nojekyll` for GitHub Pages.
+
 ## 1.0.0-rc (pre-launch) — 2026-10-14
 
 Implements `CLAUDE_CODE_KABUK_PLATFORM_IMPLEMENTATION_PROMPT.md`, using `KABUK_PLATFORM_COPY_RECOMMENDATIONS.md` as the editorial reference and the **KabuK Platform design system** (KabuK design library) for all visual decisions. The KabuK Exchange source was not touched.

@@ -17,6 +17,7 @@ Usage (from the site root):
 import datetime
 import html
 import json
+import re
 import os
 import sys
 
@@ -165,7 +166,7 @@ def head(loc, t, page_id, meta_key):
         "publisher": {"@type": "Organization", "name": "KabuK Style Inc.", "url": CONFIG["urls"]["corporate"]},
     }, ensure_ascii=False)
     return f"""<!doctype html>
-<html lang="{loc['htmlLang']}" dir="{loc['dir']}" class="no-js" data-locale="{loc['code']}" data-page="{page_id}">
+<html lang="{loc['htmlLang']}" dir="{loc['dir']}" class="no-js" data-locale="{loc['code']}" data-page="{page_id}" data-root="__ROOT__">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -182,7 +183,7 @@ def head(loc, t, page_id, meta_key):
 <meta property="og:locale" content="{loc['ogLocale']}">
 <meta name="theme-color" content="#FAFAF8">
 <link rel="icon" type="image/png" href="/assets/brand/kabuk-logo.png">
-<script>(function(d){{d.classList.replace('no-js','js');try{{var p={locale_paths},s=localStorage.getItem('kbk-locale'),c=d.getAttribute('data-locale');if(c==='en'&&s&&s!=='en'&&p[s]&&!/[?&]lang=en/.test(location.search)){{location.replace('/'+p[s]+location.pathname+location.hash);}}}}catch(e){{}}}})(document.documentElement);</script>
+<script>(function(d){{d.classList.replace('no-js','js');try{{var p={locale_paths},s=localStorage.getItem('kbk-locale'),c=d.getAttribute('data-locale');if(c==='en'&&s&&s!=='en'&&p[s]&&!/[?&]lang=en/.test(location.search)){{var r=new URL(d.getAttribute('data-root')||'./',location.href).pathname;location.replace(r+p[s]+'/'+location.pathname.slice(r.length)+location.hash);}}}}catch(e){{}}}})(document.documentElement);</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={loc['fonts']}&display=swap">
@@ -662,11 +663,28 @@ def page_404(loc, t):
 <p class="eyebrow eyebrow-bar">404</p><h1>{t("notFound.title")}</h1><p class="lead">{t("notFound.body")}</p>
 <div class="actions"><a class="btn btn-primary" href="/">{t("notFound.home")}</a><a class="btn btn-secondary" href="/contact/">{t("notFound.contact")}</a></div>
 </div></section></main>"""
-    return head(loc, t, "home", "notFound").replace(f'<link rel="canonical" href="{abs_url(loc, "home")}">', "") + header(loc, t, "notfound").replace('href="/404.html"', 'href="/"') + body + footer(loc, t, "home")
+    base = CONFIG["site"].get("deployBasePath", "/")
+    h = head(loc, t, "home", "notFound").replace(f'<link rel="canonical" href="{abs_url(loc, "home")}">', "")
+    out = ROOT_ABS.sub(lambda m: m.group(1), h + header(loc, t, "notfound") + body + footer(loc, t, "home"))
+    return out.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<base href="{esc(base)}">', 1).replace('data-root="__ROOT__"', f'data-root="{esc(base)}"')
 
 
 # ---------------------------------------------------------------------------
+ROOT_ABS = re.compile(r'(\s(?:href|src)=")/(?!/)')
+
+
+def relativize(rel, content):
+    """Rewrite root-absolute href/src ("/x") to page-relative ("../x") so the site
+    works at a domain root AND under a subpath such as GitHub Pages /<repo>/."""
+    depth = rel.replace("\\", "/").count("/")
+    prefix = "../" * depth if depth else "./"
+    content = ROOT_ABS.sub(lambda m: m.group(1) + prefix, content)
+    return content.replace('data-root="__ROOT__"', f'data-root="{prefix}"')
+
+
 def write(rel, content):
+    if rel.endswith(".html") and rel != "404.html":
+        content = relativize(rel, content)
     path = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:

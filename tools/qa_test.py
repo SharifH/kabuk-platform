@@ -14,7 +14,7 @@ class P(HTMLParser):
         if 'id' in a: s.ids.add(a['id'])
         for k in ('href','src'):
             v=a.get(k)
-            if v and v.startswith('/') and not v.startswith('//'): s.links.append(v)
+            if t!='base' and v and not v.startswith(('http','//','mailto','#','data:')): s.links.append(v)
 pages={}
 for f in glob.glob(ROOT+'/**/index.html', recursive=True)+[ROOT+'/404.html']:
     p=P(); p.feed(open(f,encoding='utf-8').read()); pages[f]=p
@@ -22,6 +22,8 @@ bad=[]
 for f,p in pages.items():
     for l in p.links:
         path,_,frag=l.partition('#'); path=path.split('?')[0]
+        if f.endswith('404.html'): path='/'+path   # 404 resolves against <base>
+        elif not path.startswith('/'): path=os.path.normpath(os.path.join(os.path.dirname(f)[len(ROOT):] or '/', path)) + ('/' if path.endswith('/') else '')
         fp=ROOT+path+('index.html' if path.endswith('/') else '')
         if not os.path.exists(fp): bad.append((f,l)); continue
         if frag:
@@ -101,7 +103,7 @@ async def main():
         await m.goto(B+'/?lang=en'); await m.click('.nav-toggle')
         ok('mobile menu opens', await m.is_visible('#site-nav'))
         await m.click('[aria-controls=menu-technology]')
-        ok('mobile accordion opens', await m.is_visible('#menu-technology a[href="/technology/#pricing"]'))
+        ok('mobile accordion opens', await m.is_visible('#menu-technology a[href$="technology/#pricing"]'))
         await m.keyboard.press('Escape'); await m.keyboard.press('Escape')
         ok('Escape closes mobile panel', not await m.is_visible('#site-nav'))
 

@@ -8,7 +8,10 @@
   function storeLocale(code) { try { localStorage.setItem('kbk-locale', code); } catch (e) { /* storage unavailable */ } }
 
   /* ---- Config-driven links (site-config.json) ---------------------------- */
-  var configPromise = fetch('/site-config.json', { cache: 'no-cache' })
+  // Resolve the site root from <html data-root> so the site works at a domain root
+  // or under a subpath (e.g. GitHub Pages /kabuk-platform/).
+  var siteRoot = new URL(root.getAttribute('data-root') || './', location.href);
+  var configPromise = fetch(new URL('site-config.json', siteRoot).href, { cache: 'no-cache' })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .catch(function (e) { console.warn('[kabuk] site-config.json unavailable', e); return null; });
 
