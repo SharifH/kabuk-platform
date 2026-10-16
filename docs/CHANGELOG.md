@@ -1,5 +1,31 @@
 # Changelog — KabuK Platform website
 
+## 1.1.0 — 2026-10-16 (unreleased; pending commercial/product approval)
+
+### Changed — hotel-first positioning
+Copy from `01_KabuK_Platform_Website_Copy.md`, applied per `03_Claude_Prompt_Platform_Website.md`. Routes, navigation behaviour, the contact form, localization and the design system are unchanged. Claims and readiness are tracked in `docs/HOTEL_FIRST_READINESS.md`.
+
+- **Home:** new hero ("Your Hotel. Your Inventory. Your Control."), six hotel benefits, the hotel → Platform → HafH / Omakastay / KabuK Exchange ecosystem diagram, transparency and control with a data-coverage qualifier, gated Coming soon modules (market intelligence, white-label), onboarding steps and the hotel audience. The value pillars and capability cards were removed; that content remains on Why and Technology.
+- **Solutions:** hotel-benefits hero, six benefits (`#benefits`), a controls and transparency FAQ (`#faq`), the distribution ecosystem (`#ecosystem`), then the existing segment rows under their former heading. The dark KabuK Exchange note was replaced by the ecosystem section.
+- **Why, About, Contact:** hotel-first hero and lead copy. About adds a fourth family card for consumer products (HafH and Omakastay, the latter planned). The Contact form adds the interests hotel onboarding, market insights and white-label.
+- **Global:** the header CTA is "Connect Your Property" (`/contact/?type=hotel&interest=onboarding`), the Solutions menu adds Hotel benefits and Distribution ecosystem, the closing CTA has primary and secondary actions, and the footer tagline changed. SEO titles and descriptions were updated for Home, Solutions, Why, About and Contact.
+- **Config:** new `channelStatus` and `modules` keys. Unknown module values (including `live`) are treated as hidden.
+- **i18n:** 113 new or changed strings per locale were drafted for ja, ko, zh-TW and ar. They are unreviewed, like the rest of those locales.
+
+### Changed — owner sign-off (2026-10-16)
+- HafH and KabuK Exchange channel status changed to `pilot`.
+- Rate transparency is not available yet, so it is now gated by the new `modules.rateTransparency` (`comingSoon`): Coming soon chips, the FAQ answers "Not yet", and "rate" was removed from visibility claims in meta descriptions, the control lead, and the Solutions hero and hotel topics.
+- Omakastay now targets travelers from North America and Europe.
+- The white-label copy now mentions planned no-cost and low-cost packages. No prices are given.
+- Footer: KabuK Platform is "a KabuK Style Inc. product".
+- Confirmed: channel commercial terms are reviewed during onboarding; white-label prices are still to be announced. The copy is unchanged.
+- Inquiry email: all `leads.routes` now point to `network@kabuk.com`, replacing the `example.com` placeholders. `tools/qa_test.py` expectations were updated to match.
+- Single onboarding covering all KabuK products, subject to eligibility: confirmed. The existing copy already says this, so it is unchanged.
+- **No setup fee for hotels** (confirmed): added as a notice under the Home onboarding steps and as the first Solutions FAQ item, in all locales.
+
+### Fixed
+- Contact select options were taken from each locale's own dictionary, so an option missing from a translation was silently dropped instead of reported. They now follow the English keys.
+
 ## 1.0.1 — 2026-10-14
 
 ### Fixed
