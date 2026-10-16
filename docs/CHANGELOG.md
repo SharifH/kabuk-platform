@@ -18,6 +18,7 @@ Copy from `01_KabuK_Platform_Website_Copy.md`, applied per `03_Claude_Prompt_Pla
 - Omakastay now targets travelers from North America and Europe.
 - The white-label copy now mentions planned no-cost and low-cost packages. No prices are given.
 - Footer: KabuK Platform is "a KabuK Style Inc. product".
+- Confirmed: channel commercial terms are reviewed during onboarding; white-label prices are still to be announced. The copy is unchanged.
 - Inquiry email: all `leads.routes` now point to `network@kabuk.com`, replacing the `example.com` placeholders. `tools/qa_test.py` expectations were updated to match.
 - Single onboarding covering all KabuK products, subject to eligibility: confirmed. The existing copy already says this, so it is unchanged.
 - **No setup fee for hotels** (confirmed): added as a notice under the Home onboarding steps and as the first Solutions FAQ item, in all locales.

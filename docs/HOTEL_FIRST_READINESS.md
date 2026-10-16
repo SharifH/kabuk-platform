@@ -31,8 +31,10 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 
 ## 2. Open items
 
-1. **Other hotel fees:** the site now says there is no setup fee and that "commercial terms for individual channels are reviewed with you during onboarding". Confirm that this second sentence is accurate.
-2. **White-label pricing:** the site says only "planned low-cost and no-cost packages". Specific prices, scope and eligibility are still to be announced.
+None. All copy claims are confirmed by the site owner (2026-10-16):
+
+- Channel commercial terms are reviewed with each hotel during onboarding (FAQ "Is there a setup fee for hotels?").
+- White-label prices, scope and eligibility are still to be announced. The site keeps saying "planned low-cost and no-cost packages", with no prices.
 
 ## 3. Copy I wrote that is not in the source document
 
@@ -51,7 +53,7 @@ Bridging copy is needed where the source has no text for an existing component. 
 | Contact | Hero "Connect your property." + lead; interests "Hotel onboarding & distribution", "Market insights (coming soon)", "White-label solutions (coming soon)" |
 | Common | Status chips "Subject to eligibility", "Pilot", "Coming soon"; footer tagline |
 
-## 4. Outstanding placeholders (unchanged by this update, still blocking launch)
+## 4. Outstanding before launch
 
 - ~~Lead inboxes~~ Resolved: all `leads.routes.*` now point to `network@kabuk.com`.
 - `site.canonicalBase` (`kabukplatform.com`) is unverified, so the site still ships `noindex` and a closed `robots.txt`.
