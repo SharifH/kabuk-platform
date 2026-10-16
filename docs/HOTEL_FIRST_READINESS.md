@@ -10,6 +10,7 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 
 | Capability or claim | Status | How it is shown | Control |
 |---|---|---|---|
+| **Single onboarding** covers all KabuK products, subject to eligibility | Confirmed | Hero note, "One Onboarding, Multiple Opportunities", FAQ (activation still depends on eligibility, readiness, terms and approval) | Copy |
 | One onboarding → HafH | **Pilot** (confirmed) | Chip "Pilot" | `channelStatus.hafh` |
 | One onboarding → KabuK Exchange | **Pilot** (confirmed) | Chip "Pilot" | `channelStatus.exchange` |
 | One onboarding → Omakastay | **Planned** | Chip "Planned", dashed card; "Prepare to reach…" | `channelStatus.omakastay` |
@@ -30,9 +31,8 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 
 ## 2. Open items
 
-1. **Shared onboarding claim:** "One onboarding relationship. Multiple paths to demand" (Home hero) and "One Onboarding, Multiple Opportunities" (Solutions). Confirm that a hotel onboards once through KabuK Platform and is then considered for each channel, rather than signing up to each channel separately.
-2. **Other hotel fees:** the site now says there is no setup fee and that "commercial terms for individual channels are reviewed with you during onboarding". Confirm that this second sentence is accurate.
-3. **White-label pricing:** the site says only "planned low-cost and no-cost packages". Specific prices, scope and eligibility are still to be announced.
+1. **Other hotel fees:** the site now says there is no setup fee and that "commercial terms for individual channels are reviewed with you during onboarding". Confirm that this second sentence is accurate.
+2. **White-label pricing:** the site says only "planned low-cost and no-cost packages". Specific prices, scope and eligibility are still to be announced.
 
 ## 3. Copy I wrote that is not in the source document
 
