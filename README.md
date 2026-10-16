@@ -49,7 +49,7 @@ Serve over HTTP (not `file://`); the form reads `site-config.json` with `fetch`.
 | `leads.routes.*`, `leads.organizationTypeRoute` | Which inbox each organization type's email is addressed to | No (read at runtime) |
 | `capabilityStatus.*` | `core` / `development` / `planned` chips on cards and the Technology page | Yes |
 | `channelStatus.hafh`, `.omakastay`, `.exchange` | `eligible` / `pilot` / `planned` chips on the hotel ecosystem diagram | Yes |
-| `modules.marketInsights`, `modules.whiteLabel` | `comingSoon` shows the labelled register-interest module; `hidden` removes it (and its benefit card) everywhere. There is no `live` value by design; see `docs/HOTEL_FIRST_READINESS.md` | Yes |
+| `modules.marketInsights`, `modules.whiteLabel`, `modules.rateTransparency` | `comingSoon` shows the labelled register-interest module; `hidden` removes it (and its benefit card) everywhere. There is no `live` value by design; see `docs/HOTEL_FIRST_READINESS.md` | Yes |
 | `locales[].review` | `draft` shows the "draft translation" banner; set `approved` after native review | Yes |
 | `site.canonicalBase`, `site.canonicalVerified` | Canonical, hreflang and sitemap URLs. `false` adds `noindex` and a closed `robots.txt` | Yes |
 

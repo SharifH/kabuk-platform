@@ -32,15 +32,16 @@
     "ai": "planned"
   },
   "channelStatus": {
-    "_values": "eligible | pilot | planned. How each KabuK distribution channel is labelled for hotels. 'eligible' = available to properties that meet eligibility and approval (never automatic). TODO: confirm each value with product/commercial before launch.",
-    "hafh": "eligible",
+    "_values": "eligible | pilot | planned. How each KabuK distribution channel is labelled for hotels. 'eligible' = available to properties that meet eligibility and approval (never automatic). Confirmed 2026-10-16: HafH and KabuK Exchange are pilot; Omakastay is planned.",
+    "hafh": "pilot",
     "omakastay": "planned",
-    "exchange": "eligible"
+    "exchange": "pilot"
   },
   "modules": {
-    "_values": "hidden | comingSoon. Gates hotel modules that are not live. 'comingSoon' shows a labelled register-interest module; 'hidden' removes it everywhere. There is deliberately no 'live' value: publishing as live needs approved copy (data rights, methodology, pricing, eligibility) and a code change.",
+    "_values": "hidden | comingSoon. Gates hotel features that are not live. 'comingSoon' shows a labelled register-interest module; 'hidden' removes it everywhere. There is deliberately no 'live' value: publishing as live needs approved copy (data rights, methodology, pricing, eligibility) and a code change.",
     "marketInsights": "comingSoon",
-    "whiteLabel": "comingSoon"
+    "whiteLabel": "comingSoon",
+    "rateTransparency": "comingSoon"
   },
   "leads": {
     "formMode": "mailto",

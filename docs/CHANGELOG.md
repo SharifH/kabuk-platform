@@ -12,6 +12,13 @@ Copy from `01_KabuK_Platform_Website_Copy.md`, applied per `03_Claude_Prompt_Pla
 - **Config:** new `channelStatus` and `modules` keys. Unknown module values (including `live`) are treated as hidden.
 - **i18n:** 113 new or changed strings per locale were drafted for ja, ko, zh-TW and ar. They are unreviewed, like the rest of those locales.
 
+### Changed — owner sign-off (2026-10-16)
+- HafH and KabuK Exchange channel status changed to `pilot`.
+- Rate transparency is not available yet, so it is now gated by the new `modules.rateTransparency` (`comingSoon`): Coming soon chips, the FAQ answers "Not yet", and "rate" was removed from visibility claims in meta descriptions, the control lead, and the Solutions hero and hotel topics.
+- Omakastay now targets travelers from North America and Europe.
+- The white-label copy now mentions planned no-cost and low-cost packages. No prices are given.
+- Footer: KabuK Platform is "a KabuK Style Inc. product".
+
 ### Fixed
 - Contact select options were taken from each locale's own dictionary, so an option missing from a translation was silently dropped instead of reported. They now follow the English keys.
 

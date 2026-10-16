@@ -61,7 +61,7 @@
       "comingSoon": "Coming soon"
     },
     "footer": {
-      "tagline": "Hotel onboarding, distribution visibility and control. A KabuK Style Inc. company.",
+      "tagline": "Hotel onboarding, distribution visibility and control. A KabuK Style Inc. product.",
       "solutions": "Solutions",
       "technology": "Technology",
       "techCore": "Core Services",
@@ -173,7 +173,7 @@
         "omakastay": {
           "name": "Omakastay",
           "kind": "KabuK consumer product",
-          "body": "AI-assisted travel discovery. Prepare to reach U.S. and inbound travelers through KabuK's AI travel concierge experience."
+          "body": "AI-assisted travel discovery. Prepare to reach travelers from North America and Europe through KabuK's AI travel concierge experience."
         },
         "exchange": {
           "name": "KabuK Exchange",
@@ -195,7 +195,7 @@
   "home": {
     "meta": {
       "title": "KabuK Platform | Hotel Distribution, Visibility & Control",
-      "description": "Connect your hotel to KabuK's travel ecosystem. Explore distribution opportunities, greater rate transparency, and hotel-focused technology."
+      "description": "Connect your hotel to KabuK's travel ecosystem. Explore distribution opportunities, clearer distribution visibility, and hotel-focused technology."
     },
     "hero": {
       "eyebrow": "KabuK Platform — built for hotels",
@@ -221,7 +221,7 @@
         },
         {
           "title": "Understand Your Rates",
-          "body": "Gain visibility into available channel pricing information and supported rate controls."
+          "body": "Gain visibility into available channel pricing information."
         },
         {
           "title": "Understand Your Market",
@@ -246,7 +246,7 @@
     "control": {
       "eyebrow": "Transparency and control",
       "title": "See More. Understand More. Decide with Confidence.",
-      "lead": "Hotels should be able to understand where their inventory goes and how it is sold. KabuK Platform is designed to make distribution less opaque by bringing available partner, rate, and booking information into a clearer hotel experience.",
+      "lead": "Hotels should be able to understand where their inventory goes and how it is sold. KabuK Platform is designed to make distribution less opaque by bringing available partner and booking information into a clearer hotel experience.",
       "items": [
         {
           "title": "Distribution Visibility",
@@ -307,7 +307,7 @@
         },
         {
           "title": "Accessible Commercial Options.",
-          "body": "Ask about planned packages and eligibility."
+          "body": "Ask about planned low-cost and no-cost packages and eligibility."
         }
       ],
       "cta": "Register Interest"
@@ -372,7 +372,7 @@
       "cta": "Connect Your Property",
       "topics": [
         "One onboarding for eligible KabuK channels",
-        "Distribution and rate visibility, where data is available",
+        "Distribution visibility, where data is available",
         "Rate and availability controls",
         "Connectivity through existing PMS or channel manager"
       ]
@@ -414,12 +414,12 @@
   "solutions": {
     "meta": {
       "title": "Hotel Distribution & Commercial Control | KabuK Platform",
-      "description": "Reach new travelers through KabuK's ecosystem with more visibility into distribution, rates, and supported controls. Solutions for hotels, destinations, suppliers, and travel companies."
+      "description": "Reach new travelers through KabuK's ecosystem with more visibility into distribution and supported rate and availability controls. Solutions for hotels, destinations, suppliers, and travel companies."
     },
     "hero": {
       "eyebrow": "Hotel benefits",
       "title": "Distribution That Works for Your Hotel.",
-      "lead": "Reach new travelers through KabuK's ecosystem while gaining more visibility into distribution relationships, rates, and performance information.",
+      "lead": "Reach new travelers through KabuK's ecosystem while gaining more visibility into distribution relationships and performance information.",
       "cta": "Connect Your Property"
     },
     "benefits": {
@@ -436,7 +436,7 @@
         },
         {
           "title": "Understand Pricing Across Channels",
-          "body": "Available price and rate information plus supported commercial controls."
+          "body": "Rate information across channels, as rate transparency is released."
         },
         {
           "title": "See Your Competitive Context",
@@ -444,7 +444,7 @@
         },
         {
           "title": "Extend Your Own Brand",
-          "body": "Accessible white-label options as packages become available."
+          "body": "Accessible white-label options, including planned no-cost and low-cost packages, as they become available."
         },
         {
           "title": "Work with a Hotel-First Team",
@@ -462,7 +462,7 @@
         },
         {
           "q": "Will I see the final price shown by every reseller?",
-          "a": "Not necessarily. Visibility depends on accessible channel data and downstream distribution arrangements; we aim to make available information clearer."
+          "a": "Not yet. Rate transparency is planned. When it is released, visibility will depend on accessible channel data and downstream distribution arrangements, so it may not cover every reseller."
         },
         {
           "q": "Will I automatically appear on HafH, Omakastay, and all KabuK Exchange partners?",
@@ -474,7 +474,7 @@
         },
         {
           "q": "Are white-label tools free?",
-          "a": "Package pricing and eligibility will be announced when confirmed. Contact us to discuss your requirements."
+          "a": "Some white-label packages are planned at no cost and others at low cost. Pricing, scope, and eligibility will be announced when confirmed. Contact us to discuss your requirements."
         }
       ]
     },
@@ -484,7 +484,7 @@
       "lead": "KabuK Platform connects accommodation partners with KabuK consumer experiences and B2B distribution opportunities through a coordinated onboarding and connectivity foundation.",
       "consumerTitle": "KabuK consumer products",
       "hafh": "Travel membership experiences.",
-      "omakastay": "AI-powered travel concierge for U.S. and inbound travelers.",
+      "omakastay": "AI-powered travel concierge for travelers from North America and Europe.",
       "exchangeBody": "KabuK Exchange connects eligible accommodation supply with participating B2B travel distributors, including agencies, OTAs, wholesalers, travel apps, and membership platforms.",
       "platformTitle": "The role of KabuK Platform",
       "platformBody": "Hotel onboarding, connectivity, inventory information, commercial controls, and operational services that support the broader ecosystem.",
@@ -738,7 +738,7 @@
         {
           "role": "Consumer travel products",
           "name": "HafH · Omakastay",
-          "body": "KabuK's traveler-facing products: HafH, a travel membership, and Omakastay, an AI travel concierge for U.S. and inbound travelers (planned).",
+          "body": "KabuK's traveler-facing products: HafH, a travel membership, and Omakastay, an AI travel concierge for travelers from North America and Europe (planned).",
           "link": "hafh"
         }
       ],

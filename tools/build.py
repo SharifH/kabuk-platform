@@ -86,7 +86,8 @@ _I = {
 DOMAIN_ICON = {"pricing": "pricing", "booking": "booking", "billing": "billing", "content": "content", "identity": "identity", "analytics": "analytics"}
 # Hotel benefit cards: (i18n index -> icon, gating module or None). Copy lives in home.benefits.items / solutions.benefits.items.
 BENEFIT_ICONS = ["connectivity", "visibility", "pricing", "analytics", "brand", "partner"]
-BENEFIT_MODULES = [None, None, None, "marketInsights", "whiteLabel", None]
+BENEFIT_MODULES = [None, None, "rateTransparency", "marketInsights", "whiteLabel", None]
+CONTROL_MODULES = [None, "rateTransparency", None, None]  # home.control.items
 CHANNELS = ["hafh", "omakastay", "exchange"]
 HOTEL_CONTACT = "?type=hotel&amp;interest=onboarding"
 
@@ -488,8 +489,9 @@ def ai_chip(t):
 # Pages
 # ---------------------------------------------------------------------------
 def page_home(loc, t):
-    control = "".join(f'<div class="pillar" data-reveal style="--d:{i}"><span class="card-index">0{i + 1}</span><h3>{esc(p["title"])}</h3><p>{esc(p["body"])}</p></div>'
-                      for i, p in enumerate(t.raw("home.control.items")))
+    control = "".join(f'<div class="pillar" data-reveal style="--d:{i}"><span class="card-index">0{i + 1}</span><h3>{esc(p["title"])}</h3><p>{esc(p["body"])}</p>'
+                      f'{"<span>" + coming_soon_chip(t) + "</span>" if CONTROL_MODULES[i] else ""}</div>'
+                      for i, p in enumerate(t.raw("home.control.items")) if not (CONTROL_MODULES[i] and module_state(CONTROL_MODULES[i]) == "hidden"))
     steps = "".join(f'<li class="step" data-reveal style="--d:{i}"><h3>{esc(s["title"])}</h3><p>{esc(s["body"])}</p></li>'
                     for i, s in enumerate(t.raw("home.onboarding.steps")))
     also = "".join(f'<li><a href="{href(loc, "solutions", a)}">{t(f"common.segments.{k}.name")}</a></li>' for k, a, _ in SEGMENTS[1:])

@@ -1,37 +1,38 @@
 # Hotel-first update: readiness and claims review
 
-Source copy: `01_KabuK_Platform_Website_Copy.md` (2026-10-15, "Proposed copy, subject to commercial/product approval"). Implementation brief: `03_Claude_Prompt_Platform_Website.md`. Branch: `feat/hotel-first-messaging`. **Not deployed.**
+Source copy: `01_KabuK_Platform_Website_Copy.md` (2026-10-15, "Proposed copy, subject to commercial/product approval"). Implementation brief: `03_Claude_Prompt_Platform_Website.md`. Branch: `feat/hotel-first-messaging` (PR #2). **Not deployed.**
 
 Nothing in this repository (code, config or docs) proves that any hotel-facing capability is live. Every status below is therefore taken from the copy document's own flags, not from product evidence.
 
 ## 1. Claims / readiness matrix
 
-| Capability or claim | Copy flag | Status used on site | How it is shown | Control |
-|---|---|---|---|---|
-| One onboarding → HafH | `[VERIFY live eligibility and onboarding flow]` | Unknown → **eligible** | Chip "Subject to eligibility" | `channelStatus.hafh` |
-| One onboarding → Omakastay | `[PLANNED]` | **Planned** | Chip "Planned", dashed card; "Prepare to reach…" | `channelStatus.omakastay` |
-| One onboarding → KabuK Exchange | `[VERIFY actual distribution activation]` | Unknown → **eligible** | Chip "Subject to eligibility" | `channelStatus.exchange` |
-| Distribution visibility (who sells inventory, booking attribution) | none (calibrated copy) | Unknown | Copy says "where information is available", plus a coverage qualifier | Copy only |
-| Rate transparency / discrepancy indicators | none (calibrated copy) | Unknown | "available rate information", "supported channels" | Copy only |
-| Commercial and inventory controls | none (calibrated copy) | Unknown | "supported … according to your agreements and connected systems" | Copy only |
-| Market intelligence / comparable properties | `[PLANNED / VERIFY]`, `[PLANNED / CONFIG]` | **Planned** | Coming soon module and benefit card; register-interest CTA | `modules.marketInsights` |
-| White-label solutions | `[PLANNED / VERIFY COMMERCIAL PACKAGES]` | **Planned** | Coming soon module and benefit card; "Register Interest" | `modules.whiteLabel` |
-| Hotel-first onboarding and support | none | Process claim | Onboarding steps, "A Partner That Listens" | Copy only |
-| Partner login | "only if applicable" | Not added | `urls.adminConsole` is a placeholder and not public | n/a |
+Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All others still come from the copy document's own flags.
 
-No module was hidden before this change, so none was activated. The two new modules ship as `comingSoon`. `module_state()` in `tools/build.py` treats any other value, including `live`, as hidden, so a config typo can never publish them as live.
+| Capability or claim | Status | How it is shown | Control |
+|---|---|---|---|
+| One onboarding → HafH | **Pilot** (confirmed) | Chip "Pilot" | `channelStatus.hafh` |
+| One onboarding → KabuK Exchange | **Pilot** (confirmed) | Chip "Pilot" | `channelStatus.exchange` |
+| One onboarding → Omakastay | **Planned** | Chip "Planned", dashed card; "Prepare to reach…" | `channelStatus.omakastay` |
+| Omakastay target markets | Travelers from **North America and Europe** (confirmed) | Diagram, Solutions ecosystem, About | Copy |
+| KabuK Exchange distributor types (agencies, OTAs, wholesalers, travel apps, membership platforms) | Available (confirmed) | Diagram downstream list, Solutions | Copy |
+| Distribution visibility (who sells inventory, booking attribution) | **Available** (confirmed) | Visible; coverage qualifier kept | Copy |
+| Commercial and inventory controls | **Available** (confirmed) | Visible; "supported … according to your agreements" kept | Copy |
+| Clearer operational insight | **Available** (confirmed) | Visible | Copy |
+| **Rate transparency** / discrepancy indicators | **Not available** (confirmed) → Coming soon | Chip on the Rate Transparency pillar and the two rate benefit cards; FAQ answers "Not yet"; "rate" removed from visibility claims elsewhere | `modules.rateTransparency` |
+| Market intelligence / comparable properties | **Planned** | Coming soon module and benefit card; register interest | `modules.marketInsights` |
+| White-label solutions | **Planned**; packages will be a mix of no-cost and low-cost (confirmed) | Coming soon module and benefit card; "planned low-cost and no-cost packages"; no prices | `modules.whiteLabel` |
+| Brand promise "We build around hotels…" | Confirmed | Why hero | Copy |
+| KabuK Platform is a **product** of KabuK Style Inc. | Confirmed | Footer "A KabuK Style Inc. product." in all locales | Copy |
+| Hotel setup fee | "No setup fee is correct" (see §2) | Not stated on the site | n/a |
+| Partner login | n/a | Not added; `urls.adminConsole` is a placeholder | n/a |
 
-## 2. Claims requiring business approval before launch
+`module_state()` in `tools/build.py` treats any value other than `comingSoon` (including `live`) as hidden.
 
-1. **HafH and KabuK Exchange shown as "Subject to eligibility".** Confirm that hotels can actually be onboarded to each today. Otherwise set them to `planned` or `pilot`.
-2. **"One onboarding relationship. Multiple paths to demand"** and "One Onboarding, Multiple Opportunities". This needs a real shared onboarding flow across the channels.
-3. **Transparency and controls copy** (Distribution Visibility, Rate Transparency, Commercial & Inventory Controls, Clearer Operational Insight, "Know Who Sells Your Inventory"). The section is visible and has no status chip. Product must confirm what hotels can see and control today. If none of it is live, these items should be gated like the modules.
-4. **Omakastay positioning:** "AI travel concierge for U.S. and inbound travelers". Confirm the target markets and that it may be named publicly.
-5. **KabuK Exchange downstream list** (travel agencies, OTAs, wholesalers, travel apps, membership platforms). Confirm that each category is a real participating distributor type.
-6. **White-label "accessible" packages.** I deliberately dropped "low-cost and no-cost" from the source copy, following the source's own rule not to publish "free" or "no-cost" until approved. The FAQ question "Are white-label tools free?" stays because its answer makes no promise.
-7. **Brand promise "We build around hotels—not the other way around"** (Why hero) and "designed around hotel needs rather than distributor requirements".
-8. **Footer "A KabuK Style Inc. company".** Confirm whether KabuK Platform is a company or a product of KabuK Style Inc. The zh-TW draft currently says 旗下公司 (subsidiary company).
-9. **Hotel onboarding fee terms:** the site states none. The KBKX distributor no-setup-fee policy was not carried over.
+## 2. Open items
+
+1. **Shared onboarding claim:** "One onboarding relationship. Multiple paths to demand" (Home hero) and "One Onboarding, Multiple Opportunities" (Solutions). Confirm that a hotel onboards once through KabuK Platform and is then considered for each channel, rather than signing up to each channel separately.
+2. **Hotel setup fee:** confirmed that there is no setup fee. It is **not** stated on the site yet. Decide whether to publish it and where (e.g. onboarding step 1 or the FAQ), and whether any other fees apply (the source copy warns not to imply KBKX's distributor fee policy).
+3. **White-label pricing:** the site says only "planned low-cost and no-cost packages". Specific prices, scope and eligibility are still to be announced.
 
 ## 3. Copy I wrote that is not in the source document
 
@@ -57,11 +58,11 @@ Bridging copy is needed where the source has no text for an existing component. 
 - `urls.*` are marked TODO for verification. No Omakastay URL exists, so the site has no link to it.
 - The privacy notice is a draft.
 - The ja, ko, zh-TW and ar translations are drafts. The 113 new or changed strings per locale were drafted for this update and have **not** had native review. Reviewer flags:
-  - **zh-TW:** 物業 for "property" in the header CTA may read as real estate in Taiwan; 住宿設施 is an option. "Your Control." is rendered 您做主.
+  - **zh-TW:** footer now 旗下產品 (product). 物業 for "property" in the header CTA may read as real estate in Taiwan; 住宿設施 is an option. "Your Control." is rendered 您做主.
   - **ko:** "Your Control." is rendered 당신의 관리 (literal). "Subject to eligibility" (자격 요건에 따라 제공) is long for a chip.
   - **ja:** "Subject to eligibility" is 対象条件あり. HafH is described as 旅のサブスクリプション会員. "Booking attribution" is 予約の帰属.
   - **ar:** "Your Control" is rendered قرارك ("your decision"). "Onboarding" is الإعداد throughout.
-  - **All locales:** "inbound travelers" is kept neutral (インバウンド / 인바운드 / 入境 / الوافدين) rather than "visiting Japan". Confirm the intended market.
+  - **All locales:** Omakastay now targets travelers from North America and Europe (北米および欧州 / 북미 및 유럽 / 北美與歐洲 / أمريكا الشمالية وأوروبا).
 
 ## 5. Source section → implementation map
 
@@ -72,6 +73,7 @@ Bridging copy is needed where the source has no text for an existing component. 
 | Signature ecosystem | Home `#ecosystem`; Solutions `#ecosystem` | `eco_diagram()` (new, light background) |
 | Transparency and control | Home | `.pillars` + `.scope-note` qualifier |
 | Market intelligence / White-label | Home `#market-insights`, `#white-label` | `gated_modules()` (new) |
+| Rate transparency (not available) | Home control pillar 02, benefit 03 on Home and Solutions | per-item Coming soon chip (`CONTROL_MODULES`, `BENEFIT_MODULES`) |
 | How onboarding works | Home | `.steps` (existing) |
 | Audience / hotel groups | Home | `.split` |
 | Closing CTA | All pages | `cta_band()` (now with a secondary action) |
