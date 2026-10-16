@@ -194,6 +194,8 @@ ul, ol { margin: 0; padding: 0; }
 :lang(ja) .hero h1, :lang(zh-Hant-TW) .hero h1, :lang(ko) .hero h1 { line-height: 1.25; letter-spacing: -0.01em; max-width: 18ch; }
 :lang(ar) .hero h1 { line-height: 1.3; letter-spacing: 0; }
 .hero .lead { margin-top: var(--space-24); }
+.hero-sub { margin-top: var(--space-16); font: 600 clamp(17px, 1.6vw, 20px)/1.45 var(--font-sans); color: var(--brand-strong); max-width: 40ch; }
+.hero-note { margin-top: var(--space-16); }
 .hero-page h1 { max-width: 22ch; }
 .hero-page .lead { max-width: 64ch; }
 .eyebrow-bar { display: inline-flex; align-items: center; gap: var(--space-12); }
@@ -272,7 +274,7 @@ a.card:hover .text-link { text-decoration: underline; }
 .prose ul { padding-inline-start: 20px; color: var(--text-secondary); line-height: 1.7; }
 
 /* Product family */
-.family { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-24); }
+.family { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-24); }
 .family .card.is-current { border-color: var(--text); box-shadow: inset 0 var(--stroke-bar) 0 var(--brand); }
 .family-role { font: var(--type-label); color: var(--text-secondary); }
 
@@ -393,6 +395,49 @@ a.card:hover .text-link { text-decoration: underline; }
 .rel-foundation-title b { font-weight: 600; color: var(--kbk-blue); }
 .rel-foundation-services { font: 500 12px/18px var(--font-sans); color: var(--dark-text-secondary); }
 
+/* ---- Diagram 4 · Hotel ecosystem (hotel → Platform → KabuK channels) ------ */
+.eco { margin: 0; display: flex; flex-direction: column; align-items: stretch; }
+.eco-hotels { align-self: center; display: inline-flex; align-items: center; gap: var(--space-12); padding: 12px 20px; border: var(--stroke-hairline) solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface); font: 600 15px/20px var(--font-sans); color: var(--text); }
+.eco-hotels svg { width: 20px; height: 20px; color: var(--brand-strong); }
+.eco-stem { align-self: center; width: 1.5px; height: 32px; background: var(--diagram-platform); position: relative; overflow: hidden; }
+.eco-stem::after { content: ""; position: absolute; left: -1.5px; top: -8px; width: 4.5px; height: 8px; border-radius: 3px; background: var(--diagram-pulse); animation: pulse-down var(--duration-pulse) var(--web-ease) infinite; }
+.eco-platform { border: 1.5px solid var(--diagram-platform); border-radius: var(--radius-lg); background: var(--surface); padding: var(--space-24); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-8) var(--space-24); align-items: center; box-shadow: inset 0 var(--stroke-bar) 0 var(--brand); }
+.eco-platform-name { font: 600 22px/28px var(--font-sans); letter-spacing: -0.01em; color: var(--text); }
+.eco-platform-desc { grid-column: 1; font-size: 14px; line-height: 1.55; color: var(--text-secondary); }
+.eco-roles { grid-column: 2; grid-row: 1 / span 2; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; max-width: 420px; }
+.eco-roles li { font: 500 12px/16px var(--font-sans); padding: 4px 10px; border-radius: var(--radius-sm); background: var(--brand-subtle); border: var(--stroke-hairline) solid var(--brand-soft); color: var(--brand-on-soft); }
+.eco-fork { display: grid; grid-template-columns: repeat(3, 1fr); height: 32px; position: relative; }
+.eco-fork::before { content: ""; position: absolute; top: 0; inset-inline: calc(100% / 6); height: 1.5px; background: var(--diagram-line); }
+.eco-fork span { justify-self: center; width: 1.5px; background: var(--diagram-line); }
+.eco-channels { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-16); }
+.eco-channel { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-8); padding: var(--space-24); border: var(--stroke-hairline) solid var(--border-strong); border-radius: var(--radius-lg); background: var(--surface); }
+.eco-channel--planned { border-style: dashed; }
+.eco-kind { font: 600 12px/16px var(--font-sans); color: var(--text-secondary); }
+.eco-name { font: 600 20px/26px var(--font-sans); color: var(--text); }
+.eco-desc { font-size: 14px; line-height: 1.55; color: var(--text-secondary); flex: 1; }
+.eco-downstream { align-self: stretch; margin-top: var(--space-8); padding: 10px 12px; border: var(--stroke-hairline) dashed var(--diagram-third-party); border-radius: var(--radius-md); }
+.eco-downstream p { font: 600 12px/16px var(--font-sans); color: var(--text); margin-bottom: 6px; }
+.eco-downstream ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 10px; font: var(--type-small); color: var(--text-secondary); }
+.eco-text-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-12); font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
+.eco-text-list strong { color: var(--text); font-weight: 600; }
+.card.is-foundation { box-shadow: inset 0 var(--stroke-bar) 0 var(--brand); }
+
+/* Gated hotel modules (site-config.json modules.*) */
+.module-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-12); }
+.module-card h3 { font: var(--type-h3); font-family: var(--font-sans); }
+.module-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-8); font-size: 15px; line-height: 1.55; color: var(--text-secondary); border-top: var(--stroke-hairline) solid var(--border); padding-top: var(--space-16); }
+.module-list strong { color: var(--text); font-weight: 600; }
+
+/* FAQ (native <details>, keyboard accessible without JS) */
+.faq { border-top: var(--stroke-hairline) solid var(--border-strong); }
+.faq-item { border-bottom: var(--stroke-hairline) solid var(--border); }
+.faq-item summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--space-16); padding-block: var(--space-20, 20px); font: 600 16px/1.45 var(--font-sans); color: var(--text); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; flex: none; font-weight: 500; color: var(--brand-strong); }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { padding-bottom: var(--space-20, 20px); color: var(--text-secondary); line-height: 1.65; max-width: 68ch; }
+.also-list { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-24); font-weight: 600; }
+
 /* ---- Diagram 3 · Point-to-point vs shared foundation --------------------- */
 .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-24); }
 .compare-panel { background: var(--surface); border: var(--stroke-hairline) solid var(--border); border-radius: var(--radius-lg); padding: var(--space-24); display: flex; flex-direction: column; gap: var(--space-16); }
@@ -478,6 +523,7 @@ a.card:hover .text-link { text-decoration: underline; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .form-layout { grid-template-columns: 1fr; }
+  .family { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
   .grid-3, .family { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -496,6 +542,12 @@ a.card:hover .text-link { text-decoration: underline; }
   .rel-riser { grid-column: 1; grid-row: auto; }
   .rel-foundation { grid-column: 1; grid-row: auto; }
   .arch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* ecosystem diagram stacks: channels in one column, fork collapses to a stem */
+  .eco-platform { grid-template-columns: 1fr; }
+  .eco-roles { grid-column: 1; grid-row: auto; justify-content: flex-start; }
+  .eco-fork { grid-template-columns: 1fr; }
+  .eco-fork::before, .eco-fork span:not(:first-child) { display: none; }
+  .eco-channels { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .grid-2, .grid-3, .grid-4, .family, .pillars, .steps, .form-grid, .tick-list { grid-template-columns: 1fr; }
@@ -515,7 +567,7 @@ a.card:hover .text-link { text-decoration: underline; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }
   .js [data-reveal] { opacity: 1; transform: none; }
   .arch-node::after { opacity: 1; }
-  .arch-links span::after, .rel-link-line::after, .rel-riser::after { display: none; }
+  .arch-links span::after, .rel-link-line::after, .rel-riser::after, .eco-stem::after { display: none; }
   .compare-panel .hub .flow { stroke-dasharray: none; opacity: .0; }
 }
 

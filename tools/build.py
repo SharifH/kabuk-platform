@@ -78,8 +78,17 @@ _I = {
     "info": '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
     "alert": '<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/>',
     "mail": '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+    "visibility": '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',
+    "brand": '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>',
+    "partner": '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/><path d="M8 9h8M8 13h5"/>',
+    "hotel": '<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4M18 9h2a2 2 0 0 1 2 2v11h-4M10 6h4M10 10h4M10 14h4M10 18h4"/>',
 }
 DOMAIN_ICON = {"pricing": "pricing", "booking": "booking", "billing": "billing", "content": "content", "identity": "identity", "analytics": "analytics"}
+# Hotel benefit cards: (i18n index -> icon, gating module or None). Copy lives in home.benefits.items / solutions.benefits.items.
+BENEFIT_ICONS = ["connectivity", "visibility", "pricing", "analytics", "brand", "partner"]
+BENEFIT_MODULES = [None, None, None, "marketInsights", "whiteLabel", None]
+CHANNELS = ["hafh", "omakastay", "exchange"]
+HOTEL_CONTACT = "?type=hotel&amp;interest=onboarding"
 
 
 def icon(name, cls="icon"):
@@ -148,6 +157,25 @@ def status_chip(key, t):
     return f'<span class="chip chip-{status}">{t("common.status." + status)}</span>'
 
 
+def module_state(name):
+    """site-config.json modules.<name>: 'comingSoon' or 'hidden'. Anything else (missing, typo, 'live') is
+    treated as hidden, so a module is never published as live by accident."""
+    state = CONFIG.get("modules", {}).get(name)
+    return state if state == "comingSoon" else "hidden"
+
+
+def coming_soon_chip(t):
+    return f'<span class="chip chip-planned">{t("common.status.comingSoon")}</span>'
+
+
+def channel_chip(key, t):
+    status = CONFIG.get("channelStatus", {}).get(key, "planned")
+    if status not in ("eligible", "pilot", "planned"):
+        status = "planned"
+    cls = "development" if status == "pilot" else ("core" if status == "eligible" else "planned")
+    return f'<span class="chip chip-{cls}">{t("common.status." + status)}</span>'
+
+
 # ---------------------------------------------------------------------------
 # Shared components
 # ---------------------------------------------------------------------------
@@ -208,7 +236,8 @@ def header(loc, t, page_id):
         return ' aria-current="page"' if page_id == pid else ""
     sol_items = f'<li class="menu-overview"><a href="{href(loc, "solutions")}">{t("common.nav.solutionsOverview")}</a></li>' + "".join(
         f'<li><a href="{href(loc, "solutions", anchor)}">{t(f"common.segments.{k}.name")}<small>{t(f"common.segments.{k}.hint")}</small></a></li>'
-        for k, anchor, _ in SEGMENTS)
+        for k, anchor, _ in SEGMENTS) + "".join(
+        f'<li><a href="{href(loc, "solutions", anchor)}">{t("common.nav." + k)}</a></li>' for k, anchor in [("benefits", "benefits"), ("ecosystem", "ecosystem")])
     tech_items = f'<li class="menu-overview"><a href="{href(loc, "technology")}">{t("common.nav.technologyOverview")}</a></li>' + "".join(
         f'<li><a href="{href(loc, "technology", d)}">{t(f"common.services.{d}")}</a></li>' for d in DOMAINS)
     lang_items = "".join(
@@ -233,7 +262,7 @@ def header(loc, t, page_id):
 <div class="nav-actions">
 <div class="lang nav-item"><button class="nav-link nav-trigger lang-trigger" type="button" aria-expanded="false" aria-controls="menu-lang" aria-label="{t("common.languageChoose")}: {esc(loc["label"])}">{icon("globe")}<span>{esc(loc["short"])}</span>{icon("chevron", "chev")}</button>
 <div class="nav-menu lang-menu" id="menu-lang"><ul>{lang_items}</ul></div></div>
-<a class="btn btn-primary btn-sm" href="{href(loc, "contact")}"{cur("contact")}>{t("common.nav.talk")}</a>
+<a class="btn btn-primary btn-sm" href="{href(loc, "contact")}{HOTEL_CONTACT}"{cur("contact")}>{t("common.nav.connect")}</a>
 </div>
 </nav>
 </div>
@@ -293,16 +322,84 @@ def section_head(eyebrow, title, lead="", hid="", cls=""):
             f'<h2{id_attr}>{title}</h2>{lead_html}</div>')
 
 
-def page_hero(t, key):
+def page_hero(t, key, actions=""):
+    actions_html = f'<div class="actions">{actions}</div>' if actions else ""
     return (f'<section class="hero hero-page"><div class="container">'
             f'<p class="eyebrow eyebrow-bar">{t(key + ".hero.eyebrow")}</p>'
-            f'<h1>{t(key + ".hero.title")}</h1><p class="lead">{t(key + ".hero.lead")}</p></div></section>')
+            f'<h1>{t(key + ".hero.title")}</h1><p class="lead">{t(key + ".hero.lead")}</p>{actions_html}</div></section>')
+
+
+def connect_btn(loc, label, cls="btn btn-primary"):
+    return f'<a class="{cls}" href="{href(loc, "contact")}{HOTEL_CONTACT}">{label}{icon("arrow", "icon icon-dir")}</a>'
 
 
 def cta_band(loc, t):
     return f"""<section class="section-surface cta-band" aria-labelledby="cta-title"><div class="container cta-inner" data-reveal>
 <div><h2 id="cta-title">{t("home.cta.title")}</h2><p class="lead">{t("home.cta.body")}</p></div>
-<div class="actions"><a class="btn btn-primary" href="{href(loc, "contact")}">{t("home.cta.button")}{icon("arrow", "icon icon-dir")}</a></div>
+<div class="actions">{connect_btn(loc, t("home.cta.button"))}<a class="btn btn-secondary" href="{href(loc, "contact")}">{t("home.cta.secondary")}</a></div>
+</div></section>"""
+
+
+# ---- Hotel-first components -------------------------------------------------
+def benefit_cards(t, key):
+    """Six hotel benefits. Cards tied to a gated module carry a Coming soon chip, or are dropped when it is hidden."""
+    out = ""
+    for i, item in enumerate(t.raw(key)):
+        mod = BENEFIT_MODULES[i]
+        if mod and module_state(mod) == "hidden":
+            continue
+        chip = f'<span class="card-foot">{coming_soon_chip(t)}</span>' if mod else ""
+        out += (f'<article class="card" data-reveal style="--d:{i % 3}"><span class="card-icon">{icon(BENEFIT_ICONS[i])}</span>'
+                f'<h3>{t(f"{key}.{i}.title")}</h3><p>{t(f"{key}.{i}.body")}</p>{chip}</article>')
+    return f'<div class="grid grid-3">{out}</div>'
+
+
+def eco_diagram(t, uid="eco"):
+    """Diagram 4 · Hotel → KabuK Platform → three KabuK channels. Platform is the foundation;
+    KabuK Exchange is one channel built on it, not a peer infrastructure layer."""
+    k = "diagram.eco."
+    branches = ""
+    for i, c in enumerate(CHANNELS):
+        extra = ""
+        if c == "exchange":
+            items = "".join(f"<li>{esc(x)}</li>" for x in t.raw(k + "distributorItems"))
+            extra = f'<div class="eco-downstream"><p>{t(k + "distributors")}</p><ul>{items}</ul></div>'
+        planned = " eco-channel--planned" if CONFIG.get("channelStatus", {}).get(c) == "planned" else ""
+        branches += (f'<li class="eco-channel{planned}" data-reveal style="--d:{i + 2}"><p class="eco-kind">{t(k + "channels." + c + ".kind")}</p>'
+                     f'<p class="eco-name" lang="en" dir="ltr">{t(k + "channels." + c + ".name")}</p>'
+                     f'<p class="eco-desc">{t(k + "channels." + c + ".body")}</p>{channel_chip(c, t)}{extra}</li>')
+    roles = "".join(f"<li>{esc(x)}</li>" for x in t.raw(k + "platformRoles"))
+    return f"""<figure class="eco" role="group" aria-labelledby="{uid}-label">
+<p class="sr-only" id="{uid}-label">{t(k + "label")}</p>
+<div class="eco-hotels" data-reveal>{icon("hotel")}<span>{t(k + "hotels")}</span></div>
+<div class="eco-stem" aria-hidden="true"></div>
+<div class="eco-platform" data-reveal style="--d:1"><p class="eco-platform-name"><span lang="en" dir="ltr">KabuK Platform</span></p>
+<p class="eco-platform-desc">{t(k + "platformDesc")}</p><ul class="eco-roles">{roles}</ul></div>
+<div class="eco-fork" aria-hidden="true"><span></span><span></span><span></span></div>
+<ul class="eco-channels">{branches}</ul>
+<figcaption class="rel-caption">{t(k + "caption")}</figcaption>
+</figure>"""
+
+
+def gated_modules(loc, t):
+    """Market intelligence and white-label: register-interest modules while unverified (site-config modules.*)."""
+    cards = ""
+    for i, (mod, key, interest, ic) in enumerate([("marketInsights", "home.market", "market-insights", "analytics"),
+                                                  ("whiteLabel", "home.whiteLabel", "white-label", "brand")]):
+        if module_state(mod) == "hidden":
+            continue
+        items = "".join(f'<li><strong>{esc(x["title"])}</strong> {esc(x["body"])}</li>' for x in t.raw(key + ".items"))
+        cards += f"""<article class="card module-card" id="{interest}" data-module="{mod}" data-module-state="comingSoon" data-reveal style="--d:{i}">
+<div class="module-top"><span class="card-icon">{icon(ic)}</span>{coming_soon_chip(t)}</div>
+<p class="eyebrow">{t(key + ".eyebrow")}</p><h3>{t(key + ".title")}</h3><p>{t(key + ".lead")}</p>
+<ul class="module-list">{items}</ul>
+<span class="card-foot"><a class="btn btn-secondary" href="{href(loc, "contact")}?type=hotel&amp;interest={interest}">{t(key + ".cta")}{icon("arrow", "icon icon-dir")}</a></span>
+</article>"""
+    if not cards:
+        return ""
+    return f"""<section class="section" aria-labelledby="soon-title"><div class="container">
+{section_head(t("home.soon.eyebrow"), t("home.soon.title"), t("home.soon.lead"), "soon-title")}
+<div class="grid grid-2">{cards}</div>
 </div></section>"""
 
 
@@ -387,62 +484,62 @@ def ai_chip(t):
     return f'<span class="chip chip-{status}">{t("diagram.arch.plannedTag")}</span>'
 
 
-def capability_cards(loc, t):
-    out = ""
-    for i, d in enumerate(DOMAINS):
-        out += (f'<a class="card" href="{href(loc, "technology", d)}" data-reveal style="--d:{i % 3}">'
-                f'<span class="card-icon">{icon(DOMAIN_ICON[d])}</span>'
-                f'<h3>{t("common.services." + d)}</h3><p>{t("capabilityCards." + d)}</p>'
-                f'<span class="card-foot"><span style="display:flex;gap:8px;flex-wrap:wrap">{status_chip(d, t)}{ai_chip(t) if d == "analytics" else ""}</span>'
-                f'<span class="text-link">{t("common.learnMore")}{icon("arrow", "icon icon-dir")}</span></span></a>')
-    return f'<div class="grid grid-3">{out}</div>'
-
-
 # ---------------------------------------------------------------------------
 # Pages
 # ---------------------------------------------------------------------------
 def page_home(loc, t):
-    pillars = "".join(f'<div class="pillar" data-reveal style="--d:{i}"><span class="card-index">0{i + 1}</span><h3>{esc(p["title"])}</h3><p>{esc(p["body"])}</p></div>'
-                      for i, p in enumerate(t.raw("home.value.pillars")))
-    audiences = "".join(
-        f'<a class="card" href="{href(loc, "solutions", a)}" data-reveal style="--d:{i}"><p class="eyebrow">{t(f"common.segments.{k}.name")}</p>'
-        f'<h3>{t(f"audienceCopy.{k}.title")}</h3><span class="card-foot"><span class="text-link">{t(f"audienceCopy.{k}.cta")}{icon("arrow", "icon icon-dir")}</span></span></a>'
-        for i, (k, a, _) in enumerate(SEGMENTS))
+    control = "".join(f'<div class="pillar" data-reveal style="--d:{i}"><span class="card-index">0{i + 1}</span><h3>{esc(p["title"])}</h3><p>{esc(p["body"])}</p></div>'
+                      for i, p in enumerate(t.raw("home.control.items")))
+    steps = "".join(f'<li class="step" data-reveal style="--d:{i}"><h3>{esc(s["title"])}</h3><p>{esc(s["body"])}</p></li>'
+                    for i, s in enumerate(t.raw("home.onboarding.steps")))
+    also = "".join(f'<li><a href="{href(loc, "solutions", a)}">{t(f"common.segments.{k}.name")}</a></li>' for k, a, _ in SEGMENTS[1:])
     return f"""<main id="main">
 {draft_banner(loc, t, "home")}
 <section class="hero"><div class="container hero-grid">
 <div>
 <p class="eyebrow eyebrow-bar">{t("home.hero.eyebrow")}</p>
 <h1>{t("home.hero.title")}</h1>
+<p class="hero-sub">{t("home.hero.subtitle")}</p>
 <p class="lead">{t("home.hero.lead")}</p>
-<div class="actions"><a class="btn btn-primary" href="{href(loc, "contact")}">{t("home.hero.primary")}{icon("arrow", "icon icon-dir")}</a>
-<a class="btn btn-secondary" href="{href(loc, "technology")}">{t("home.hero.secondary")}</a></div>
+<div class="actions">{connect_btn(loc, t("home.hero.primary"))}
+<a class="btn btn-secondary" href="{href(loc, "solutions", "benefits")}">{t("home.hero.secondary")}</a></div>
+<p class="fineprint hero-note">{t("home.hero.note")}</p>
 </div>
 <div data-reveal>{arch_diagram(t, compact=True, uid="arch-hero")}</div>
 </div></section>
 
-<section class="section section-surface" aria-labelledby="value-title"><div class="container">
-{section_head(t("home.value.eyebrow"), t("home.value.title"), t("home.value.lead"), "value-title")}
-<div class="pillars">{pillars}</div>
-<p style="margin-top:40px"><a class="text-link" href="{href(loc, "why")}">{t("home.value.link")}{icon("arrow", "icon icon-dir")}</a></p>
+<section class="section section-surface" aria-labelledby="ben-title"><div class="container">
+{section_head(t("home.benefits.eyebrow"), t("home.benefits.title"), t("home.benefits.lead"), "ben-title")}
+{benefit_cards(t, "home.benefits.items")}
 </div></section>
 
-<section class="section" aria-labelledby="cap-title"><div class="container">
-{section_head(t("home.capabilities.eyebrow"), t("home.capabilities.title"), t("home.capabilities.lead"), "cap-title")}
-{capability_cards(loc, t)}
-<p class="notice notice-info" style="margin-top:32px" data-reveal>{icon("info")}<span><strong>{t("home.transparency.title")}.</strong> {t("home.transparency.body")} <a href="{href(loc, "technology", "status")}">{t("home.transparency.link")}</a></span></p>
+<section class="section" id="ecosystem" aria-labelledby="eco-title"><div class="container">
+{section_head(t("home.ecosystem.eyebrow"), t("home.ecosystem.title"), t("home.ecosystem.lead"), "eco-title")}
+{eco_diagram(t, "eco-home")}
+<div class="actions"><a class="btn btn-secondary" href="{href(loc, "solutions", "ecosystem")}">{t("home.ecosystem.cta")}{icon("arrow", "icon icon-dir")}</a></div>
 </div></section>
 
-<section class="section section-dark theme-dark" aria-labelledby="rel-title"><div class="container">
-{section_head(t("home.relationship.eyebrow"), t("home.relationship.title"), t("home.relationship.body"), "rel-title")}
-{rel_diagram(t, "rel-home")}
-<div class="actions">{ext_link("exchange", t("home.relationship.cta"), t, "btn btn-secondary")}</div>
+<section class="section section-surface" aria-labelledby="ctl-title"><div class="container">
+{section_head(t("home.control.eyebrow"), t("home.control.title"), t("home.control.lead"), "ctl-title")}
+<div class="pillars">{control}</div>
+<p class="scope-note" style="margin-top:40px" data-reveal>{icon("info")}<span>{t("home.control.qualifier")}</span></p>
 </div></section>
 
-<section class="section" aria-labelledby="aud-title"><div class="container">
-{section_head(t("home.audiences.eyebrow"), t("home.audiences.title"), t("home.audiences.lead"), "aud-title")}
-<div class="grid grid-4">{audiences}</div>
+{gated_modules(loc, t)}
+
+<section class="section section-surface" aria-labelledby="onb-title"><div class="container">
+{section_head(t("home.onboarding.eyebrow"), t("home.onboarding.title"), "", "onb-title")}
+<ol class="steps">{steps}</ol>
+<div class="actions">{connect_btn(loc, t("home.onboarding.cta"))}</div>
 </div></section>
+
+<section class="section" aria-labelledby="aud-title"><div class="container split">
+<div class="section-head" style="margin:0"><p class="eyebrow">{t("home.audiences.eyebrow")}</p><h2 id="aud-title">{t("home.audiences.title")}</h2></div>
+<div class="prose" data-reveal><p class="strong lead" style="color:var(--text)">{t("home.audiences.lead")}</p>
+<p>{t("home.audiences.also")}</p><ul class="also-list">{also}</ul></div>
+</div>
+<div class="container"><p class="notice notice-info" style="margin-top:48px" data-reveal>{icon("info")}<span><strong>{t("home.transparency.title")}.</strong> {t("home.transparency.body")} <a href="{href(loc, "technology", "status")}">{t("home.transparency.link")}</a></span></p></div>
+</section>
 
 {cta_band(loc, t)}
 </main>
@@ -457,22 +554,41 @@ def page_solutions(loc, t):
 <div><p class="eyebrow">{t(f"common.segments.{k}.name")}</p><h3 id="{a}-title">{t(f"audienceCopy.{k}.title")}</h3></div>
 <div class="audience-body"><p>{t(f"audienceCopy.{k}.body")}</p>
 <p class="field-hint">{t("solutions.topicsLabel")}</p><ul class="tick-list">{topics}</ul>
-<p><a class="btn btn-secondary" href="{href(loc, "contact")}?type={ctype}">{t(f"audienceCopy.{k}.cta")}{icon("arrow", "icon icon-dir")}</a></p></div>
+<p><a class="btn btn-secondary" href="{href(loc, "contact")}{HOTEL_CONTACT if ctype == "hotel" else "?type=" + ctype}">{t(f"audienceCopy.{k}.cta")}{icon("arrow", "icon icon-dir")}</a></p></div>
 </article>"""
     steps = "".join(f'<li class="step" data-reveal style="--d:{i}"><h3>{esc(s["title"])}</h3><p>{esc(s["body"])}</p></li>'
                     for i, s in enumerate(t.raw("solutions.pathway.steps")))
+    faq = "".join(f'<details class="faq-item"><summary>{esc(q["q"])}</summary><p>{esc(q["a"])}</p></details>' for q in t.raw("solutions.faq.items"))
+    k = "solutions.ecosystem."
+    eco_cols = (f'<div class="card"><p class="eyebrow">{t(k + "consumerTitle")}</p><ul class="eco-text-list">'
+                f'<li><strong lang="en" dir="ltr">HafH</strong> {t(k + "hafh")} {channel_chip("hafh", t)}</li>'
+                f'<li><strong lang="en" dir="ltr">Omakastay</strong> {t(k + "omakastay")} {channel_chip("omakastay", t)}</li></ul></div>'
+                f'<div class="card"><p class="eyebrow" lang="en" dir="ltr" style="text-align:start">KabuK Exchange</p><p>{t(k + "exchangeBody")}</p>'
+                f'<span class="card-foot">{ext_link("exchange", t("solutions.exchangeNote.cta"), t, "text-link")}</span></div>'
+                f'<div class="card is-foundation"><p class="eyebrow">{t(k + "platformTitle")}</p><p>{t(k + "platformBody")}</p></div>')
     return f"""<main id="main">
 {draft_banner(loc, t, "solutions")}
-{page_hero(t, "solutions")}
-<section class="section-tight section"><div class="container">{rows}</div></section>
+{page_hero(t, "solutions", connect_btn(loc, t("solutions.hero.cta")))}
+<section class="section section-surface" id="benefits" aria-labelledby="ben-title"><div class="container">
+{section_head(t("solutions.benefits.eyebrow"), t("solutions.benefits.title"), "", "ben-title")}
+{benefit_cards(t, "solutions.benefits.items")}
+</div></section>
+<section class="section" id="faq" aria-labelledby="faq-title"><div class="container split">
+<div class="section-head" style="margin:0"><p class="eyebrow">{t("solutions.faq.eyebrow")}</p><h2 id="faq-title">{t("solutions.faq.title")}</h2></div>
+<div class="faq" data-reveal>{faq}</div>
+</div></section>
+<section class="section section-surface" id="ecosystem" aria-labelledby="eco-sol-title"><div class="container">
+{section_head(t(k + "eyebrow"), t(k + "title"), t(k + "lead"), "eco-sol-title")}
+{eco_diagram(t, "eco-sol")}
+<div class="grid grid-3" style="margin-top:48px">{eco_cols}</div>
+<div class="actions">{connect_btn(loc, t(k + "cta"))}</div>
+</div></section>
+<section class="section" aria-labelledby="seg-title"><div class="container">
+{section_head(t("solutions.segments.eyebrow"), t("solutions.segments.title"), t("solutions.segments.lead"), "seg-title")}
+{rows}</div></section>
 <section class="section section-surface" aria-labelledby="path-title"><div class="container">
 {section_head(t("solutions.pathway.eyebrow"), t("solutions.pathway.title"), t("solutions.pathway.lead"), "path-title")}
 <ol class="steps">{steps}</ol>
-</div></section>
-<section class="section section-dark theme-dark" aria-labelledby="exn-title"><div class="container">
-{section_head(t("home.relationship.eyebrow"), t("solutions.exchangeNote.title"), t("solutions.exchangeNote.body"), "exn-title")}
-{rel_diagram(t, "rel-sol")}
-<div class="actions">{ext_link("exchange", t("solutions.exchangeNote.cta"), t, "btn btn-secondary")}</div>
 </div></section>
 {cta_band(loc, t)}
 </main>
@@ -586,7 +702,7 @@ def page_contact(loc, t):
 
     def options(group, choose):
         opts = f'<option value="">{t(f + choose)}</option>'
-        for k in t.raw(f + group).keys() if isinstance(t.raw(f + group), dict) else []:
+        for k in t._get(EN, f + group).keys():
             opts += f'<option value="{k}">{t(f + group + "." + k)}</option>'
         return opts
 
