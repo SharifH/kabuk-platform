@@ -95,8 +95,8 @@ async def main():
         await pg.click('#lead-form button[type=submit]'); await pg.wait_for_timeout(800); print('ERRS', errs, await pg.evaluate("[document.getElementById('form-status').innerHTML.slice(0,80), document.getElementById('form-summary').hidden, document.activeElement.id, [...new FormData(document.getElementById('lead-form')).entries()].map(e=>e.join('=')).join('&')]"))
         st=await pg.text_content('#form-status') or ''
         print('DEBUG url', pg.url, 'errs', await pg.locator('.has-error').count(), [await e.get_attribute('class') for e in await pg.locator('.has-error').all()])
-        ok('mailto confirmation (not "submitted") shown', 'Your email application will open' in st and 'hotels@example.com' in st, st[:80])
-        ok('hotel type routed to hotels mailbox', 'hotels@example.com' in st)
+        ok('mailto confirmation (not "submitted") shown', 'Your email application will open' in st and 'network@kabuk.com' in st, st[:80])
+        ok('hotel type routed to hotels mailbox', 'network@kabuk.com' in st)
 
         # mobile menu
         m=await b.new_page(viewport={'width':375,'height':800})

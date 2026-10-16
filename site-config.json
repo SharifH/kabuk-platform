@@ -47,12 +47,12 @@
     "formMode": "mailto",
     "_formModeNote": "Only 'mailto' is implemented. A backend/CRM endpoint is proposed in docs/CHANGELOG.md but does not exist yet.",
     "routes": {
-      "hotels": "hotels@example.com",
-      "tourism": "destinations@example.com",
-      "technology": "technology@example.com",
-      "general": "platform@example.com"
+      "hotels": "network@kabuk.com",
+      "tourism": "network@kabuk.com",
+      "technology": "network@kabuk.com",
+      "general": "network@kabuk.com"
     },
-    "_routesNote": "TODO: replace every example.com address with a monitored KabuK Style inbox.",
+    "_routesNote": "All inquiry types go to network@kabuk.com (confirmed by the site owner 2026-10-16). Per-type routes are kept so inboxes can be split later without code changes.",
     "organizationTypeRoute": {
       "hotel": "hotels",
       "tourism": "tourism",

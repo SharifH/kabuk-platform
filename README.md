@@ -66,7 +66,7 @@ See `docs/CHANGELOG.md` → *Proposed production form backend* for the server-si
 Upload the folder to any static host with directory-index routing (Netlify, Vercel, Cloudflare Pages, S3 website endpoint, GitHub Pages). Before launch:
 
 1. Verify the domain → set `site.canonicalVerified: true` → rebuild.
-2. Replace example.com lead addresses.
+2. ~~Replace example.com lead addresses.~~ Done: all inquiries go to `network@kabuk.com` (`leads.routes`).
 3. Replace `/privacy/` with legal-approved text.
 4. Complete native review → set each locale's `review` to `approved` → rebuild.
 

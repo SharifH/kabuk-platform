@@ -53,11 +53,11 @@ Bridging copy is needed where the source has no text for an existing component. 
 
 ## 4. Outstanding placeholders (unchanged by this update, still blocking launch)
 
-- `leads.routes.*` are `example.com` addresses, so hotel inquiries currently go nowhere.
+- ~~Lead inboxes~~ Resolved: all `leads.routes.*` now point to `network@kabuk.com`.
 - `site.canonicalBase` (`kabukplatform.com`) is unverified, so the site still ships `noindex` and a closed `robots.txt`.
 - `urls.*` are marked TODO for verification. No Omakastay URL exists, so the site has no link to it.
 - The privacy notice is a draft.
-- The ja, ko, zh-TW and ar translations are drafts. The 113 new or changed strings per locale were drafted for this update and have **not** had native review. Reviewer flags:
+- The ja, ko, zh-TW and ar translations were accepted by the site owner "for now" (2026-10-16) without native review. The draft-translation banner stays on until a locale's `review` is set to `approved`. The 113 new or changed strings per locale were drafted for this update and have **not** had native review. Reviewer flags:
   - **zh-TW:** footer now 旗下產品 (product). 物業 for "property" in the header CTA may read as real estate in Taiwan; 住宿設施 is an option. "Your Control." is rendered 您做主.
   - **ko:** "Your Control." is rendered 당신의 관리 (literal). "Subject to eligibility" (자격 요건에 따라 제공) is long for a chip.
   - **ja:** "Subject to eligibility" is 対象条件あり. HafH is described as 旅のサブスクリプション会員. "Booking attribution" is 予約の帰属.
