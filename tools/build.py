@@ -532,6 +532,7 @@ def page_home(loc, t):
 <section class="section section-surface" aria-labelledby="onb-title"><div class="container">
 {section_head(t("home.onboarding.eyebrow"), t("home.onboarding.title"), "", "onb-title")}
 <ol class="steps">{steps}</ol>
+<p class="notice notice-info" style="margin-top:40px" data-reveal>{icon("info")}<span><strong>{t("home.onboarding.note")}</strong></span></p>
 <div class="actions">{connect_btn(loc, t("home.onboarding.cta"))}</div>
 </div></section>
 

@@ -18,6 +18,7 @@ Copy from `01_KabuK_Platform_Website_Copy.md`, applied per `03_Claude_Prompt_Pla
 - Omakastay now targets travelers from North America and Europe.
 - The white-label copy now mentions planned no-cost and low-cost packages. No prices are given.
 - Footer: KabuK Platform is "a KabuK Style Inc. product".
+- **No setup fee for hotels** (confirmed): added as a notice under the Home onboarding steps and as the first Solutions FAQ item, in all locales.
 
 ### Fixed
 - Contact select options were taken from each locale's own dictionary, so an option missing from a translation was silently dropped instead of reported. They now follow the English keys.

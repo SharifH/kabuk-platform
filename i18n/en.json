@@ -333,6 +333,7 @@
           "body": "Access support and new opportunities as the KabuK ecosystem develops."
         }
       ],
+      "note": "No setup fee for hotels.",
       "cta": "Start Hotel Onboarding"
     },
     "audiences": {
@@ -456,6 +457,10 @@
       "eyebrow": "Controls and transparency",
       "title": "Questions hotels ask.",
       "items": [
+        {
+          "q": "Is there a setup fee for hotels?",
+          "a": "No. There is no setup fee for hotels to onboard with KabuK Platform. Commercial terms for individual channels are reviewed with you during onboarding."
+        },
         {
           "q": "Can I choose which channels sell my rooms?",
           "a": "Channel eligibility and controls depend on your agreement, the supported integration, and distribution settings. We review available options during onboarding."

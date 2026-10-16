@@ -23,7 +23,7 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 | White-label solutions | **Planned**; packages will be a mix of no-cost and low-cost (confirmed) | Coming soon module and benefit card; "planned low-cost and no-cost packages"; no prices | `modules.whiteLabel` |
 | Brand promise "We build around hotels…" | Confirmed | Why hero | Copy |
 | KabuK Platform is a **product** of KabuK Style Inc. | Confirmed | Footer "A KabuK Style Inc. product." in all locales | Copy |
-| Hotel setup fee | "No setup fee is correct" (see §2) | Not stated on the site | n/a |
+| **No setup fee for hotels** | Confirmed | Notice under the Home onboarding steps; first Solutions FAQ item (all locales) | Copy |
 | Partner login | n/a | Not added; `urls.adminConsole` is a placeholder | n/a |
 
 `module_state()` in `tools/build.py` treats any value other than `comingSoon` (including `live`) as hidden.
@@ -31,7 +31,7 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 ## 2. Open items
 
 1. **Shared onboarding claim:** "One onboarding relationship. Multiple paths to demand" (Home hero) and "One Onboarding, Multiple Opportunities" (Solutions). Confirm that a hotel onboards once through KabuK Platform and is then considered for each channel, rather than signing up to each channel separately.
-2. **Hotel setup fee:** confirmed that there is no setup fee. It is **not** stated on the site yet. Decide whether to publish it and where (e.g. onboarding step 1 or the FAQ), and whether any other fees apply (the source copy warns not to imply KBKX's distributor fee policy).
+2. **Other hotel fees:** the site now says there is no setup fee and that "commercial terms for individual channels are reviewed with you during onboarding". Confirm that this second sentence is accurate.
 3. **White-label pricing:** the site says only "planned low-cost and no-cost packages". Specific prices, scope and eligibility are still to be announced.
 
 ## 3. Copy I wrote that is not in the source document
