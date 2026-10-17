@@ -24,7 +24,8 @@
       "about": "About",
       "connect": "Connect Your Property",
       "benefits": "Hotel benefits",
-      "ecosystem": "Distribution ecosystem"
+      "ecosystem": "Distribution ecosystem",
+      "connectOptions": "Ways to connect"
     },
     "segments": {
       "hotels": {
@@ -53,7 +54,7 @@
       "analytics": "Analytics & Automation"
     },
     "status": {
-      "core": "Core service",
+      "live": "Live",
       "development": "In development",
       "planned": "Planned",
       "eligible": "Subject to eligibility",
@@ -108,7 +109,7 @@
         "operations": "Operations",
         "analytics": "Analytics & Automation"
       },
-      "plannedTag": "AI workflows planned",
+      "plannedTag": "AI workflows in development",
       "base": "Shared foundation",
       "baseItems": [
         "Integration patterns",
@@ -356,7 +357,7 @@
     },
     "transparency": {
       "title": "How we describe our capabilities",
-      "body": "We label each service area by maturity—core service, in development, or planned—and confirm scope with every partner. Nothing on this site is a service-level commitment or a public API.",
+      "body": "We label each service area and feature by status (live, in development, coming soon, or planned) and confirm scope with every partner. Nothing on this site is a service-level commitment or a public API.",
       "link": "See capability status"
     },
     "cta": {
@@ -375,7 +376,7 @@
         "One onboarding for eligible KabuK channels",
         "Distribution visibility, where data is available",
         "Rate and availability controls",
-        "Connectivity through existing PMS or channel manager"
+        "Channel manager connections provided through Bakuun"
       ]
     },
     "destinations": {
@@ -495,6 +496,20 @@
       "platformBody": "Hotel onboarding, connectivity, inventory information, commercial controls, and operational services that support the broader ecosystem.",
       "cta": "Connect Your Property"
     },
+    "connect": {
+      "eyebrow": "Ways to connect",
+      "title": "How your property connects.",
+      "lead": "Channel manager connections are provided through Bakuun and are being rolled out, so check each status below. Payments are settled through the options listed. Your connection method is confirmed during onboarding.",
+      "channelManagersTitle": "Channel manager connections",
+      "provided": "Provided through {provider}.",
+      "paymentsTitle": "Payment options",
+      "paymentsBody": "KabuK Platform is not a licensed payment processor.",
+      "payments": {
+        "direct": "Direct payment (bank transfer)",
+        "vcc": "Virtual credit card (VCC)"
+      },
+      "note": "Statuses reflect current availability and may change. Connection support depends on your system and is confirmed during onboarding."
+    },
     "segments": {
       "eyebrow": "Solutions",
       "title": "One foundation, shaped to different travel business models.",
@@ -545,9 +560,9 @@
     },
     "legend": {
       "title": "Capability status",
-      "core": "A foundation service area within KabuK Platform. Scope is confirmed for each engagement.",
+      "live": "Available today. Scope is confirmed for each engagement.",
       "development": "Actively being built. Timing and scope are not yet committed.",
-      "planned": "On the roadmap. Not available today."
+      "comingSoon": "Scheduled for release. Not available today."
     },
     "domainsTitle": "Service domains",
     "covers": "Covers",
@@ -561,7 +576,7 @@
           "Channel- and partner-specific commercial rules",
           "Rule management for operations teams"
         ],
-        "note": "Pricing is rule-based. Automated or machine-learning price optimization is not part of the current scope."
+        "note": "Pricing is rule-based today. Machine-learning price optimization is coming soon."
       },
       "booking": {
         "body": "Coordinate booking transactions and the reservation lifecycle across connected systems.",
@@ -591,7 +606,7 @@
           "Accounts payable and receivable",
           "Settlement-related workflows"
         ],
-        "note": "KabuK Platform supports financial workflows. It is not a licensed payment processor or escrow service."
+        "note": "KabuK Platform supports financial workflows. It is not a licensed payment processor or escrow service. Payments are made by direct bank transfer today; virtual credit card (VCC) payments are coming soon."
       },
       "identity": {
         "body": "Manage partner access and operational administration through defined permissions and tools.",
@@ -609,9 +624,9 @@
           "Operational reporting",
           "Transaction and partner visibility",
           "Exception monitoring",
-          "AI-assisted workflows (planned)"
+          "AI-assisted workflows (in development)"
         ],
-        "note": "AI-assisted workflows, including KAOS, are planned and in development. They are not generally available."
+        "note": "AI-assisted workflows, including the KabuK Automated Operations Service, are in development. They are not generally available."
       }
     },
     "connectivity": {
@@ -622,7 +637,8 @@
         "Consistent data structures across partners",
         "Defined reservation and status events",
         "Partner onboarding with explicit responsibilities"
-      ]
+      ],
+      "link": "See ways to connect"
     },
     "operations": {
       "eyebrow": "Operations",
@@ -688,7 +704,7 @@
         },
         {
           "title": "Honest about maturity",
-          "body": "We distinguish core services, work in development, and planned capabilities—and confirm scope with every partner."
+          "body": "We distinguish live capabilities, work in development, and features that are coming soon—and confirm scope with every partner."
         }
       ]
     },
@@ -743,7 +759,7 @@
         {
           "role": "Consumer travel products",
           "name": "HafH · Omakastay",
-          "body": "KabuK's traveler-facing products: HafH, a travel membership, and Omakastay, an AI travel concierge for travelers from North America and Europe (planned).",
+          "body": "KabuK's traveler-facing products: HafH, a travel membership, and Omakastay, an AI travel concierge for travelers from North America and Europe (coming soon).",
           "link": "hafh"
         }
       ],

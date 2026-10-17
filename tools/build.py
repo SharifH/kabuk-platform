@@ -153,9 +153,18 @@ def ext_link(key, label, t, cls=""):
             f'{label}<span class="sr-only"> ({t("common.external")})</span>{icon("external", "ext")}</a>')
 
 
+# Status value -> chip style. Unknown values fall back to "planned" (the most conservative label).
+CHIP_CLASS = {"live": "core", "eligible": "core", "pilot": "development", "development": "development",
+              "comingSoon": "planned", "planned": "planned"}
+
+
+def chip(status, t):
+    status = status if status in CHIP_CLASS else "planned"
+    return f'<span class="chip chip-{CHIP_CLASS[status]}">{t("common.status." + status)}</span>'
+
+
 def status_chip(key, t):
-    status = CONFIG["capabilityStatus"].get(key, "core")
-    return f'<span class="chip chip-{status}">{t("common.status." + status)}</span>'
+    return chip(CONFIG["capabilityStatus"].get(key, "planned"), t)
 
 
 def module_state(name):
@@ -170,11 +179,7 @@ def coming_soon_chip(t):
 
 
 def channel_chip(key, t):
-    status = CONFIG.get("channelStatus", {}).get(key, "planned")
-    if status not in ("eligible", "pilot", "planned"):
-        status = "planned"
-    cls = "development" if status == "pilot" else ("core" if status == "eligible" else "planned")
-    return f'<span class="chip chip-{cls}">{t("common.status." + status)}</span>'
+    return chip(CONFIG.get("channelStatus", {}).get(key, "planned"), t)
 
 
 # ---------------------------------------------------------------------------
@@ -238,7 +243,7 @@ def header(loc, t, page_id):
     sol_items = f'<li class="menu-overview"><a href="{href(loc, "solutions")}">{t("common.nav.solutionsOverview")}</a></li>' + "".join(
         f'<li><a href="{href(loc, "solutions", anchor)}">{t(f"common.segments.{k}.name")}<small>{t(f"common.segments.{k}.hint")}</small></a></li>'
         for k, anchor, _ in SEGMENTS) + "".join(
-        f'<li><a href="{href(loc, "solutions", anchor)}">{t("common.nav." + k)}</a></li>' for k, anchor in [("benefits", "benefits"), ("ecosystem", "ecosystem")])
+        f'<li><a href="{href(loc, "solutions", anchor)}">{t("common.nav." + k)}</a></li>' for k, anchor in [("benefits", "benefits"), ("ecosystem", "ecosystem"), ("connectOptions", "connect")])
     tech_items = f'<li class="menu-overview"><a href="{href(loc, "technology")}">{t("common.nav.technologyOverview")}</a></li>' + "".join(
         f'<li><a href="{href(loc, "technology", d)}">{t(f"common.services.{d}")}</a></li>' for d in DOMAINS)
     lang_items = "".join(
@@ -365,7 +370,7 @@ def eco_diagram(t, uid="eco"):
         if c == "exchange":
             items = "".join(f"<li>{esc(x)}</li>" for x in t.raw(k + "distributorItems"))
             extra = f'<div class="eco-downstream"><p>{t(k + "distributors")}</p><ul>{items}</ul></div>'
-        planned = " eco-channel--planned" if CONFIG.get("channelStatus", {}).get(c) == "planned" else ""
+        planned = " eco-channel--planned" if CONFIG.get("channelStatus", {}).get(c) in ("planned", "comingSoon") else ""
         branches += (f'<li class="eco-channel{planned}" data-reveal style="--d:{i + 2}"><p class="eco-kind">{t(k + "channels." + c + ".kind")}</p>'
                      f'<p class="eco-name" lang="en" dir="ltr">{t(k + "channels." + c + ".name")}</p>'
                      f'<p class="eco-desc">{t(k + "channels." + c + ".body")}</p>{channel_chip(c, t)}{extra}</li>')
@@ -380,6 +385,27 @@ def eco_diagram(t, uid="eco"):
 <ul class="eco-channels">{branches}</ul>
 <figcaption class="rel-caption">{t(k + "caption")}</figcaption>
 </figure>"""
+
+
+def connect_options(loc, t):
+    """Solutions > Ways to connect: channel manager connections (provided through Bakuun) and payment options,
+    each with its status from site-config.json connections.*"""
+    k = "solutions.connect."
+    conn = CONFIG.get("connections", {})
+    cm = conn.get("channelManagers", {})
+    rows = "".join(f'<li><span class="connect-name" lang="en" dir="ltr">{esc(s["name"])}</span>{chip(s.get("status"), t)}</li>'
+                   for s in cm.get("systems", []))
+    pays = "".join(f'<li><span class="connect-name">{t(k + "payments." + p)}</span>{chip(st, t)}</li>'
+                   for p, st in conn.get("payments", {}).items())
+    provider = t(k + "provided").replace("{provider}", f'<span lang="en" dir="ltr">{esc(cm.get("provider", ""))}</span>')
+    return f"""<section class="section" id="connect" aria-labelledby="connect-title"><div class="container">
+{section_head(t(k + "eyebrow"), t(k + "title"), t(k + "lead"), "connect-title")}
+<div class="grid grid-2">
+<article class="card" data-reveal><span class="card-icon">{icon("connectivity")}</span><h3>{t(k + "channelManagersTitle")}</h3><p>{provider}</p><ul class="connect-list">{rows}</ul></article>
+<article class="card" data-reveal style="--d:1"><span class="card-icon">{icon("billing")}</span><h3>{t(k + "paymentsTitle")}</h3><p>{t(k + "paymentsBody")}</p><ul class="connect-list">{pays}</ul></article>
+</div>
+<p class="fineprint" style="margin-top:24px">{t(k + "note")}</p>
+</div></section>"""
 
 
 def gated_modules(loc, t):
@@ -482,7 +508,7 @@ def compare_diagram(t):
 
 def ai_chip(t):
     status = CONFIG["capabilityStatus"].get("ai", "planned")
-    return f'<span class="chip chip-{status}">{t("diagram.arch.plannedTag")}</span>'
+    return f'<span class="chip chip-{CHIP_CLASS.get(status, "planned")}">{t("diagram.arch.plannedTag")}</span>'
 
 
 # ---------------------------------------------------------------------------
@@ -586,6 +612,7 @@ def page_solutions(loc, t):
 <div class="grid grid-3" style="margin-top:48px">{eco_cols}</div>
 <div class="actions">{connect_btn(loc, t(k + "cta"))}</div>
 </div></section>
+{connect_options(loc, t)}
 <section class="section" aria-labelledby="seg-title"><div class="container">
 {section_head(t("solutions.segments.eyebrow"), t("solutions.segments.title"), t("solutions.segments.lead"), "seg-title")}
 {rows}</div></section>
@@ -599,8 +626,8 @@ def page_solutions(loc, t):
 
 
 def page_technology(loc, t):
-    legend = "".join(f'<div class="legend-item"><span><span class="chip chip-{s}">{t("common.status." + s)}</span></span><p>{t("technology.legend." + s)}</p></div>'
-                     for s in ["core", "development", "planned"])
+    legend = "".join(f'<div class="legend-item"><span>{chip(s, t)}</span><p>{t("technology.legend." + s)}</p></div>'
+                     for s in ["live", "development", "comingSoon"])
     domains = ""
     for d in DOMAINS:
         covers = "".join(f"<li>{esc(x)}</li>" for x in t.raw(f"technology.domains.{d}.covers"))
@@ -627,7 +654,7 @@ def page_technology(loc, t):
 {domains}
 </div></section>
 <section class="section" aria-label="{t("technology.connectivity.eyebrow")} · {t("technology.operations.eyebrow")}"><div class="container grid grid-2">
-<article class="card" id="connectivity" data-reveal><span class="card-icon">{icon("connectivity")}</span><p class="eyebrow">{t("technology.connectivity.eyebrow")}</p><h3>{t("technology.connectivity.title")}</h3><p>{t("technology.connectivity.body")}</p><ul class="tick-list" style="grid-template-columns:1fr">{points("technology.connectivity.points")}</ul></article>
+<article class="card" id="connectivity" data-reveal><span class="card-icon">{icon("connectivity")}</span><p class="eyebrow">{t("technology.connectivity.eyebrow")}</p><h3>{t("technology.connectivity.title")}</h3><p>{t("technology.connectivity.body")}</p><ul class="tick-list" style="grid-template-columns:1fr">{points("technology.connectivity.points")}</ul><span class="card-foot"><a class="text-link" href="{href(loc, "solutions", "connect")}">{t("technology.connectivity.link")}{icon("arrow", "icon icon-dir")}</a></span></article>
 <article class="card" id="operations" data-reveal style="--d:1"><span class="card-icon">{icon("operations")}</span><p class="eyebrow">{t("technology.operations.eyebrow")}</p><h3>{t("technology.operations.title")}</h3><p>{t("technology.operations.body")}</p><ul class="tick-list" style="grid-template-columns:1fr">{points("technology.operations.points")}</ul></article>
 </div>
 <div class="container"><p class="fineprint" style="margin-top:32px">{t("technology.disclaimer")}</p></div>

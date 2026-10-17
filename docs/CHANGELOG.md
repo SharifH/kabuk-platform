@@ -1,5 +1,18 @@
 # Changelog — KabuK Platform website
 
+## 1.2.0 — 2026-10-17 (unreleased)
+
+### Added
+- **Solutions › Ways to connect (`#connect`):** channel manager connections provided through Bakuun (TL-Lincoln: In development; Sanha: Coming soon; Neppan: Coming soon) and payment options (Direct payment by bank transfer: Live; VCC: Coming soon). It is driven by the new `site-config.json` → `connections` and linked from the Solutions menu and Technology › Connectivity.
+
+### Changed
+- Status vocabulary is now live / in development / coming soon / planned, through a single `chip()` helper. Unknown values fall back to "Planned".
+- Core services are **Live**. Analytics & Automation and AI-assisted workflows are **In development**. Omakastay is **Coming soon**.
+- Pricing note: rule-based today, machine-learning optimisation coming soon. Billing note: not a licensed payment processor; bank transfer today, VCC coming soon.
+- The internal automation-service name was removed from the site and docs; it is referred to publicly as "KabuK Automated Operations Service".
+- Links: www.kabukexchange.com, www.hafh.com, and www.kabuk.com (corporate, previously kabuk.co.jp).
+- The hotel topic "Connectivity through existing PMS or channel manager" became "Channel manager connections provided through Bakuun".
+
 ## 1.1.0 — 2026-10-16 (unreleased; pending commercial/product approval)
 
 ### Changed — hotel-first positioning
@@ -59,7 +72,7 @@ Implements `CLAUDE_CODE_KABUK_PLATFORM_IMPLEMENTATION_PROMPT.md`, using `KABUK_P
 - **Visual system 1 — Platform service architecture** (`arch_diagram`): a three-layer diagram. Businesses and products (third parties dashed gray, KabuK Exchange in network blue) sit above KabuK Platform core services (8 nodes, ink outline), which sit above the shared foundation. It has animated connection pulses and a light that cycles across nodes. It is reused in the home hero (compact) and on Technology (full).
 - **Visual system 2 — Product relationship** (`rel_diagram`): Supply → KabuK Exchange → Distribution, with **KabuK Platform as a foundation slab beneath Exchange**, not a fourth peer. OTAs and wholesalers are marked "Both sides". PMS, CRS and channel managers appear as connectivity providers, not sellers. A caption states it is illustrative, not live integrations. It is reused on Home, Solutions and About (dark sections), mirrors for Arabic and stacks vertically on mobile.
 - **Visual system 3 — Point-to-point vs shared foundation** (Why page), SVG with a flowing-dash animation.
-- **Capability status chips**, driven by `site-config.json` → `capabilityStatus`, plus a status legend on Technology (`#status`). Analytics is shown as **In development**, and AI/KAOS workflows as **Planned**.
+- **Capability status chips**, driven by `site-config.json` → `capabilityStatus`, plus a status legend on Technology (`#status`). Analytics is shown as **In development**, and AI-assisted workflows as **Planned**.
 - **Scope notes** on each Technology domain that turn the copy doc's guardrails into honest public statements. For example: rule-based pricing with no ML optimization; not a licensed payment processor or escrow; no certification claims.
 - **Navigation**: Solutions ▾ and Technology ▾ disclosure menus (keyboard, Escape, focus return, click-outside), Why KabuK Platform, About, a language menu and a **Talk to Us** CTA. Below 1080px it becomes a mobile panel with accordions.
 - **Footer** per the copy doc §9. KabuK Style Products links (Exchange, HafH, KabuK Style Inc.) come from `site-config.json`. Terms is omitted until approved.
