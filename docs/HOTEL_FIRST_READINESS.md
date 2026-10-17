@@ -13,25 +13,34 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 | **Single onboarding** covers all KabuK products, subject to eligibility | Confirmed | Hero note, "One Onboarding, Multiple Opportunities", FAQ (activation still depends on eligibility, readiness, terms and approval) | Copy |
 | One onboarding → HafH | **Pilot** (confirmed) | Chip "Pilot" | `channelStatus.hafh` |
 | One onboarding → KabuK Exchange | **Pilot** (confirmed) | Chip "Pilot" | `channelStatus.exchange` |
-| One onboarding → Omakastay | **Planned** | Chip "Planned", dashed card; "Prepare to reach…" | `channelStatus.omakastay` |
+| One onboarding → Omakastay | **Coming soon** (confirmed) | Chip "Coming soon", dashed card; "Prepare to reach…" | `channelStatus.omakastay` |
 | Omakastay target markets | Travelers from **North America and Europe** (confirmed) | Diagram, Solutions ecosystem, About | Copy |
 | KabuK Exchange distributor types (agencies, OTAs, wholesalers, travel apps, membership platforms) | Available (confirmed) | Diagram downstream list, Solutions | Copy |
 | Distribution visibility (who sells inventory, booking attribution) | **Available** (confirmed) | Visible; coverage qualifier kept | Copy |
 | Commercial and inventory controls | **Available** (confirmed) | Visible; "supported … according to your agreements" kept | Copy |
 | Clearer operational insight | **Available** (confirmed) | Visible | Copy |
 | **Rate transparency** / discrepancy indicators | **Not available** (confirmed) → Coming soon | Chip on the Rate Transparency pillar and the two rate benefit cards; FAQ answers "Not yet"; "rate" removed from visibility claims elsewhere | `modules.rateTransparency` |
-| Market intelligence / comparable properties | **Planned** | Coming soon module and benefit card; register interest | `modules.marketInsights` |
+| Market intelligence / comparable properties | **Coming soon** (confirmed) | Coming soon module and benefit card; register interest | `modules.marketInsights` |
 | White-label solutions | **Planned**; packages will be a mix of no-cost and low-cost (confirmed) | Coming soon module and benefit card; "planned low-cost and no-cost packages"; no prices | `modules.whiteLabel` |
 | Brand promise "We build around hotels…" | Confirmed | Why hero | Copy |
 | KabuK Platform is a **product** of KabuK Style Inc. | Confirmed | Footer "A KabuK Style Inc. product." in all locales | Copy |
 | **No setup fee for hotels** | Confirmed | Notice under the Home onboarding steps; first Solutions FAQ item (all locales) | Copy |
+| Core services: Pricing & Availability, Booking & Reservations, Billing & Payments, Content & Mapping, Identity & Administration | **Live** (confirmed) | Technology chips "Live"; legend "Available today. Scope is confirmed for each engagement." | `capabilityStatus.*` |
+| Analytics & Automation; AI-assisted workflows | **In development** (confirmed) | Chips "In development" / "AI workflows in development" | `capabilityStatus.analytics`, `.ai` |
+| Pricing method | Rule-based today; machine-learning optimisation **coming soon** (confirmed) | Technology › Pricing scope note | Copy |
+| Payments | Not a licensed payment processor (confirmed). **Direct payment (bank transfer): Live**, **VCC: Coming soon** | Technology › Billing note; Solutions › Ways to connect | `connections.payments` |
+| Channel manager connections, **provided through Bakuun** | **TL-Lincoln: In development**, **Sanha: Coming soon**, **Neppan: Coming soon** (confirmed) | Solutions › Ways to connect (`#connect`), Solutions menu, hotel topics, Technology › Connectivity link | `connections.channelManagers` |
+| Automation service name | Internal name kept private; public name "KabuK Automated Operations Service" (confirmed) | Technology › Analytics note | Copy |
+| External links | Confirmed: www.kabukexchange.com, www.hafh.com, www.kabuk.com | Footer, About, JSON-LD publisher | `urls.*` |
 | Partner login | n/a | Not added; `urls.adminConsole` is a placeholder | n/a |
 
 `module_state()` in `tools/build.py` treats any value other than `comingSoon` (including `live`) as hidden.
 
 ## 2. Open items
 
-None. All copy claims are confirmed by the site owner (2026-10-16):
+- **Direct payment = bank transfer?** Solutions shows "Direct payment (bank transfer)", inferred from "payment solutions through bank transfer and VCC". Confirm.
+
+No other open copy items. All copy claims are confirmed by the site owner (2026-10-16):
 
 - Channel commercial terms are reviewed with each hotel during onboarding (FAQ "Is there a setup fee for hotels?").
 - White-label prices, scope and eligibility are still to be announced. The site keeps saying "planned low-cost and no-cost packages", with no prices.
@@ -57,7 +66,7 @@ Bridging copy is needed where the source has no text for an existing component. 
 
 - ~~Lead inboxes~~ Resolved: all `leads.routes.*` now point to `network@kabuk.com`.
 - `site.canonicalBase` (`kabukplatform.com`) is unverified, so the site still ships `noindex` and a closed `robots.txt`.
-- `urls.*` are marked TODO for verification. No Omakastay URL exists, so the site has no link to it.
+- No Omakastay URL exists, so the site has no link to it.
 - The privacy notice is a draft.
 - The ja, ko, zh-TW and ar translations were accepted by the site owner "for now" (2026-10-16) without native review. The draft-translation banner stays on until a locale's `review` is set to `approved`. The 113 new or changed strings per locale were drafted for this update and have **not** had native review. Reviewer flags:
   - **zh-TW:** footer now 旗下產品 (product). 物業 for "property" in the header CTA may read as real estate in Taiwan; 住宿設施 is an option. "Your Control." is rendered 您做主.

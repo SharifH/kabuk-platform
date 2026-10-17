@@ -15,26 +15,26 @@
     "_logoNote": "Official KabuK brush mark from the KabuK design library, paired with the 'Platform' descriptor. A dedicated KabuK Platform lockup has not been approved yet."
   },
   "urls": {
-    "exchange": "https://kabukexchange.com/",
-    "corporate": "https://www.kabuk.co.jp/",
+    "exchange": "https://www.kabukexchange.com/",
+    "corporate": "https://www.kabuk.com/",
     "hafh": "https://www.hafh.com/",
     "adminConsole": "https://console.example.com/",
-    "_note": "TODO: verify each URL. adminConsole is not linked publicly."
+    "_note": "exchange, hafh and corporate confirmed by the site owner 2026-10-16. adminConsole is a placeholder and is not linked publicly."
   },
   "capabilityStatus": {
-    "_values": "core | development | planned. 'core' = a foundation service area within KabuK Platform, scoped per engagement (not a claim of standalone public availability). Confirm with product before launch.",
-    "pricing": "core",
-    "booking": "core",
-    "content": "core",
-    "billing": "core",
-    "identity": "core",
+    "_values": "live | development | comingSoon | planned. Confirmed 2026-10-16: core service areas are live (scope confirmed per engagement); analytics, automation and AI-assisted workflows are in development.",
+    "pricing": "live",
+    "booking": "live",
+    "content": "live",
+    "billing": "live",
+    "identity": "live",
     "analytics": "development",
-    "ai": "planned"
+    "ai": "development"
   },
   "channelStatus": {
-    "_values": "eligible | pilot | planned. How each KabuK distribution channel is labelled for hotels. 'eligible' = available to properties that meet eligibility and approval (never automatic). Confirmed 2026-10-16: HafH and KabuK Exchange are pilot; Omakastay is planned.",
+    "_values": "eligible | pilot | comingSoon | planned. How each KabuK distribution channel is labelled for hotels; activation is never automatic. Confirmed 2026-10-16: HafH and KabuK Exchange are pilot; Omakastay is coming soon.",
     "hafh": "pilot",
-    "omakastay": "planned",
+    "omakastay": "comingSoon",
     "exchange": "pilot"
   },
   "modules": {
@@ -42,6 +42,30 @@
     "marketInsights": "comingSoon",
     "whiteLabel": "comingSoon",
     "rateTransparency": "comingSoon"
+  },
+  "connections": {
+    "_values": "live | development | comingSoon | planned. Hotel connection methods shown on Solutions > Ways to connect. System names are proper nouns and are not translated. Confirmed 2026-10-16.",
+    "channelManagers": {
+      "provider": "Bakuun",
+      "systems": [
+        {
+          "name": "TL-Lincoln",
+          "status": "development"
+        },
+        {
+          "name": "Sanha",
+          "status": "comingSoon"
+        },
+        {
+          "name": "Neppan",
+          "status": "comingSoon"
+        }
+      ]
+    },
+    "payments": {
+      "direct": "live",
+      "vcc": "comingSoon"
+    }
   },
   "leads": {
     "formMode": "mailto",

@@ -422,6 +422,11 @@ a.card:hover .text-link { text-decoration: underline; }
 .eco-text-list strong { color: var(--text); font-weight: 600; }
 .card.is-foundation { box-shadow: inset 0 var(--stroke-bar) 0 var(--brand); }
 
+/* Ways to connect (Solutions #connect) */
+.connect-list { list-style: none; display: flex; flex-direction: column; border-top: var(--stroke-hairline) solid var(--border); margin-top: var(--space-4); }
+.connect-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-12); padding-block: var(--space-12); border-bottom: var(--stroke-hairline) solid var(--border); }
+.connect-name { font: 600 15px/20px var(--font-sans); color: var(--text); }
+
 /* Gated hotel modules (site-config.json modules.*) */
 .module-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-12); }
 .module-card h3 { font: var(--type-h3); font-family: var(--font-sans); }
