@@ -38,9 +38,7 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 
 ## 2. Open items
 
-- **Direct payment = bank transfer?** Solutions shows "Direct payment (bank transfer)", inferred from "payment solutions through bank transfer and VCC". Confirm.
-
-No other open copy items. All copy claims are confirmed by the site owner (2026-10-16):
+None. "Direct payment (bank transfer)" was confirmed on 2026-10-17. All copy claims are confirmed by the site owner (2026-10-16):
 
 - Channel commercial terms are reviewed with each hotel during onboarding (FAQ "Is there a setup fee for hotels?").
 - White-label prices, scope and eligibility are still to be announced. The site keeps saying "planned low-cost and no-cost packages", with no prices.
