@@ -59,7 +59,8 @@
       "eligible": "対象条件あり",
       "pilot": "パイロット",
       "comingSoon": "近日公開",
-      "live": "提供中"
+      "live": "提供中",
+      "unconfirmed": "ステータス確認中"
     },
     "footer": {
       "tagline": "ホテルのオンボーディング、流通の可視化とコントロール。KabuK Style Inc. のプロダクトです。",
@@ -376,7 +377,7 @@
         "対象となる KabuK チャネルへのオンボーディングをひとつに",
         "データが入手可能な場合の流通の可視化",
         "料金・在庫のコントロール",
-        "Bakuun を通じて提供されるサイトコントローラー接続"
+        "Bakuun を通じたサイトコントローラー・PMS 接続と、直接連携"
       ]
     },
     "destinations": {
@@ -499,15 +500,33 @@
     "connect": {
       "eyebrow": "接続方法",
       "title": "施設の接続方法。",
-      "lead": "サイトコントローラー接続は Bakuun を通じて提供され、順次対応を進めています。各ステータスは以下をご確認ください。お支払いは以下の方法で精算します。接続方法はオンボーディングの中で確認します。",
-      "channelManagersTitle": "サイトコントローラー接続",
-      "provided": "{provider} を通じて提供されます。",
+      "lead": "現在お使いのサイトコントローラーや PMS を通じて接続できます。Bakuun を通じて {count} 件の連携が提供されているほか、KabuK の直接連携も順次提供します。お支払いは以下の方法で精算します。接続方法はオンボーディングの中で確認します。",
+      "directTitle": "直接連携",
+      "directBody": "これらのシステムとの KabuK 独自の連携です。",
       "paymentsTitle": "お支払い方法",
       "paymentsBody": "KabuK Platform は認可を受けた決済代行業者ではありません。",
       "payments": {
         "direct": "直接支払い（銀行振込）",
         "vcc": "バーチャルクレジットカード（VCC）"
       },
+      "bakuunTitle": "サイトコントローラー、PMS など",
+      "provided": "{provider} を通じて提供されます。",
+      "bakuunBody": "Bakuun が掲載している {count} 件の連携です。",
+      "filtersLabel": "連携を絞り込む",
+      "search": "連携を検索",
+      "searchPlaceholder": "名前で検索",
+      "statusLabel": "ステータス",
+      "statusAll": "すべてのステータス",
+      "typeLabel": "パートナー種別",
+      "typeAll": "すべての種別",
+      "types": {
+        "premium": "プレミアムパートナー",
+        "connectivity": "コネクティビティパートナー"
+      },
+      "count": "{total} 件中 {shown} 件を表示",
+      "empty": "条件に一致する連携はありません。",
+      "source": "ステータスは {provider} が {date} 時点で公開している情報です。変更される場合があります。",
+      "sourceLink": "Bakuun で最新の一覧を見る",
       "note": "ステータスは現在の提供状況を示しており、変更される場合があります。接続の可否はご利用のシステムによって異なり、オンボーディングの中で確認します。"
     },
     "segments": {

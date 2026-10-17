@@ -48,7 +48,8 @@ Serve over HTTP (not `file://`); the form reads `site-config.json` with `fetch`.
 | `urls.exchange`, `urls.hafh`, `urls.corporate` | Footer and cross-product links | Applied at runtime too; rebuild to update the static HTML |
 | `leads.routes.*`, `leads.organizationTypeRoute` | Which inbox each organization type's email is addressed to | No (read at runtime) |
 | `capabilityStatus.*` | `live` / `development` / `comingSoon` / `planned` chips on the Technology page and the architecture diagram | Yes |
-| `connections.channelManagers`, `connections.payments` | Solutions › Ways to connect: channel managers (provided through Bakuun) and payment options, each with a status chip | Yes |
+| `connections.direct`, `connections.payments` | Solutions › Ways to connect: KabuK direct integrations and payment options, each with a status chip | Yes |
+| `connections.bakuun.data` | Filterable directory of integrations provided through Bakuun, read from `assets/data/bakuun-integrations.json`. Refresh with `python3 tools/fetch_bakuun.py` (see the script header if Python reports a certificate error), review the diff, then rebuild | Yes |
 | `channelStatus.hafh`, `.omakastay`, `.exchange` | `eligible` / `pilot` / `comingSoon` / `planned` chips on the hotel ecosystem diagram | Yes |
 | `modules.marketInsights`, `modules.whiteLabel`, `modules.rateTransparency` | `comingSoon` shows the labelled register-interest module; `hidden` removes it (and its benefit card) everywhere. There is no `live` value by design; see `docs/HOTEL_FIRST_READINESS.md` | Yes |
 | `locales[].review` | `draft` shows the "draft translation" banner; set `approved` after native review | Yes |

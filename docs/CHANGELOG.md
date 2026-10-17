@@ -1,5 +1,15 @@
 # Changelog — KabuK Platform website
 
+## 1.2.1 — 2026-10-17 (unreleased)
+
+### Fixed
+- **Ways to connect** was wrong. TL-Lincoln, Sanha and Neppan were shown as channel managers "provided through Bakuun". They are KabuK **direct integrations**: TL-Lincoln in development, Sanha and Neppan coming soon.
+- Channel manager and PMS connections **provided through Bakuun** are now a filterable directory of the 218 integrations Bakuun lists, with search, status and partner-type filters. The full list renders without JavaScript; `site.js` adds the filtering.
+
+### Added
+- `tools/fetch_bakuun.py` (stdlib only) refreshes `assets/data/bakuun-integrations.json` from bakuun.com/integrations. It keeps only Bakuun's visible status label and lists ambiguous entries under `_review`.
+- A "Status to be confirmed" status, used for NextPax, which Bakuun lists as both Live and In Development.
+
 ## 1.2.0 — 2026-10-17 (unreleased)
 
 ### Added

@@ -59,7 +59,8 @@
       "planned": "Planned",
       "eligible": "Subject to eligibility",
       "pilot": "Pilot",
-      "comingSoon": "Coming soon"
+      "comingSoon": "Coming soon",
+      "unconfirmed": "Status to be confirmed"
     },
     "footer": {
       "tagline": "Hotel onboarding, distribution visibility and control. A KabuK Style Inc. product.",
@@ -376,7 +377,7 @@
         "One onboarding for eligible KabuK channels",
         "Distribution visibility, where data is available",
         "Rate and availability controls",
-        "Channel manager connections provided through Bakuun"
+        "Channel manager and PMS connections through Bakuun, plus direct integrations"
       ]
     },
     "destinations": {
@@ -499,15 +500,33 @@
     "connect": {
       "eyebrow": "Ways to connect",
       "title": "How your property connects.",
-      "lead": "Channel manager connections are provided through Bakuun and are being rolled out, so check each status below. Payments are settled through the options listed. Your connection method is confirmed during onboarding.",
-      "channelManagersTitle": "Channel manager connections",
-      "provided": "Provided through {provider}.",
+      "lead": "Connect through the channel manager or PMS you already use, with {count} integrations provided through Bakuun, or through KabuK's direct integrations as they launch. Payments are settled through the options below. Your connection method is confirmed during onboarding.",
+      "directTitle": "Direct integrations",
+      "directBody": "KabuK's own integrations with these systems.",
       "paymentsTitle": "Payment options",
       "paymentsBody": "KabuK Platform is not a licensed payment processor.",
       "payments": {
         "direct": "Direct payment (bank transfer)",
         "vcc": "Virtual credit card (VCC)"
       },
+      "bakuunTitle": "Channel managers, PMS and more",
+      "provided": "Provided through {provider}.",
+      "bakuunBody": "{count} integrations, as listed by Bakuun.",
+      "filtersLabel": "Filter integrations",
+      "search": "Search integrations",
+      "searchPlaceholder": "Search by name",
+      "statusLabel": "Status",
+      "statusAll": "All statuses",
+      "typeLabel": "Partner type",
+      "typeAll": "All partner types",
+      "types": {
+        "premium": "Premium partner",
+        "connectivity": "Connectivity partner"
+      },
+      "count": "Showing {shown} of {total}",
+      "empty": "No integrations match your filters.",
+      "source": "Statuses as published by {provider} on {date}. They may change.",
+      "sourceLink": "View the current list on Bakuun",
       "note": "Statuses reflect current availability and may change. Connection support depends on your system and is confirmed during onboarding."
     },
     "segments": {
