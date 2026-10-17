@@ -427,6 +427,22 @@ a.card:hover .text-link { text-decoration: underline; }
 .connect-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-12); padding-block: var(--space-12); border-bottom: var(--stroke-hairline) solid var(--border); }
 .connect-name { font: 600 15px/20px var(--font-sans); color: var(--text); }
 
+.dir { margin-top: var(--space-24); }
+.dir-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-16); flex-wrap: wrap; }
+.dir-head h3 { margin-bottom: var(--space-8); }
+.dir-head .card-foot { margin-top: 0; padding-top: 0; }
+.dir-filters { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-16); margin-top: var(--space-8); }
+.no-js .dir-filters, .no-js .dir-count { display: none; }
+.dir-count { font: var(--type-small); color: var(--text-secondary); }
+.dir-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0 var(--space-24); border-top: var(--stroke-hairline) solid var(--border); }
+.dir-list li { display: flex; align-items: center; gap: var(--space-8); padding-block: 10px; border-bottom: var(--stroke-hairline) solid var(--border); min-width: 0; }
+.dir-list li[hidden] { display: none; }
+.dir-name { font: 500 14px/20px var(--font-sans); color: var(--text); flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.dir-badge { font: 500 10.5px/14px var(--font-sans); color: var(--brand-on-soft); border: var(--stroke-hairline) solid var(--brand-soft); border-radius: var(--radius-sm); padding: 1px 6px; white-space: nowrap; }
+.dir-list .chip { flex: none; }
+.dir-empty { padding-block: var(--space-16); color: var(--text-secondary); }
+@media (max-width: 860px) { .dir-filters { grid-template-columns: 1fr; } }
+
 /* Gated hotel modules (site-config.json modules.*) */
 .module-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-12); }
 .module-card h3 { font: var(--type-h3); font-family: var(--font-sans); }

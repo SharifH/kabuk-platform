@@ -59,7 +59,8 @@
       "eligible": "須符合資格",
       "pilot": "試行中",
       "comingSoon": "即將推出",
-      "live": "已上線"
+      "live": "已上線",
+      "unconfirmed": "狀態待確認"
     },
     "footer": {
       "tagline": "飯店導入、通路可視性與控管。KabuK Style Inc. 旗下產品。",
@@ -376,7 +377,7 @@
         "一次導入，對應符合資格的 KabuK 各通路",
         "通路可視性（視資料可取得程度而定）",
         "房價與房況控管",
-        "透過 Bakuun 提供的通路管理系統連線"
+        "透過 Bakuun 連接通路管理系統與 PMS，以及直接整合"
       ]
     },
     "destinations": {
@@ -499,15 +500,33 @@
     "connect": {
       "eyebrow": "連線方式",
       "title": "您的飯店如何連線。",
-      "lead": "通路管理系統連線由 Bakuun 提供，並陸續推出中，請參閱下方各項狀態。付款透過下列方式結算。連線方式將於導入過程中確認。",
-      "channelManagersTitle": "通路管理系統連線",
-      "provided": "由 {provider} 提供。",
+      "lead": "透過您目前使用的通路管理系統或 PMS 連線：Bakuun 提供 {count} 項整合，KabuK 的直接整合也將陸續推出。付款透過下列方式結算。連線方式將於導入過程中確認。",
+      "directTitle": "直接整合",
+      "directBody": "KabuK 與這些系統的自有整合。",
       "paymentsTitle": "付款方式",
       "paymentsBody": "KabuK Platform 並非持牌支付服務業者。",
       "payments": {
         "direct": "直接付款（銀行轉帳）",
         "vcc": "虛擬信用卡（VCC）"
       },
+      "bakuunTitle": "通路管理系統、PMS 等",
+      "provided": "由 {provider} 提供。",
+      "bakuunBody": "Bakuun 列出的 {count} 項整合。",
+      "filtersLabel": "篩選整合",
+      "search": "搜尋整合",
+      "searchPlaceholder": "依名稱搜尋",
+      "statusLabel": "狀態",
+      "statusAll": "所有狀態",
+      "typeLabel": "合作夥伴類型",
+      "typeAll": "所有類型",
+      "types": {
+        "premium": "進階合作夥伴",
+        "connectivity": "連線合作夥伴"
+      },
+      "count": "顯示 {shown} / {total} 項",
+      "empty": "沒有符合篩選條件的整合。",
+      "source": "狀態為 {provider} 於 {date} 公布的資訊，可能有所變動。",
+      "sourceLink": "在 Bakuun 查看最新清單",
       "note": "狀態反映目前的提供情況，可能有所變動。是否支援連線取決於您使用的系統，並將於導入過程中確認。"
     },
     "segments": {

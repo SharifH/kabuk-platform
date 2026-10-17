@@ -155,7 +155,7 @@ def ext_link(key, label, t, cls=""):
 
 # Status value -> chip style. Unknown values fall back to "planned" (the most conservative label).
 CHIP_CLASS = {"live": "core", "eligible": "core", "pilot": "development", "development": "development",
-              "comingSoon": "planned", "planned": "planned"}
+              "comingSoon": "planned", "planned": "planned", "unconfirmed": "planned"}
 
 
 def chip(status, t):
@@ -388,21 +388,51 @@ def eco_diagram(t, uid="eco"):
 
 
 def connect_options(loc, t):
-    """Solutions > Ways to connect: channel manager connections (provided through Bakuun) and payment options,
-    each with its status from site-config.json connections.*"""
+    """Solutions > Ways to connect: KabuK direct integrations, payment options, and the channel manager /
+    PMS integrations provided through Bakuun (assets/data/bakuun-integrations.json, refreshed with
+    tools/fetch_bakuun.py). The full list is rendered statically; site.js adds search and filters."""
     k = "solutions.connect."
     conn = CONFIG.get("connections", {})
-    cm = conn.get("channelManagers", {})
-    rows = "".join(f'<li><span class="connect-name" lang="en" dir="ltr">{esc(s["name"])}</span>{chip(s.get("status"), t)}</li>'
-                   for s in cm.get("systems", []))
+    bk = conn.get("bakuun", {})
+    provider = bk.get("provider", "Bakuun")
+    prov_html = f'<span lang="en" dir="ltr">{esc(provider)}</span>'
+    data = load(bk["data"]) if bk.get("data") else {"integrations": []}
+    items = data["integrations"]
+
+    def rows(entries):
+        return "".join(f'<li><span class="connect-name" lang="en" dir="ltr">{esc(e["name"])}</span>{chip(e.get("status"), t)}</li>' for e in entries)
+
     pays = "".join(f'<li><span class="connect-name">{t(k + "payments." + p)}</span>{chip(st, t)}</li>'
                    for p, st in conn.get("payments", {}).items())
-    provider = t(k + "provided").replace("{provider}", f'<span lang="en" dir="ltr">{esc(cm.get("provider", ""))}</span>')
+    dir_items = ""
+    for e in items:
+        st = e.get("status") or "unconfirmed"
+        badge = f'<span class="dir-badge">{t(k + "types.premium")}</span>' if e.get("type") == "premium" else ""
+        dir_items += (f'<li data-name="{esc(e["name"].lower())}" data-status="{st}" data-type="{esc(e.get("type") or "")}">'
+                      f'<span class="dir-name" lang="en" dir="ltr">{esc(e["name"])}</span>{badge}{chip(st, t)}</li>')
+    count = len(items)
+    opt = lambda v, label: f'<option value="{v}">{label}</option>'
+    status_opts = opt("", t(k + "statusAll")) + opt("live", t("common.status.live")) + opt("development", t("common.status.development"))
+    type_opts = opt("", t(k + "typeAll")) + opt("premium", t(k + "types.premium")) + opt("connectivity", t(k + "types.connectivity"))
+    source = (t(k + "source").replace("{provider}", prov_html).replace("{date}", f'<time dir="ltr" datetime="{esc(data.get("_retrieved", ""))}">{esc(data.get("_retrieved", ""))}</time>'))
     return f"""<section class="section" id="connect" aria-labelledby="connect-title"><div class="container">
-{section_head(t(k + "eyebrow"), t(k + "title"), t(k + "lead"), "connect-title")}
+{section_head(t(k + "eyebrow"), t(k + "title"), t(k + "lead").replace("{count}", str(count)), "connect-title")}
 <div class="grid grid-2">
-<article class="card" data-reveal><span class="card-icon">{icon("connectivity")}</span><h3>{t(k + "channelManagersTitle")}</h3><p>{provider}</p><ul class="connect-list">{rows}</ul></article>
+<article class="card" data-reveal><span class="card-icon">{icon("connectivity")}</span><h3>{t(k + "directTitle")}</h3><p>{t(k + "directBody")}</p><ul class="connect-list">{rows(conn.get("direct", []))}</ul></article>
 <article class="card" data-reveal style="--d:1"><span class="card-icon">{icon("billing")}</span><h3>{t(k + "paymentsTitle")}</h3><p>{t(k + "paymentsBody")}</p><ul class="connect-list">{pays}</ul></article>
+</div>
+<div class="card dir" id="bakuun-integrations" data-dir data-count-template="{esc(t.raw(k + "count"))}" data-reveal>
+<div class="dir-head"><div><h3 id="dir-title">{t(k + "bakuunTitle")}</h3><p>{t(k + "provided").replace("{provider}", prov_html)} {t(k + "bakuunBody").replace("{count}", str(count))}</p></div>
+<span class="card-foot">{ext_link("bakuun", t(k + "sourceLink"), t, "text-link")}</span></div>
+<form class="dir-filters" role="search" aria-label="{t(k + "filtersLabel")}" data-dir-filters>
+<div class="field"><label for="dir-q">{t(k + "search")}</label><input class="input" id="dir-q" type="search" autocomplete="off" placeholder="{t(k + "searchPlaceholder")}" data-dir-q></div>
+<div class="field"><label for="dir-status">{t(k + "statusLabel")}</label><select class="select" id="dir-status" data-dir-status>{status_opts}</select></div>
+<div class="field"><label for="dir-type">{t(k + "typeLabel")}</label><select class="select" id="dir-type" data-dir-type>{type_opts}</select></div>
+</form>
+<p class="dir-count" role="status" aria-live="polite" data-dir-count>{t(k + "count").replace("{shown}", str(count)).replace("{total}", str(count))}</p>
+<ul class="dir-list" aria-labelledby="dir-title" data-dir-list>{dir_items}</ul>
+<p class="dir-empty" data-dir-empty hidden>{t(k + "empty")}</p>
+<p class="fineprint" style="margin-top:16px">{source}</p>
 </div>
 <p class="fineprint" style="margin-top:24px">{t(k + "note")}</p>
 </div></section>"""

@@ -29,7 +29,8 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 | Analytics & Automation; AI-assisted workflows | **In development** (confirmed) | Chips "In development" / "AI workflows in development" | `capabilityStatus.analytics`, `.ai` |
 | Pricing method | Rule-based today; machine-learning optimisation **coming soon** (confirmed) | Technology › Pricing scope note | Copy |
 | Payments | Not a licensed payment processor (confirmed). **Direct payment (bank transfer): Live**, **VCC: Coming soon** | Technology › Billing note; Solutions › Ways to connect | `connections.payments` |
-| Channel manager connections, **provided through Bakuun** | **TL-Lincoln: In development**, **Sanha: Coming soon**, **Neppan: Coming soon** (confirmed) | Solutions › Ways to connect (`#connect`), Solutions menu, hotel topics, Technology › Connectivity link | `connections.channelManagers` |
+| Channel manager / PMS connections **provided through Bakuun** | As listed on bakuun.com/integrations: 218 integrations on 2026-10-17 (198 Live, 19 In Development, 1 unclear) | Solutions › Ways to connect: filterable directory (search, status, partner type) | `connections.bakuun` → `assets/data/bakuun-integrations.json` (refresh with `tools/fetch_bakuun.py`) |
+| KabuK **direct integrations** | **TL-Lincoln: In development**, **Sanha: Coming soon**, **Neppan: Coming soon** (confirmed) | Solutions › Ways to connect | `connections.direct` |
 | Automation service name | Internal name kept private; public name "KabuK Automated Operations Service" (confirmed) | Technology › Analytics note | Copy |
 | External links | Confirmed: www.kabukexchange.com, www.hafh.com, www.kabuk.com | Footer, About, JSON-LD publisher | `urls.*` |
 | Partner login | n/a | Not added; `urls.adminConsole` is a placeholder | n/a |
@@ -38,7 +39,11 @@ Statuses marked "confirmed" were signed off by the site owner on 2026-10-16. All
 
 ## 2. Open items
 
-None. "Direct payment (bank transfer)" was confirmed on 2026-10-17. All copy claims are confirmed by the site owner (2026-10-16):
+- **Two ambiguous entries on Bakuun's own list:**
+  - **NextPax** shows both "Live" and "In Development". The site shows "Status to be confirmed".
+  - **HTI (Hospitality Technology International)** has no partner type, so it only appears under "All partner types".
+  These are listed in `_review` in the data file; please confirm both.
+- **Bakuun statuses are a snapshot.** The site states "Statuses as published by Bakuun on 2026-10-17" and links to Bakuun's live list. Re-run `tools/fetch_bakuun.py` and rebuild to refresh. All copy claims are confirmed by the site owner (2026-10-16):
 
 - Channel commercial terms are reviewed with each hotel during onboarding (FAQ "Is there a setup fee for hotels?").
 - White-label prices, scope and eligibility are still to be announced. The site keeps saying "planned low-cost and no-cost packages", with no prices.

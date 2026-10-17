@@ -19,7 +19,8 @@
     "corporate": "https://www.kabuk.com/",
     "hafh": "https://www.hafh.com/",
     "adminConsole": "https://console.example.com/",
-    "_note": "exchange, hafh and corporate confirmed by the site owner 2026-10-16. adminConsole is a placeholder and is not linked publicly."
+    "_note": "exchange, hafh, corporate and bakuun confirmed by the site owner 2026-10-16/17. adminConsole is a placeholder and is not linked publicly.",
+    "bakuun": "https://www.bakuun.com/integrations"
   },
   "capabilityStatus": {
     "_values": "live | development | comingSoon | planned. Confirmed 2026-10-16: core service areas are live (scope confirmed per engagement); analytics, automation and AI-assisted workflows are in development.",
@@ -44,24 +45,25 @@
     "rateTransparency": "comingSoon"
   },
   "connections": {
-    "_values": "live | development | comingSoon | planned. Hotel connection methods shown on Solutions > Ways to connect. System names are proper nouns and are not translated. Confirmed 2026-10-16.",
-    "channelManagers": {
+    "_values": "live | development | comingSoon | planned. Solutions > Ways to connect. Confirmed 2026-10-17: channel manager / PMS connections are provided through Bakuun (list and statuses from Bakuun, refreshed with tools/fetch_bakuun.py); TL-Lincoln, Sanha and Neppan are KabuK direct integrations.",
+    "bakuun": {
       "provider": "Bakuun",
-      "systems": [
-        {
-          "name": "TL-Lincoln",
-          "status": "development"
-        },
-        {
-          "name": "Sanha",
-          "status": "comingSoon"
-        },
-        {
-          "name": "Neppan",
-          "status": "comingSoon"
-        }
-      ]
+      "data": "assets/data/bakuun-integrations.json"
     },
+    "direct": [
+      {
+        "name": "TL-Lincoln",
+        "status": "development"
+      },
+      {
+        "name": "Sanha",
+        "status": "comingSoon"
+      },
+      {
+        "name": "Neppan",
+        "status": "comingSoon"
+      }
+    ],
     "payments": {
       "direct": "live",
       "vcc": "comingSoon"

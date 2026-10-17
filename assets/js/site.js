@@ -105,6 +105,25 @@
     });
   }
 
+  /* ---- Integrations directory filter (Solutions #connect) ---------------- */
+  Array.prototype.forEach.call(doc.querySelectorAll('[data-dir]'), function (dir) {
+    var q = dir.querySelector('[data-dir-q]'), st = dir.querySelector('[data-dir-status]'), ty = dir.querySelector('[data-dir-type]');
+    var items = dir.querySelectorAll('[data-dir-list] > li'), count = dir.querySelector('[data-dir-count]');
+    var empty = dir.querySelector('[data-dir-empty]'), tpl = dir.getAttribute('data-count-template') || '{shown} / {total}';
+    function apply() {
+      var term = (q.value || '').trim().toLowerCase(), s = st.value, t = ty.value, shown = 0;
+      Array.prototype.forEach.call(items, function (li) {
+        var ok = (!term || li.getAttribute('data-name').indexOf(term) !== -1) &&
+                 (!s || li.getAttribute('data-status') === s) && (!t || li.getAttribute('data-type') === t);
+        li.hidden = !ok; if (ok) shown++;
+      });
+      count.textContent = tpl.replace('{shown}', shown).replace('{total}', items.length);
+      empty.hidden = shown !== 0;
+    }
+    dir.querySelector('[data-dir-filters]').addEventListener('submit', function (e) { e.preventDefault(); });
+    [q, st, ty].forEach(function (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); });
+  });
+
   /* ---- Contact form (mailto) --------------------------------------------- */
   var form = doc.getElementById('lead-form');
   if (!form) return;
